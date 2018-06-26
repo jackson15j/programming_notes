@@ -558,16 +558,43 @@ dotnet sln add MyLibrary.FSharp/MyLibrary.FSharp.fsproj
 * The solution allows top of project `dotnet restore`/`dotnet build`, but
   `dotnet test` still needs to be done within the test folder(s).
 
+The following is a list of the key NuGet packages for .NET Core:
+
+* `System.Runtime` - The most fundamental .NET Core package, including
+  `Object`, `String`, `Array`, `Action`, and `IList<T>`.
+* `System.Collections` - A set of (primarily) generic collections, including
+  `List<T>` and `Dictionary<TKey,TValue>`.
+* `System.Net.Http` - A set of types for HTTP network communication, including
+  `HttpClient` and `HttpResponseMessage`.
+* `System.IO.FileSystem` - A set of types for reading and writing to local or
+  networked disk-based storage, including `File` and `Directory`.
+* `System.Linq` - A set of types for querying objects, including `Enumerable`
+  and `ILookup<TKey,TElement>`.
+* `System.Reflection` - A set of types for loading, inspecting, and activating
+  types, including `Assembly`, `TypeInfo` and `MethodInfo`.
+
+The above plus more packages make up the MetaPackage that represents the .NET
+Standard Library Framework.
+
+* You can reference packages individually or the MetaPackage (if you need
+  several packages).
+
+
 Deployments
 ===========
 
 * See:
 	* [Microsoft: .NET Core application deployment].
     * [Microsoft: CLI application deployment].
+	* [Microsoft: runtime patch selection].
 * **Save `.pdb` (program database) files so you can debug release builds!!**
 * External dependencies must be in `.csproj` within a `<PackageReference>` node
   uder `<ItemGroup>` and then pulled down locally from [Nuget] via `dotnet
   restore`.
+* `--no-restore` on a `build`/`run`/`publish` call will explicitly stop the
+  latest package versions from being pulled down to your local cache.
+* `RuntimeFrameworkVersion` in the `.csproj` programmatically  sets the
+  required package versions.
 
 FDD (Framework-dependent deployment)
 ------------------------------------
@@ -580,6 +607,13 @@ FDD (Framework-dependent deployment)
 * Con is Library mismatch issues & library pre-requisite.
 * Publish eg: `dotnet publish -f netcoreapp1.1 -c Release`, generates artefacts
   under `bin/publish/`.
+* ASP.NET Core Apps:
+	* Typically FDD.
+	* Typically assume prior Libraries deployed from a manifest file(s) to
+      create a [Microsoft: runtime store]. ie. Host with libraries
+      pre-deployed, which may run multiple FDD apps.
+    * Version mismatches will highlight the target manifest that called for the
+      runtime package store assembly.
 
 SCD (Self-contained deployment)
 -------------------------------
@@ -595,6 +629,8 @@ SCD (Self-contained deployment)
   <runtime_identifier>`.
 * Requires `<RuntimeIdentifiers` node under `<ProjectGroup>` in your `.csproj`
   file.
+* `TargetLatestRuntimePatch` propert set to `true` in `.csproj` prevents
+  implicit restores from grabbing latest packages during `dotnet publish`.
 
 
 
@@ -635,6 +671,8 @@ Pipelines
 * Static Analysis:
 	* coverity ?
 	* <style checking> ??
+	* [IWYU](https://include-what-you-use.org) ??
+	* https://stackoverflow.com/questions/38635/what-static-analysis-tools-are-available-for-c#100350
 * Documentation:
 	* Sphinx ?
 	* Doxygen
@@ -642,6 +680,8 @@ Pipelines
 * Build Tools:
 	* dotnet
 	* msbuild
+		* https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-concepts
+		* https://docs.microsoft.com/en-us/dotnet/core/tools/cli-msbuild-architecture
 	* csc
 
 
@@ -657,3 +697,5 @@ Pipelines
 [Nuget]: https://www.nuget.org "Nuget: The .NET package repository"
 [Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
+[Microsoft: runtime patch selection]: https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-patch-selection
+[Microsoft: runtime store]: https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-store
