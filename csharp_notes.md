@@ -572,6 +572,51 @@ SCD (Self-contained deployment)
 
 
 
+TODO
+====
+
+Coding Concepts
+---------------
+
+* async/await.
+* LINQ
+* Generics
+* asp.NET
+* Core web api
+* Xamarin
+
+Test Frameworks
+---------------
+
+* Unittesting:
+	* xUnit
+	* nUnit
+	* MStest
+* Mocking:
+	* Moq
+* WebUI:
+    * Selenium (C# bindings)
+* Devices:
+    * Android ??
+    * IOS ??
+
+Pipelines
+---------
+
+* Code Coverage:
+* Static Analysis:
+	* coverity ?
+	* <style checking> ??
+* Documentation:
+	* Sphinx ?
+	* Doxygen
+	* ?
+* Build Tools:
+	* dotnet
+	* msbuild
+	* csc
+
+
 [Microsoft: C# Tour]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index
 [SO: readonly benefits]: https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c#277117
 [MSDN: Generic Lists]: https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx "MSDN: Generic Lists (dynamic lists)"
