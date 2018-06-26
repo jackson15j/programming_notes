@@ -38,6 +38,7 @@ instance of the same class type or an instance of a derived class type.
 Glossary
 ========
 
+* REPL: Read-Eval-Print Loop interface. Interactive code prompt.
 * Boxing: Converting from a Value Type to a Reference Type Object. The `object`
   instance is the _"box"_ that holds a copy of that value.
 
@@ -513,7 +514,63 @@ LINQ
   _"Database"_ like, rather than pythons universal _"read/write"_ or CRUD
   (Create Read Update Delete) mentality that allows easy swapping of the
   underlying source (database, file, socket, mock, dictionary, etc).
-* 
+
+.NET Libraries
+==============
+
+* See: [Microsoft: Libraries], [Microsoft: Packages].
+* _".NET Standard"_ is the base package of BCL's (Base Class Libraries) that
+  all other packages build upon. ~40 libraries.
+* Target _".NET Standard 4.0"_ for the widest user base. Done in your `.csproj`
+  file with a `<TargetFramework>` node in the `<PropertyGroup>`.
+* Multitarget if you need different library versions for; OS / Compile Time
+  (`#if` directives) for conditional compilation / Different API
+  calls. Requires `<TargetFrameworks>` and `<ItemGroup Condition>` nodes.
+* _".NET Core"_ builds off _".NET Standard"_ with ~20 more libraries for CLI
+  applications.
+* [Nuget] is the .NET package repository (think mvnrepository).
+
+Deployments
+===========
+
+* See:
+	* [Microsoft: .NET Core application deployment].
+    * [Microsoft: CLI application deployment].
+* **Save `.pdb` (program database) files so you can debug release builds!!**
+* External dependencies must be in `.csproj` within a `<PackageReference>` node
+  uder `<ItemGroup>` and then pulled down locally from [Nuget] via `dotnet
+  restore`.
+
+FDD (Framework-dependent deployment)
+------------------------------------
+
+* FDD (Framework-dependent deployment): Application built with 3rd party /
+  external to .NET Core libraries. Assumption is that .NET Core is installed on
+  Target. Contains `.dll` files (`dotnet app.dll`).
+* .NET Core apps default to FDD.
+* Pro: small size and absence of creating a Platform-specific binary.
+* Con is Library mismatch issues & library pre-requisite.
+* Publish eg: `dotnet publish -f netcoreapp1.1 -c Release`, generates artefacts
+  under `bin/publish/`.
+
+SCD (Self-contained deployment)
+-------------------------------
+
+* SCD (Self-contained deployment): Built executable (`app.exe` for platform
+  specific .NET Core host) and `.dll` (`app.dll` is the actual application)
+  with all required libraries (including .NET Core) and .NET Core runtime
+  included.
+* Pro: allows library/platform control, host executable digital signature.
+* Cons: larger packages & installs (silo-ed .NET Core libraries), specifying
+  platforms for deployment.
+* Publish eg: repeat for each platform: `dotnet publish -c Release -r
+  <runtime_identifier>`.
+* Requires `<RuntimeIdentifiers` node under `<ProjectGroup>` in your `.csproj`
+  file.
+
+
+
+
 
 [Microsoft: C# Tour]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index
 [SO: readonly benefits]: https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c#277117
@@ -522,3 +579,8 @@ LINQ
 [Microsoft: Anonymous Methods]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-methods
 [Microsoft: Lambda Operator `=>`]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
 [MSDN: LINQ]: https://msdn.microsoft.com/en-us/library/bb308959.aspx "MSDN: LINQ (.NET Language-Integrate Query)"
+[Microsoft: Libraries]: https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
+[Microsoft: Packages]: https://docs.microsoft.com/en-us/dotnet/core/packages
+[Nuget]: https://www.nuget.org "Nuget: The .NET package repository"
+[Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
+[Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
