@@ -529,6 +529,34 @@ LINQ
 * _".NET Core"_ builds off _".NET Standard"_ with ~20 more libraries for CLI
   applications.
 * [Nuget] is the .NET package repository (think mvnrepository).
+* Multiple Projects: Used to separate code from test or, core logic from public
+  API's that can be consumed by a .NET language. eg.
+
+```
+MyLibrary
+ |- MyLibrary.Core     # Business logic.
+ |- MyLibrary.CSharp   # Public APIs for C# consumption.
+ |- MyLibrary.FSharp   # Public APIs for F# consumption.
+```
+
+* Above example is built via:
+
+```bash
+mkdir MyLibrary && cd MyLibrary
+dotnet new sln
+mkdir MyLibrary.Core && cd MyLibrary.Core && dotnet new classlib
+cd ..
+mkdir MyLibrary.CSharp && cd MyLibrary.CSharp && dotnet new classlib && dotnet add reference ../MyLibrary.Core/MyLibrary.Core.csproj
+cd ..
+mkdir MyLibrary.FSharp && cd MyLibrary.FSharp && dotnet new classlib -lang F# && dotnet add reference ../MyLibrary.Core/MyLibrary.Core.csproj
+cd ..
+dotnet sln add MyLibrary.Core/MyLibrary.Core.csproj
+dotnet sln add MyLibrary.CSharp/MyLibrary.CSharp.csproj
+dotnet sln add MyLibrary.FSharp/MyLibrary.FSharp.fsproj
+```
+
+* The solution allows top of project `dotnet restore`/`dotnet build`, but
+  `dotnet test` still needs to be done within the test folder(s).
 
 Deployments
 ===========
