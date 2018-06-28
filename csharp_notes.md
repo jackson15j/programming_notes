@@ -714,11 +714,15 @@ Pipelines
       completing the effort to provide the necessary API's. All non-Windows
       tools are either free/paid reverse engineered projects.
 	* [MiniCover](https://github.com/lucaslorentz/minicover) Linux based
-      coverage.
+      coverage. Outputs Clover/JSON/NCover/CoverAll formats. Requires some faff
+      to instal/build.
 	* [vstest](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#coverage) -
       Windows Visual Studio based coverage. The coverage data **can** be built
       from CLI, but is still consumed by Visual Studio.
-	* 
+	* [Coverlet](https://github.com/tonerdo/coverlet) Assume cross-platform
+      (works on Linux). Outputs JSON/LCOV/opencover/cobertura. Very easy
+      install, simple `nuget test` CLI switches. Also actively developed. _-
+      Prefer it to MiniCover!!_
 * Static Analysis:
 	* coverity ?
 	* <style checking> ??
