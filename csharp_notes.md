@@ -39,6 +39,7 @@ Glossary
 ========
 
 * REPL: Read-Eval-Print Loop interface. Interactive code prompt.
+* BYOC: Bring your own Container.
 * Boxing: Converting from a Value Type to a Reference Type Object. The `object`
   instance is the _"box"_ that holds a copy of that value.
 
@@ -632,6 +633,20 @@ SCD (Self-contained deployment)
 * `TargetLatestRuntimePatch` propert set to `true` in `.csproj` prevents
   implicit restores from grabbing latest packages during `dotnet publish`.
 
+Docker
+------
+
+* See: [Microsoft: Docker], for loads of examples for various frameworks.
+* Microsoft maintains a space on [DockerHub: Microsoft].
+* [DockerHub: microsoft/aspnetcore] is for ASP.NET Core (Web) apps.
+* [DockerHub: microsoft/dotnet] is for .NET Core (Console) apps. eg. Batch
+  processes, Azure WebJobs, etc..
+* Visual Studio support for development; Visual Studio Tools for Docker.
+* BYOC: Bring your own Container.
+* Change environment by injecting config/environment variables into the image.
+* Dev/Test/Build/Deploy using containers for consistency & stable environment
+  at each stage of the pipeline.
+
 
 
 
@@ -699,3 +714,7 @@ Pipelines
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
 [Microsoft: runtime patch selection]: https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-patch-selection
 [Microsoft: runtime store]: https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-store
+[Microsoft: Docker]: https://docs.microsoft.com/en-us/dotnet/core/docker/intro-net-docker
+[DockerHub: Microsoft]: https://hub.docker.com/u/microsoft/
+[DockerHub: microsoft/aspnetcore]: https://hub.docker.com/r/microsoft/aspnetcore/
+[DockerHub: microsoft/dotnet]: https://hub.docker.com/r/microsoft/dotnet/
