@@ -647,6 +647,23 @@ Docker
 * Dev/Test/Build/Deploy using containers for consistency & stable environment
   at each stage of the pipeline.
 
+Testing
+=======
+
+xUnit
+-----
+
+Annotations:
+
+* `[Fact]` - standard testcase.
+* `[Theory]` - allows multi-testcase generation by feeding in arguments into
+  the methods parameter list. Done via: `[InlineData]`, `[PropertyData]`,
+  `[ClassData]`, `[MemberData]`.
+* `[Trait]` - allows selective filtering of tests by category/priority. Usage:
+  `dotnet test --filter <blah>`. See: [Microsoft: selective unittests].
+* Test published artefact: `dotnet vstest <PublishedTests>.dll`. Requires
+  `--Framework:"<framework>,Version=vN.N"` if a non `netcoreapp`.
+* 
 
 
 
@@ -662,7 +679,7 @@ Coding Concepts
 * Generics
 * asp.NET
 * Core web api
-* Xamarin
+* [Xamarin] - Builds core C# business logic + UI to Android/iOS/Windows.
 
 Test Frameworks
 ---------------
@@ -671,18 +688,37 @@ Test Frameworks
 	* xUnit
 	* nUnit
 	* MStest
+	* _[Robolectric](http://robolectric.org) - Android JVM for your desktop to
+      run Android unittests locally. Needs explicit Annotation. Also is Java
+      only??_
+	* https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#.NET_programming_languages
 * Mocking:
 	* Moq
 * WebUI:
     * Selenium (C# bindings)
 * Devices:
     * Android ??
-    * IOS ??
+    * iOS ??
+	* [Appium] - Andorid/iOS/Windows cross-platform mobile-automation
+      Library. Looks like it wraps up platform-specific test frameworks
+      (UIAutomator, UIAutomator2, Instrumentation / XCUITest, UIAutomation /
+      WinAppDriver - respectively) with Selenium so that tests are written to a
+      common HTTP REST Client and then translated to the framework via the JSON
+      Wire Protocol.
 
 Pipelines
 ---------
 
 * Code Coverage:
+	* Seems to be a mess with no cross-platform programs due to Microsoft not
+      completing the effort to provide the necessary API's. All non-Windows
+      tools are either free/paid reverse engineered projects.
+	* [MiniCover](https://github.com/lucaslorentz/minicover) Linux based
+      coverage.
+	* [vstest](https://github.com/Microsoft/vstest-docs/blob/master/docs/analyze.md#coverage) -
+      Windows Visual Studio based coverage. The coverage data **can** be built
+      from CLI, but is still consumed by Visual Studio.
+	* 
 * Static Analysis:
 	* coverity ?
 	* <style checking> ??
@@ -718,3 +754,10 @@ Pipelines
 [DockerHub: Microsoft]: https://hub.docker.com/u/microsoft/
 [DockerHub: microsoft/aspnetcore]: https://hub.docker.com/r/microsoft/aspnetcore/
 [DockerHub: microsoft/dotnet]: https://hub.docker.com/r/microsoft/dotnet/
+[Microsoft: selective unittests]: https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests
+
+
+
+
+[Appium]: http://appium.io
+[Xamarin]: https://visualstudio.microsoft.com/xamarin/
