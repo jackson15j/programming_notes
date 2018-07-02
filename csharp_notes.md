@@ -685,7 +685,7 @@ Test Frameworks
 ---------------
 
 * Unittesting:
-	* xUnit
+	* [xUnit]
 	* nUnit
 	* MStest
 	* _[Robolectric](http://robolectric.org) - Android JVM for your desktop to
@@ -723,6 +723,25 @@ Pipelines
       (works on Linux). Outputs JSON/LCOV/opencover/cobertura. Very easy
       install, simple `nuget test` CLI switches. Also actively developed. _-
       Prefer it to MiniCover!!_
+	* [AltCover](https://github.com/SteveGilham/altcover) is
+      cross-platform. Called via `dotnet fake run ./Build/build.fsx`, so new
+      package setup and additional build scripts in your project.
+	* [OpenCover](https://github.com/OpenCover/opencover) Not cross-platform
+      yet [issue #703](https://github.com/OpenCover/opencover/issues/703). Like
+      Coverlet, OpenCover seems to extend the `dotnet test` calls with
+      additional flags. May be one to watch when it goes
+      cross-platform. Previously called (or forked from) PartCover.
+	* [ReportGenerator](https://github.com/danielpalme/ReportGenerator)
+      Generates human readable reports from most XML based coverage outputs
+      (OpenCover, PartCover, dotCover, NCover, Visual Studio, Covertura, Mono's
+      mprof-report).
+	* Non-investigated coverage tools:
+		* dotCover.
+		* NCover (Paid solution).
+		* Covertura.
+		* Visual Studio (Currently running a Linux only laptop).
+		* NDepend (Paid solution).
+		* NCrunch (Paid solution).
 * Static Analysis:
 	* coverity ?
 	* <style checking> ??
@@ -759,7 +778,7 @@ Pipelines
 [DockerHub: microsoft/aspnetcore]: https://hub.docker.com/r/microsoft/aspnetcore/
 [DockerHub: microsoft/dotnet]: https://hub.docker.com/r/microsoft/dotnet/
 [Microsoft: selective unittests]: https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests
-
+[xUnit]: https://xunit.github.io
 
 
 
