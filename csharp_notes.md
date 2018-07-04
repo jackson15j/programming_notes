@@ -550,6 +550,7 @@ LINQ
 ==============
 
 * See: [Microsoft: Libraries], [Microsoft: Packages].
+* **Also: [Microsoft: .NET API Browser] for API reference.**
 * _".NET Standard"_ is the base package of BCL's (Base Class Libraries) that
   all other packages build upon. ~40 libraries.
 * Target _".NET Standard 4.0"_ for the widest user base. Done in your `.csproj`
@@ -821,6 +822,7 @@ Pipelines
 [MSDN: LINQ]: https://msdn.microsoft.com/en-us/library/bb308959.aspx "MSDN: LINQ (.NET Language-Integrate Query)"
 [Microsoft: Libraries]: https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
 [Microsoft: Packages]: https://docs.microsoft.com/en-us/dotnet/core/packages
+[Microsoft: .NET API Browser]: https://docs.microsoft.com/en-gb/dotnet/api/
 [Nuget]: https://www.nuget.org "Nuget: The .NET package repository"
 [Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
