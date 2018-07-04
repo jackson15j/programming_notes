@@ -507,6 +507,36 @@ public override string ToString()
 }
 ```
 
+Asynchronous Programming
+========================
+
+* See: [Microsoft: Async Concepts].
+* Seems to be a **lot** simpler than the Twisted Python I used to write.
+* Method signature's. NOTE: convention for an `Async` suffix:
+	* `async Task<Type> MyMethodAsync()`.
+	* `async Task NoReturnStatementOrReturnStatementWithNoOperandAsync()`.
+	* `async void MyEventHandlerAsync()`.
+	* C# 7.0 `async <Type> MyNonTaskMethodAsync()`. Type used requires a
+      `GetAwaiter` method!
+* Code inside looks synchronous as normal, unless anything downstream is async
+  as well (getter `Task<Type>` or `await` calls).
+* Method uses `return` as normal (**not `yield`!!**).
+* The caller of the method: `<Type> RetVal = await MyMethodAsync()`.
+* You cannot `await` or catch exceptions from an `async void MethodAsync()
+  method.
+
+Maintains the same I.O.U. basics as other languages, but instead of Deferred's
+& Callbacks, there is `async` to create your callback method and `await` which
+sits on the deferred I.O.U.'s (Generally a `Task<Type>` instead of a
+defer). Awaited tasks (un-fired defers) are in _"suspension"_, which allows the
+compiler to return control back to the caller of the async method.
+
+* Async (_work_ to do) + `Task.Run` (coordinating _work_ onto the threadpool)
+  is better & simpler (no race condition guarding) than `BackgroundWorker`
+  class for I/O-bound operations
+    * **INVESTIGATE:** `BackgroundWorker` if I see it anywhere. Assuming a
+      legacy way of writing code !?
+
 LINQ
 ====
 
@@ -646,6 +676,10 @@ Docker
 * Change environment by injecting config/environment variables into the image.
 * Dev/Test/Build/Deploy using containers for consistency & stable environment
   at each stage of the pipeline.
+* Example Docker files:
+	* [Docker Docs: Dockerise .NET].
+	* [Github: .NET Docker Unittesting] from [Github: .NET Docker].
+	* [MSDN: .NET Docker].
 
 Testing
 =======
@@ -705,6 +739,21 @@ Test Frameworks
       WinAppDriver - respectively) with Selenium so that tests are written to a
       common HTTP REST Client and then translated to the framework via the JSON
       Wire Protocol.
+	* [Sikuli]: Automation via image recognition. Like Selenium, but can be
+      used on desktop apps. Same issues of Selenium with UI changes (Typically
+      non-backend and sometimes non-frontend code changes) can cause test
+      failures until the tests are updated (should be definition of done, to
+      update as part of the feature change).
+* Load Testing:
+	* [Microsoft: Visual Studio based Load testing] - Has; _Scenarios, Counter
+      Sets, Run Settings_, for Web/unit testing multiple simulated Users. All
+      done within Visual Studio Enterprise (ie. How do you use this in CI or
+      cross-platform ??). **INVESTIGATE:** further if I'm going to be using VS
+      Enterprise edition in the future.
+	* [tc] - Traffic Control is great if you can control the network that
+      contains your SUT (System Under Test). Linux tool that does network
+      traffic shaping (ie. dropped/delayed packets, bandwidth). There are also
+      similar tools on managed switches (eg. Cisco).
 
 Pipelines
 ---------
@@ -757,6 +806,8 @@ Pipelines
 		* https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-concepts
 		* https://docs.microsoft.com/en-us/dotnet/core/tools/cli-msbuild-architecture
 	* csc
+* CI:
+	* [Travis: C#].
 
 
 [Microsoft: C# Tour]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index
@@ -765,6 +816,8 @@ Pipelines
 [SO: dynamic array]: https://stackoverflow.com/questions/594853/dynamic-array-in-c-sharp
 [Microsoft: Anonymous Methods]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-methods
 [Microsoft: Lambda Operator `=>`]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
+[Microsoft: Async Concepts]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+
 [MSDN: LINQ]: https://msdn.microsoft.com/en-us/library/bb308959.aspx "MSDN: LINQ (.NET Language-Integrate Query)"
 [Microsoft: Libraries]: https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
 [Microsoft: Packages]: https://docs.microsoft.com/en-us/dotnet/core/packages
@@ -777,10 +830,17 @@ Pipelines
 [DockerHub: Microsoft]: https://hub.docker.com/u/microsoft/
 [DockerHub: microsoft/aspnetcore]: https://hub.docker.com/r/microsoft/aspnetcore/
 [DockerHub: microsoft/dotnet]: https://hub.docker.com/r/microsoft/dotnet/
+[Docker Docs: Dockerise .NET]: https://docs.docker.com/engine/examples/dotnetcore/
+[Github: .NET Docker]: https://github.com/dotnet/dotnet-docker/tree/master/samples
+[Github: .NET Docker Unittesting]: https://github.com/dotnet/dotnet-docker/blob/master/samples/dotnetapp/dotnet-docker-unit-testing.md
+[MSDN: .NET Docker]: https://blogs.msdn.microsoft.com/dotnet/2018/06/13/using-net-and-docker-together-dockercon-2018-update/
+
 [Microsoft: selective unittests]: https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests
 [xUnit]: https://xunit.github.io
-
-
+[Microsoft: Visual Studio based Load testing]: https://docs.microsoft.com/en-us/visualstudio/test/quickstart-create-a-load-test-project
+[tc]: https://linux.die.net/man/8/tc "Linux Traffic Control"
+[Sikuli]: http://www.sikuli.org "Sikuli: Automation via image recognition"
 
 [Appium]: http://appium.io
 [Xamarin]: https://visualstudio.microsoft.com/xamarin/
+[Travis: C#]: https://docs.travis-ci.com/user/languages/csharp/
