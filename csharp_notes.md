@@ -409,6 +409,8 @@ Attributes
 * If Attribute is the suffix of your class, this can be ignored when using it.
 * Attribute classes are called within square brackets above the class/function
   definitions.
+* NOTE: don't use them like a python decorator. It's apparently bad form to do
+  functional work via an attribute. eg. [SO: Timer via Attribute].
 * `Attribute` class creation:
 
 ```c#
@@ -536,6 +538,18 @@ compiler to return control back to the caller of the async method.
   class for I/O-bound operations
     * **INVESTIGATE:** `BackgroundWorker` if I see it anywhere. Assuming a
       legacy way of writing code !?
+* In C# 7.1 you can do: `static async Task Main(string[] args)`. Previously to
+  `await` on tasks in `Main()` you had to do the following as per
+  [SO: Async Main]:
+
+```c#
+static void Main(string[] args)
+{
+    MainAsync(args).GetAwaiter().GetResult();
+}
+
+static async Task MainAsync(string[] args) {... // await call(s) }
+```
 
 LINQ
 ====
@@ -815,9 +829,11 @@ Pipelines
 [SO: readonly benefits]: https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c#277117
 [MSDN: Generic Lists]: https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx "MSDN: Generic Lists (dynamic lists)"
 [SO: dynamic array]: https://stackoverflow.com/questions/594853/dynamic-array-in-c-sharp
+[SO: Timer via Attribute]: https://stackoverflow.com/questions/4479329/c-sharp-time-a-function-using-attribute#4479372
 [Microsoft: Anonymous Methods]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/anonymous-methods
 [Microsoft: Lambda Operator `=>`]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator
 [Microsoft: Async Concepts]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+[SO: Async Main]: https://stackoverflow.com/questions/9208921/cant-specify-the-async-modifier-on-the-main-method-of-a-console-app#24601591
 
 [MSDN: LINQ]: https://msdn.microsoft.com/en-us/library/bb308959.aspx "MSDN: LINQ (.NET Language-Integrate Query)"
 [Microsoft: Libraries]: https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
