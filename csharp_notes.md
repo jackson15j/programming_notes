@@ -550,6 +550,9 @@ static void Main(string[] args)
 
 static async Task MainAsync(string[] args) {... // await call(s) }
 ```
+* Use `<Type> blah = await Task.WhenAll(arrayOfTasks);` to run tasks in
+  parallel and continue when all have completed. See: [LINQ](#linq) for a Task
+  query.
 
 LINQ
 ====
@@ -559,6 +562,15 @@ LINQ
   _"Database"_ like, rather than pythons universal _"read/write"_ or CRUD
   (Create Read Update Delete) mentality that allows easy swapping of the
   underlying source (database, file, socket, mock, dictionary, etc).
+* You can use queries to create a list of async tasks eg.
+
+```c#
+// Create the query.
+IEnumerable<Task<Type>> myTasksQuery = from thing in things select SomeMethodAsync(thing);
+// Fire off & wait on the query.
+Task<Type>[] MyTasks = MyTasksQuery.ToArray();
+<Type> result = await Task.WhenAll(MyTasks);
+```
 
 .NET Libraries
 ==============
