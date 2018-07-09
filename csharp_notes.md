@@ -726,7 +726,15 @@ Annotations:
   `--Framework:"<framework>,Version=vN.N"` if a non `netcoreapp`.
 * 
 
+Code Snippets
+=============
 
+* String to/from bytes conversion:
+
+```c#
+byte bytes = Encoding.UTF8.GetBytes(someString);
+string someString = Encoding.UTF8.GetString(bytes);
+```
 
 
 TODO
@@ -754,7 +762,33 @@ Test Frameworks
       only??_
 	* https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#.NET_programming_languages
 * Mocking:
-	* Moq
+	* [Github: Moq] - **Active** - looks like a good framework from the
+      examples. See: [NuDoq: Moq] for API docs. Seems to be popular along with
+      [NSubstitute] in my searches so far. _- Trying to actively play with it._
+	* [NSubstitute] - **Active** - Looks good and is in active development
+      according to [Github: NSubstitute]. _- INVESTIGATE !!_
+	* [Github: FakeItEasy] - **Active** - Also looks pretty simple to use. Docs
+      are very good from a quick glance at: [FakeItEasy]. _- INVESTIGATE !!_
+	* [Telerik: JustMock] - **Paid (tiered) ** - solution. Not dug into it at
+      all.
+	* [TypeMock] - **Paid (tiered)** - solution. Not dug into it at all.
+	* [SourceForge: EasyMock.NET] - **Dead** - Looks to be a dead project
+      (Readonly CVS code base, by SourceForge's CVS deprecation policy. No
+      activity in 3 years) with no docs. Was a fork of the Java EasyMock
+      framework.
+	* [NMock3] - **Dead** - Another dead project ([Nuget: NMock3] show's last
+	  build in 2013. All weblinks circle back to main page, except the zip
+	  download). Seems to a progression from [SourceForge: NMock] v1 & v2.
+	* [RhinoMocks] - **Dead** - Looks okay from a quick glance, but also looks
+      dead ([Github: rhino-mocks] shows no activity in 8 years).
+* Mocking Additionals:
+	* [Kzu: Record/Replay/Verify mocking model] - Seems like an odd concept
+      (compared to python mock frameworks) that complicates test
+      code. INVESTIGATE: if I'm not using Moq.
+	* [Github: Testing.HttpClient] - **Active** - Angular style HttpClient-only
+      mock. _- Not tried yet. See: [HttpClient and unit testing] for an
+      overview._
+	* 
 * WebUI:
     * Selenium (C# bindings)
 * Devices:
@@ -797,8 +831,9 @@ Pipelines
       from CLI, but is still consumed by Visual Studio.
 	* [Coverlet](https://github.com/tonerdo/coverlet) Assume cross-platform
       (works on Linux). Outputs JSON/LCOV/opencover/cobertura. Very easy
-      install, simple `nuget test` CLI switches. Also actively developed. _-
-      Prefer it to MiniCover!!_
+      install, simple `nuget test` CLI switches (eg. `nuget test
+      /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+      /p:Threshold=90`). Also actively developed. _- Prefer it to MiniCover!!_
 	* [AltCover](https://github.com/SteveGilham/altcover) is
       cross-platform. Called via `dotnet fake run ./Build/build.fsx`, so new
       package setup and additional build scripts in your project.
@@ -873,4 +908,24 @@ Pipelines
 
 [Appium]: http://appium.io
 [Xamarin]: https://visualstudio.microsoft.com/xamarin/
+
+[Github: Moq]: https://github.com/moq/moq4
+[NuDoq: Moq]: http://www.nudoq.org/#!/Projects/Moq
+[Github: FakeItEasy]: https://github.com/FakeItEasy/FakeItEasy
+[FakeItEasy]: https://fakeiteasy.github.io
+[Telerik: JustMock]: https://www.telerik.com/products/mocking.aspx
+[SourceForge: EasyMock.NET]: https://sourceforge.net/projects/easymocknet/
+[NMock3]: https://archive.codeplex.com/?p=nmock3
+[SourceForge: NMock]: http://nmock.sourceforge.net
+[Nuget: NMock3]: https://www.nuget.org/packages/NMock3
+[TypeMock]: https://www.typemock.com
+[RhinoMocks]: http://hibernatingrhinos.com/oss/rhino-mocks
+[Github: rhino-mocks]: https://github.com/hibernating-rhinos/rhino-mocks
+[NSubstitute]: http://nsubstitute.github.io
+[Github: NSubstitute]: https://github.com/nsubstitute/NSubstitute
+
+[Kzu: Record/Replay/Verify mocking model]: http://blogs.clariusconsulting.net/kzu/whats-wrong-with-the-recordreplyverify-model-for-mocking-frameworks/
+[Github: Testing.HttpClient]: https://github.com/dfederm/Testing.HttpClient
+[HttpClient and unit testing]: https://dfederm.com/httpclient-and-unit-testing/
+
 [Travis: C#]: https://docs.travis-ci.com/user/languages/csharp/
