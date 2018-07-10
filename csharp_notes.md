@@ -884,7 +884,14 @@ Pipelines
 		* NDepend (Paid solution).
 		* NCrunch (Paid solution).
 * Static Analysis:
-	* coverity ?
+	* [Coverity] - Now has C# support as of July 2017. Used this in my old
+      place for our C/C++ code. We didn't use it for our Python code
+      though. Cross-platform Java client for running static analysis as part of
+      your build pipeline. Can take hours on a large codebase (8GB ~10hr+ from
+      clean compile). Think [Github: findbugs] or [Github: pmd] in Java, where
+      it finds the common issues in your code that could lead to a bug (leaks,
+      dereferenced NULL pointers, error handing/concurrency/flow control
+      issues, etc...). Free for opensource, or paid at [Synopsys].
 	* <style checking> ??
 	* [IWYU](https://include-what-you-use.org) ??
 	* https://stackoverflow.com/questions/38635/what-static-analysis-tools-are-available-for-c#100350
@@ -991,6 +998,11 @@ Pipelines
 [Microsoft: Visual Studio based Load testing]: https://docs.microsoft.com/en-us/visualstudio/test/quickstart-create-a-load-test-project
 [tc]: https://linux.die.net/man/8/tc "Linux Traffic Control"
 [Sikuli]: http://www.sikuli.org "Sikuli: Automation via image recognition"
+
+[Coverity]: https://scan.coverity.com
+[Github: findbugs]: https://github.com/findbugsproject/findbugs
+[Github: pmd]: https://github.com/pmd/pmd
+[Synopsys]: https://www.synopsys.com/software-integrity.html
 
 [Travis: C#]: https://docs.travis-ci.com/user/languages/csharp/
 
