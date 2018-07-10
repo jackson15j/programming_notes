@@ -577,6 +577,8 @@ Task<Type>[] MyTasks = MyTasksQuery.ToArray();
 
 * See: [Microsoft: Libraries], [Microsoft: Packages].
 * **Also: [Microsoft: .NET API Browser] for API reference.**
+* Also: [Github: mono] for cross-platform & open source implementation of the
+  .NET framework.
 * _".NET Standard"_ is the base package of BCL's (Base Class Libraries) that
   all other packages build upon. ~40 libraries.
 * Target _".NET Standard 4.0"_ for the widest user base. Done in your `.csproj`
@@ -748,7 +750,6 @@ Coding Concepts
 * Generics
 * asp.NET
 * Core web api
-* [Xamarin] - Builds core C# business logic + UI to Android/iOS/Windows.
 
 Test Frameworks
 ---------------
@@ -790,16 +791,45 @@ Test Frameworks
       overview._
 	* 
 * WebUI:
-    * Selenium (C# bindings)
+    * [Selenium] - Is a pretty good WebUI framework. Used it in the past
+      pre-WebDriver and Grid days, on their Python bindings. Also had fun
+      transitioning our tests over to WebDriver. My main feeling is that if the
+      WebUI is one of many UI's that you have (eg. CLI, GUI), then try to make
+      your wrapper code for each UI look the same. Makes it easier to point the
+      same test at all of your UI's. Selenium is so good at testing WebUI's,
+      that you need to be diligent in making sure your UI has minimal business
+      logic in it (i.e. the API's provided from your business logic in the
+      backend is feature full enough to support a thin UI layer). Also
+      impressed at how much more support there is now that I'm looking back:
+	    * [Selenium: C# API].
+		* [Selendroid] - android support. [Github: selendroid] - Java-based
+          with a Java Client. Python example show's a simple test from scratch,
+          that would be similar for C#. Works against pre-existing emulators or
+          hardware.
+		* [ios-driver].
+		* Additional: Blackberry, Windows Phone, QT, Winium (Windows
+          Desktop/Store apps (Previously we had to use [Sikuli] for this)),
+          [Appium].
 * Devices:
-    * Android ??
-    * iOS ??
-	* [Appium] - Andorid/iOS/Windows cross-platform mobile-automation
-      Library. Looks like it wraps up platform-specific test frameworks
-      (UIAutomator, UIAutomator2, Instrumentation / XCUITest, UIAutomation /
-      WinAppDriver - respectively) with Selenium so that tests are written to a
-      common HTTP REST Client and then translated to the framework via the JSON
-      Wire Protocol.
+    * Android:
+	    * [Android Dev: UIAutomator] Has testing guides.
+	    * [Android Dev: UI Automator] for testing against the Android Web
+          driver for System or UI testing. Used by [Appium] or [Selendroid].
+		* [Android Dev: Espresso] is another UI test tool.
+    * iOS:
+	    * [Apple Dev: XCTest] covers unit/performance/UI tests for Xcode
+          projects. Used by [Appium].
+	* Windows:
+	    * [Github: WinAppDriver] covers UI testing against Windows 10
+          (UWP/Win32 apps). Used by [Appium].
+	* [Appium] - Andorid/iOS/Windows(Desktop/Mac(Desktop) cross-platform
+      mobile-automation Library. Looks like it wraps up platform-specific test
+      frameworks (UIAutomator, UIAutomator2, Instrumentation / XCUITest,
+      UIAutomation / WinAppDriver - respectively) with [Selenium] so that tests
+      are written to a common HTTP REST Client and then translated to the
+      framework via the JSON Wire Protocol. [Github: Appium]. Appium extends
+      regular [Selenium: C# API] Client Driver, so should use their C# driver
+      instead: [Github: appium-dotnet-driver].
 	* [Sikuli]: Automation via image recognition. Like Selenium, but can be
       used on desktop apps. Same issues of Selenium with UI changes (Typically
       non-backend and sometimes non-frontend code changes) can cause test
@@ -863,13 +893,33 @@ Pipelines
 	* Doxygen
 	* ?
 * Build Tools:
-	* dotnet
-	* msbuild
+	* `dotnet`
+	* `msbuild`
 		* https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-concepts
 		* https://docs.microsoft.com/en-us/dotnet/core/tools/cli-msbuild-architecture
-	* csc
+	* `csc`
 * CI:
 	* [Travis: C#].
+* IDE/Editors:
+	* [Emacs] - Cross-platform cross-language CLI/GUI editor (comparable to
+      VIM). Great if you buddy code remote via an SSH terminal + [Github: Tmux]
+      for a low-bandwidth an bi-directional buddy coding session. Can also
+      compile/debug code.
+	    * [Github: omnisharp-emacs] provides IDE features via [Github:
+          omnisharp-roslyn] server.
+	    * [Github: company-mode] is a completion engine that supports [Github:
+          omnisharp-emacs].
+		* [Github: flycheck] is an on-the-fly syntax checker.
+	* [MonoDevelop] cross-platform C#/F#/VB .NET/Vala IDE.
+    * [Microsoft: Xamarin] - Windows/Mac C# IDE (fork or plugin to [Microsoft:
+      Visual Studio] ??) that supports build targets of Android/iOS/Windows via
+      wrapping native APIs.
+	    * [Github: xamarin-macios] for all apple product native APIs.
+		* [Github: xamarin-android].
+		* [Github: Xamarin.Forms] for iOS/Android/Windows native UIs in a
+          single/shared code base.
+	* [Microsoft: Visual Studio] - Windows/Mac
+      C++/Node.js/Python/R/.NET/JavaScript IDE.
 
 
 [Microsoft: C# Tour]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index
@@ -886,6 +936,7 @@ Pipelines
 [Microsoft: Libraries]: https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
 [Microsoft: Packages]: https://docs.microsoft.com/en-us/dotnet/core/packages
 [Microsoft: .NET API Browser]: https://docs.microsoft.com/en-gb/dotnet/api/
+[Github: mono]: https://github.com/mono/mono
 [Nuget]: https://www.nuget.org "Nuget: The .NET package repository"
 [Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
@@ -902,12 +953,6 @@ Pipelines
 
 [Microsoft: selective unittests]: https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests
 [xUnit]: https://xunit.github.io
-[Microsoft: Visual Studio based Load testing]: https://docs.microsoft.com/en-us/visualstudio/test/quickstart-create-a-load-test-project
-[tc]: https://linux.die.net/man/8/tc "Linux Traffic Control"
-[Sikuli]: http://www.sikuli.org "Sikuli: Automation via image recognition"
-
-[Appium]: http://appium.io
-[Xamarin]: https://visualstudio.microsoft.com/xamarin/
 
 [Github: Moq]: https://github.com/moq/moq4
 [NuDoq: Moq]: http://www.nudoq.org/#!/Projects/Moq
@@ -928,4 +973,35 @@ Pipelines
 [Github: Testing.HttpClient]: https://github.com/dfederm/Testing.HttpClient
 [HttpClient and unit testing]: https://dfederm.com/httpclient-and-unit-testing/
 
+[Selenium]: https://docs.seleniumhq.org
+[Selenium: C# API]: http://seleniumhq.github.io/selenium/docs/api/dotnet/index.html
+[Selendroid]: http://selendroid.io
+[Github: selendroid]: https://github.com/selendroid/selendroid
+[ios-driver]: http://ios-driver.github.io/ios-driver/
+
+[Android Dev: Testing]: https://developer.android.com/training/testing/
+[Android Dev: UIAutomator]: https://developer.android.com/training/testing/ui-automator
+[Android Dev: Espresso]: https://developer.android.com/training/testing/espresso/
+[Apple Dev: XCTest]: https://developer.apple.com/documentation/xctest
+[Github: WinAppDriver]: https://github.com/microsoft/winappdriver
+[Appium]: http://appium.io
+[Github: Appium]: https://github.com/appium/appium
+[Github: appium-dotnet-driver]: https://github.com/appium/appium-dotnet-driver
+
+[Microsoft: Visual Studio based Load testing]: https://docs.microsoft.com/en-us/visualstudio/test/quickstart-create-a-load-test-project
+[tc]: https://linux.die.net/man/8/tc "Linux Traffic Control"
+[Sikuli]: http://www.sikuli.org "Sikuli: Automation via image recognition"
+
 [Travis: C#]: https://docs.travis-ci.com/user/languages/csharp/
+
+[Emacs]: https://www.gnu.org/software/emacs/
+[Github: omnisharp-emacs]: https://github.com/OmniSharp/omnisharp-emacs
+[Github: omnisharp-roslyn]: https://github.com/OmniSharp/omnisharp-roslyn
+[Github: flycheck]: https://github.com/flycheck/flycheck
+[Github: Tmux]: https://github.com/tmux/tmux "Terminal multiplexer (better than screen)"
+[MonoDevelop]: http://www.monodevelop.com
+[Microsoft: Xamarin]: https://visualstudio.microsoft.com/xamarin/
+[Github: xamarin-macios]: https://github.com/xamarin/xamarin-macios
+[Github: xamarin-android]: https://github.com/xamarin/xamarin-android
+[Github: Xamarin.Forms]: https://github.com/xamarin/Xamarin.Forms
+[Microsoft: Visual Studio]: https://visualstudio.microsoft.com
