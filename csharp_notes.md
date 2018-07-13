@@ -541,6 +541,8 @@ compiler to return control back to the caller of the async method.
 * In C# 7.1 you can do: `static async Task Main(string[] args)`. Previously to
   `await` on tasks in `Main()` you had to do the following as per
   [SO: Async Main]:
+* C# 7.0 Added `ValueTask<TResult>`, where any standard Type can be
+  `TResult`. Requires `System.Threading.Tasks.Extensions` NuGet package.
 
 ```c#
 static void Main(string[] args)
