@@ -641,6 +641,19 @@ Standard Library Framework.
 * You can reference packages individually or the MetaPackage (if you need
   several packages).
 
+JSON
+----
+
+There's a handful of JSON libraries for C#. See: [json.org] for the list for
+all languages.
+
+* [Microsoft: JSON tutorial] - based on using:
+  [Microsoft: System.Runtime.Serialization.Json]. _Opinions online point to
+  this being slower than other libraries._
+* [Github: Newtonsoft.Json (Json.NET)]. _Opinions point to this being the
+  preferred choice of library.__
+* [json2csharp] - The C# equivalent of the Java: [jsonschema2pojo], for quickly
+  creating a schema class from JSON.
 
 Deployments
 ===========
@@ -947,6 +960,13 @@ Pipelines
 [Microsoft: .NET API Browser]: https://docs.microsoft.com/en-gb/dotnet/api/
 [Github: mono]: https://github.com/mono/mono
 [Nuget]: https://www.nuget.org "Nuget: The .NET package repository"
+[json.org]: http://json.org
+[Microsoft: JSON tutorial]: https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats
+[Microsoft: System.Runtime.Serialization.Json]: https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.json?view=netframework-4.7.2
+[Github: Newtonsoft.Json (Json.NET)]: https://github.com/JamesNK/Newtonsoft.Json
+[json2csharp]: http://json2csharp.com/
+[jsonschema2pojo]: http://www.jsonschema2pojo.org
+
 [Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
 [Microsoft: runtime patch selection]: https://docs.microsoft.com/en-us/dotnet/core/deploying/runtime-patch-selection
