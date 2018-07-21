@@ -910,6 +910,8 @@ Pipelines
 	* <style checking> ??
 	* [IWYU](https://include-what-you-use.org) ??
 	* https://stackoverflow.com/questions/38635/what-static-analysis-tools-are-available-for-c#100350
+	* [Github: StyleCop] - Enforces Style on a codebase. Looks to be similar to
+      Python's [pep8] or Java's [Github: CheckStyle].
 * Documentation:
 	* Sphinx ?
 	* Doxygen
@@ -1025,6 +1027,9 @@ Pipelines
 [Github: findbugs]: https://github.com/findbugsproject/findbugs
 [Github: pmd]: https://github.com/pmd/pmd
 [Synopsys]: https://www.synopsys.com/software-integrity.html
+[Github: StyleCop]: https://github.com/StyleCop/StyleCop
+[pep8]: https://www.python.org/dev/peps/pep-0008/
+[Github: CheckStyle]: https://github.com/checkstyle/checkstyle
 
 [Travis: C#]: https://docs.travis-ci.com/user/languages/csharp/
 
