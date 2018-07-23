@@ -762,7 +762,12 @@ Annotations:
   `dotnet test --filter <blah>`. See: [Microsoft: selective unittests].
 * Test published artefact: `dotnet vstest <PublishedTests>.dll`. Requires
   `--Framework:"<framework>,Version=vN.N"` if a non `netcoreapp`.
-* 
+
+Filtering:
+
+* See: [Github: vstest/dotnet filtering].
+* `dotnet test --filter DisplayName~MyTestClass` - Filter tests to class
+  name. `~` does a _contains_ lookup.
 
 Code Snippets
 =============
@@ -1013,6 +1018,7 @@ Pipelines
 [Github: .NET Docker Unittesting]: https://github.com/dotnet/dotnet-docker/blob/master/samples/dotnetapp/dotnet-docker-unit-testing.md
 [MSDN: .NET Docker]: https://blogs.msdn.microsoft.com/dotnet/2018/06/13/using-net-and-docker-together-dockercon-2018-update/
 
+[Github: vstest/dotnet filtering]: https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md
 [Microsoft: selective unittests]: https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests
 [xUnit]: https://xunit.github.io
 
