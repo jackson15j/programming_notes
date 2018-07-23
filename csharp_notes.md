@@ -655,6 +655,27 @@ all languages.
 * [json2csharp] - The C# equivalent of the Java: [jsonschema2pojo], for quickly
   creating a schema class from JSON.
 
+Logging
+-------
+
+There seems to be multiple logging libraries:
+
+* [Microsoft: ASP.NET logging] - Looks to be easy ASP.NET way to do
+  logging. INVESTIGATE if you can use this in .NET core.
+* [MSDN: Microsoft.Extensions.Logging] - Still being updated on Nuget. Looks
+  like the above.
+* [Microsoft: System.Diagnostics.Trace] - builtin logging, but looks to be
+  messier (Partway between `Console.*` and test assertions, with additional
+  method calls to change indentation).
+* [log4net] - Seems to be well regarded. Apparently it is a port/fork of Java's
+  log4j, so need an external XML config file (instead of in-code config).
+* [NLog] - The other well regarded logging framework. Supports both XML or
+  programmatic config. See: [Github: NLog Tutorial].
+* [Serilog] - Looks the most pythonic when compared to [log4net] &
+  [NLog]. Still active according to [Github: serilog]. Programmatic config.
+* [TheObjectGuy: .NET Logging Framework] - **PAID** - Looks like a dead project
+  from 2009. No updates to copyright or twitter reviews past 2010. XML config.
+
 Deployments
 ===========
 
@@ -968,6 +989,16 @@ Pipelines
 [Github: Newtonsoft.Json (Json.NET)]: https://github.com/JamesNK/Newtonsoft.Json
 [json2csharp]: http://json2csharp.com/
 [jsonschema2pojo]: http://www.jsonschema2pojo.org
+
+[Microsoft: ASP.NET logging]: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1
+[MSDN: Microsoft.Extensions.Logging]: https://msdn.microsoft.com/en-us/magazine/mt694089.aspx
+[Microsoft: System.Diagnostics.Trace]: https://docs.microsoft.com/en-gb/dotnet/api/system.diagnostics.trace?view=netframework-4.7.2
+[log4net]: http://logging.apache.org/log4net/
+[NLog]: http://nlog-project.org
+[Github: NLog Tutorial]: https://github.com/nlog/nlog/wiki/Tutorial
+[Serilog]: https://serilog.net
+[Github: serilog]: https://github.com/serilog/serilog
+[TheObjectGuy: .NET Logging Framework]: http://dotnetlog.theobjectguy.com
 
 [Microsoft: .NET Core application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/index
 [Microsoft: CLI application deployment]: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
