@@ -9,6 +9,7 @@ Languages
 
 * [Python Notes].
 * [C# Notes].
+* [Java Notes].
 
 Tooling
 -------
@@ -18,4 +19,6 @@ Tooling
 
 [Python Notes]: python_notes.md
 [C# Notes]: csharp_notes.md
+[Java Notes]: java_notes.md
+
 [Git Notes]: git_notes.md
