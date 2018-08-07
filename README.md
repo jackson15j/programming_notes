@@ -7,9 +7,10 @@ out of date, so happy for corrections.
 Languages
 ---------
 
-* [Python Notes].
+* [C++ Notes].
 * [C# Notes].
 * [Java Notes].
+* [Python Notes].
 
 Tooling
 -------
@@ -17,8 +18,9 @@ Tooling
 * [Git Notes].
 
 
-[Python Notes]: python_notes.md
+[C++ Notes]: cpp_notes.md
 [C# Notes]: csharp_notes.md
 [Java Notes]: java_notes.md
+[Python Notes]: python_notes.md
 
 [Git Notes]: git_notes.md
