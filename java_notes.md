@@ -133,8 +133,22 @@ Running integration tests in IntelliJ
 - Right click on the integration test of interest and click **Run**.
 
 
+INVESTIGATE
+===========
+
+Link dump of things I need to **INVESTIGATE** or document further:
+
+* [Github: Docker builds].
+* [Github: fabric8].
+* [fabric8].
+* [mvn: fabric8 docker-maven-plugin].
 
 
 
 [mkyong: Create a maven java project]: http://www.mkyong.com/maven/how-to-create-a-java-project-with-maven/
 [Maven: maven in 5 mins]: https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
+[Github: Docker builds]: https://github.com/docker/labs/blob/master/developer-tools/java/chapters/ch03-build-image.adoc
+[Github: fabric8]: https://github.com/fabric8io/docker-maven-plugin
+[fabric8]: https://dmp.fabric8.io/#introduction
+[mvn: fabric8 docker-maven-plugin]: https://mvnrepository.com/artifact/io.fabric8/docker-maven-plugin
