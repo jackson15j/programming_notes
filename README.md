@@ -17,6 +17,11 @@ Tooling
 
 * [Git Notes].
 
+_"Cloud"_
+---------
+
+* [Cloud Notes].
+
 
 [C++ Notes]: cpp_notes.md
 [C# Notes]: csharp_notes.md
@@ -24,3 +29,5 @@ Tooling
 [Python Notes]: python_notes.md
 
 [Git Notes]: git_notes.md
+
+[Cloud Notes]: cloud_notes.md
