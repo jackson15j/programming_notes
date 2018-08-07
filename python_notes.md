@@ -171,6 +171,7 @@ Tooling
 > has super useful `pipenv check` which will tell you if your dependencies have
 > any known security bugs.
 
+
 CLI
 ===
 
@@ -185,6 +186,20 @@ CLI
 
 * **INVESTIGATE**
 * CLI UI generation (Like [Flask] for the CLI).
+
+
+Databases
+=========
+
+[ORM]
+-----
+
+* [ORM] Object Relational Mappers, are libraries that transfer between
+  relational databases and (python) objects.
+* ie. high-level abstraction; CRUD (Create Read Update Delete), instead of
+  direct database calls/queries.
+* eg. [Flask]'s ORM is [SQLAlchemy], which uses a database connector
+  `MySQL-python`/`psycopg` for MySQL/PostgreSQL.
 
 
 [The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org
@@ -223,3 +238,7 @@ CLI
 
 [plac]: http://micheles.github.io/plac/
 [click]: http://click.pocoo.org/5/
+
+
+[ORM]: https://www.fullstackpython.com/object-relational-mappers-orms.html
+[SQLAlchemy]: https://www.fullstackpython.com/sqlalchemy.html
