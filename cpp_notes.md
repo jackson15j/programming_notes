@@ -13,9 +13,10 @@ Libraries
 
 * See:
     * [Github boost] super-project for all of the libraries.
-	* [Boost: Getting started guide].
+    * [Boost: Getting started guide].
 * [Boost] is a _"well regarded"_ collection of cross-platform libraries.
 * Some Boost libraries have been migrated into the C++ Standard Libraries.
+* See: [Test Frameworks](#test-frameworks) for [Boost.Test] notes.
 
 
 Build Tools
@@ -32,15 +33,15 @@ Build Tools
   is instead in AUR (`yaourt`).
 * `b2` is the interpreter for your build tool of choice..
     * `Jamroot.jam` config file should be at the base of your project.
-	* `Jamfile.jam` config file can be in any sub-module of your project. If
+    * `Jamfile.jam` config file can be in any sub-module of your project. If
       `b2` is executed in a folder with a `Jamfile.jam`, it will search upwards
       for a `Jamroot.jam` to get project global config.
-	* `Jamroot.jam`/`Jamfile.jam` naming convention is for `b2`'s searching
+    * `Jamroot.jam`/`Jamfile.jam` naming convention is for `b2`'s searching
       benefit.
-	* `b2` does nothing if no `.jam` file at point of execution.
-	* `b2` converts `.jam` configs to flags for your compiler of choice (`gcc`,
+    * `b2` does nothing if no `.jam` file at point of execution.
+    * `b2` converts `.jam` configs to flags for your compiler of choice (`gcc`,
       `clang`, ...).
-	* All tokens in `.jam` files must have a space around them!
+    * All tokens in `.jam` files must have a space around them!
 
 
 **INVESTIGATE**.
@@ -53,6 +54,59 @@ Build Tools
 
 Test Frameworks
 ===============
+
+* [Boost.Test]
+    * Like most frameworks, It can do manual/auto testcase registration at a
+      method/class/suite level.
+    * Testcase generation either by it's (slightly weird) dataset class, or via
+      an iterator wrapped up in a boost data set call. Note: that the latter
+      requires `ostream` definitions for the type and iterator objects. eg.
+
+      ```cpp
+      #define BOOST_TEST_DYN_LINK
+      #include <boost/test/unit_test.hpp>
+      #include <boost/test/data/test_case.hpp>
+
+      namespace bdata = boost::unit_test::data;
+
+      BOOST_AUTO_TEST_SUITE(MyBoostGeneratedTest)
+
+      struct MyTestObj
+      {
+      std::string stringUnderTest;
+      bool expResult;
+      };
+
+      /** Define how to print out the MyTestObj struct. */
+      std::ostream& operator << (std::ostream& o, const MyTestObj& myTestObj) {
+      o << "[MyTestObj]" << " - [stringUnderTest] \"" << myTestObj.stringUnderTest << "\" - [expResult] " << myTestObj.expResult;
+      return o;
+      }
+
+      /** Vector of MyTestObj's */
+      std::vector<MyTestObj> MyVectorDataset {
+      {"Thing to Test: pass", true},
+      {"This should fail", false},
+      };
+
+      /** Define how to print out a std::vector of MyTestObj's structs. This is
+      required by Boost's testcase generation on testcase failure.
+      */
+      std::ostream& operator <<(std::ostream& o, const std::vector<MyTestObj>& v) {
+      for(auto const& item: v) {
+      o << item << std::endl;
+      }
+      return o;
+      }
+
+      /** Generates testcases from the MyVectorDataset. */
+      BOOST_DATA_TEST_CASE(ads_dataset_test, bdata::make(MyVectorDataset), myTestObj)
+      {
+      BOOST_TEST(ClassUnderTest::MethodUnderTest(myTestObj.stringUnderTest) == myTestObj.expResult);
+      }
+
+      BOOST_AUTO_TEST_SUITE_END();
+      ```
 
 **INVESTIGATE**
 
@@ -68,6 +122,7 @@ Test Frameworks
 [Boost: Getting started guide]: https://www.boost.org/more/getting_started/index.html
 [Boost.Build]: https://boostorg.github.io/build/
 [Boost.Build: Tutorial]: https://boostorg.github.io/build/tutorial.html
+[Boost.Test]: https://www.boost.org/doc/libs/1_68_0/libs/test/doc/html/index.html
 
 [CMake]: https://cmake.org
 [Clang]: https://clang.llvm.org
