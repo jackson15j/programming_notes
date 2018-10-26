@@ -3,6 +3,9 @@ C++ Notes
 
 * [C++ Standards Committee: ISOCPP] tracks the state of current and proposed
   libraries. [Github: cplusplus] is their Github presence.
+* Tutorial sites:
+    * [LearnCpp].
+    * [CppReference].
 
 
 Libraries
@@ -126,6 +129,8 @@ Random Tips
 
 [C++ Standards Committee: ISOCPP]: http://www.open-std.org/JTC1/SC22/WG21/
 [Github: cplusplus]: https://github.com/cplusplus
+[LearnCpp]: https://www.learncpp.com
+[CppReference]: https://en.cppreference.com/w/
 
 [Boost]: https://www.boost.org
 [Github boost]: https://github.com/boostorg/boost
