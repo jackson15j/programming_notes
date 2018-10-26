@@ -36,8 +36,8 @@ Java's _"servlet"_ API.
 [Flask]
 -------
 
-* [Flask]: A thin framework that exposes a REST API on your application via
-  decorators.
+* [Flask]: A thin, synchronous framework that exposes a REST API on your
+  application via decorators.
 * Dependencies:
     * [Jinja2]: ([Django] inspired templating engine).
     * [Werkzeug]: [WSGI] utility library.
@@ -47,6 +47,8 @@ Java's _"servlet"_ API.
 * XSS (cross-site scripting) is covered by the [Jinja2] templating engine.
 * Works with [Twisted].
 * [Github: flask].
+* An async package was built (but is no longer maintained or production ready):
+  [Flask-aiohttp], [Github: Flask-aiohttp].
 
 [Django]
 --------
@@ -68,6 +70,13 @@ Java's _"servlet"_ API.
 * Path definitions are inside the function. Personally prefer [Flask]'s
   decorator paths for the clarity.
 
+[Klein]
+-------
+
+* Web Framework built on [Twisted] and [Werkzeug].
+* Have used this in a [Flask]/[Twisted] based python2.7
+  application. **INVESTIGATE** _- Is this still worth using in Python3 when
+  compared to something like [Tornado]?_
 
 Async Libraries
 ===============
@@ -96,6 +105,7 @@ Typically used for external connections (network/databases) to:
 ----------
 
 * **INVESTIGATE**
+* See: [PEP 492] - Coroutines with async and await syntax.
 
 [Tornado]
 ---------
@@ -115,7 +125,12 @@ Task Queuing
 ============
 
 * **INVESTIGATE**
-
+* [Celery] - Can use various system provided queue brokers (RabbitMQ (default),
+  Redis, other) for queuing tasks and result backends (RPC (RabbitMQ/AMQP),
+  Redis, SQLAchemy/Django ORM, Memcached, other) for tracking state.
+      * Looks like [Flask] with the `app` definition and decorators.
+	  * Python configuration file.
+	  * See: [Flask: Celery Background Tasks].
 
 
 Test Frameworks
@@ -124,12 +139,22 @@ Test Frameworks
 [unittest]
 ----------
 
-* **INVESTIGATE**
+* Builtin testing library.
+* Classic style of per-testcase/class setup & teardown functions and testcase
+  functions.
+* Generating multiple testcases against a dataset is a custom job. -
+  **INVESTIGATE** _- This was the case back in the day, is this still true?_
 
 [PyTest]
 --------
 
-* **INVESTIGATE**
+* An alternative to [unittest].
+* A bit C#-like ([C# Notes: xUnit]) with the use of _"fixtures"_ to pass in
+  datasets for setup/teardown into a testcase/class/module, to generate
+  multiple tests on the fly.
+* uses stock `assert`, but provides useful failure messages & code snippets
+  eg. `assert a == b`.  Seems to be an improvement to [unittest] which needed a
+  custom failure message in the `assert.assert*` to provide context.
 
 [Lettuce]
 ---------
@@ -157,6 +182,9 @@ Tooling
 =======
 
 * **INVESTIGATE**
+* [Black] - is a PEP8/Flake8-based CLI syntax re-formatting tool. Seems to be a
+  modern version of the older PEP8 ones, which could also do (sometimes
+  destructive) refactoring.
 
 [Pipenv]
 --------
@@ -212,25 +240,33 @@ Databases
 
 [Flask]: http://flask.pocoo.org/docs/1.0/
 [Github: flask]: https://github.com/pallets/flask/
+[Flask-aiohttp]: https://flask-aiohttp.readthedocs.io/en/latest/index.html
+[Github: Flask-aiohttp]: https://github.com/Hardtack/Flask-aiohttp
 [Jinja2]: http://jinja.pocoo.org/docs/2.10/
 [Werkzeug]: http://werkzeug.pocoo.org/docs/0.14/
 
 [Django]: https://www.djangoproject.com
 [Django Design Patterns and Best Practices]: https://www.amazon.co.uk/dp/B00VIBPW0I/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1
+[Klein]: https://klein.readthedocs.io/en/latest/
 
 [Tornado]: http://www.tornadoweb.org/en/stable/
-
+[AsyncI/O]: https://docs.python.org/3/library/asyncio.html
+[PEP 492]: https://www.python.org/dev/peps/pep-0492/ "PEP 492 -- Coroutines with async and await syntax"
 [Twisted]: https://twistedmatrix.com/trac/wiki
 
 [Celery]: http://www.celeryproject.org
+[Flask: Celery Background Tasks]: http://flask.pocoo.org/docs/1.0/patterns/celery/
 
 [PyTest]: https://docs.pytest.org/en/latest/
+[C# Notes: xUnit]: csharp_notes.md#xunit
 
 [Lettuce]: http://lettuce.it
 [Cucumber]: https://docs.cucumber.io
 [Github: cucumber]: https://github.com/cucumber/cucumber
 
 [tox]: https://tox.readthedocs.io/en/latest/
+
+[Black]: https://pypi.org/project/black/
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
