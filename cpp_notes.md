@@ -114,6 +114,16 @@ Test Frameworks
 * [Github: Google Test]
 
 
+Random Tips
+===========
+
+* Use `const` for all read-only variables (Mentality: _"It's not python!"_
+  Start `const` first and remove as required).
+* C++-11: Ranged based `for` loops. See: [CppReference: Range For].
+* `\n` is an OS-agnostic newline character (Traditionally. Linux=`\n`,
+  Windows=`\r\n`). See: [CppReference: Escape Sequences].
+
+
 [C++ Standards Committee: ISOCPP]: http://www.open-std.org/JTC1/SC22/WG21/
 [Github: cplusplus]: https://github.com/cplusplus
 
@@ -130,3 +140,6 @@ Test Frameworks
 
 [Github: Catch]: https://github.com/catchorg/Catch2
 [Github: Google Test]: https://github.com/google/googletest
+
+[CppReference: Range For]: https://en.cppreference.com/w/cpp/language/range-for
+[CppReference: Escape Sequences]: https://en.cppreference.com/w/cpp/language/escape
