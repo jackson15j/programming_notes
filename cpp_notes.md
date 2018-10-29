@@ -132,7 +132,8 @@ Random Tips
       exceptions, Destructor releases resources but never excepts.
     * Use resource via a RAII-class instance: Lifetime bound to lifetime of the
       object.
-
+* `g++` is _apparently_ preferred to: `gcc -lstdc++` to pull in the standard
+  C++ libraries. See: [StackOverflow: Undefined Std library reference].
 
 
 
@@ -160,3 +161,4 @@ Random Tips
 
 [RAII]: https://en.cppreference.com/w/cpp/language/raii
 [Python's `with` Context Manager]: https://docs.python.org/3/reference/compound_stmts.html#with
+[StackOverflow: Undefined Std library reference]: https://stackoverflow.com/questions/28236870/undefined-reference-to-stdcout#28236905
