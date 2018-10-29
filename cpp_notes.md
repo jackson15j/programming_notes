@@ -125,6 +125,15 @@ Random Tips
 * C++-11: Ranged based `for` loops. See: [CppReference: Range For].
 * `\n` is an OS-agnostic newline character (Traditionally. Linux=`\n`,
   Windows=`\r\n`). See: [CppReference: Escape Sequences].
+* [RAII] - a set of guidelines that get you to a safer place of de-allocating
+  resources on failure. Originally thought it was like [Python's `with` Context
+  Manager], however, it is a manual process.
+    * Encapsulate into a class: Constructor creates resources or throws
+      exceptions, Destructor releases resources but never excepts.
+    * Use resource via a RAII-class instance: Lifetime bound to lifetime of the
+      object.
+
+
 
 
 [C++ Standards Committee: ISOCPP]: http://www.open-std.org/JTC1/SC22/WG21/
@@ -148,3 +157,6 @@ Random Tips
 
 [CppReference: Range For]: https://en.cppreference.com/w/cpp/language/range-for
 [CppReference: Escape Sequences]: https://en.cppreference.com/w/cpp/language/escape
+
+[RAII]: https://en.cppreference.com/w/cpp/language/raii
+[Python's `with` Context Manager]: https://docs.python.org/3/reference/compound_stmts.html#with
