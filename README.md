@@ -23,6 +23,11 @@ _"Cloud"_
 
 * [Cloud Notes].
 
+Conferences
+-----------
+
+* [2018-11-01 O'Reilly Velocity (DeOps) Conference].
+
 
 [Bash Notes]: bash_notes.md
 [C++ Notes]: cpp_notes.md
@@ -33,3 +38,5 @@ _"Cloud"_
 [Git Notes]: git_notes.md
 
 [Cloud Notes]: cloud_notes.md
+
+[2018-11-01 O'Reilly Velocity (DeOps) Conference]: conferences/2018-11-01_oreilly_velocity_deops_conference.md
