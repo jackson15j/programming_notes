@@ -80,6 +80,72 @@ blog may be interesting if you are more hardware/rack biased.
 * Inter/Intra-team communications.
 
 
+[Advanced Docker image build patterns (Gareth Rushgrove, Docker)]
+-----------------------------------------------------------------
+
+Fast, but very good talk on the new experimental docker builder. Definitely
+worth a watch if possible!
+
+* Have a `root` folder to store your file system, hen `COPY` that into your
+  docker container.
+    * Benefit: contained file system.
+* `HOCON` = environtment variables as first class config citizens.
+    * usually Scala only.
+* Can now `COPY` from another image. eg.
+    * `COPY --from=linuxkit/ca-certificates / /`.
+
+Multibuild Stages:
+
+* Multiple `FROM`'s and `COPY --from` previous containers. eg.
+    * Stage1 = build tools.
+    * Stage2 = Compile app.
+* Can deprecate bespoke `Makefiles` or build scripts, now that multi stage
+  logic is in the `Dockerfile`.
+* Use aliases to re-use containers. eg. `FROM alpine:3.8 AS alpine`.
+* Traditionally serial builds in a `Dockerfile`.
+    * Experimental docker build will do things concurrently.
+        * Also skips unused stages.
+    * Can use this to cache dependencies.
+    * Debug a stage: `docker build --target <alias> -t debug .`.
+    * Can have test/dev/release aliases for images.
+        * Can have `ENTRYPOINT` under the alias.
+        * Build the artefact once (Release stage) and copy into the dev/test
+          stages.
+
+Links:
+
+* [Github: wagoodman/dive] - Explore layers in a docker image. eg.
+    * `docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock
+      wagoodman/dive exeproxy/proxy`.
+* [Github: hadolint/hadolint] - `dockerfile` linter. eg.
+    * Windows: `Get-Content \Dockerfile | docker run --rm -i hadolint/hadolint`
+    * Linux: `cat Dockerfile | docker run --rm -i hadolint/hadolint`
+* [Github: GoogleContainerTools/container-structure-test] - Verify structure of
+  container based on Company policy config file.
+* [Snyk: Snyk for Docker] - Displays vulnerabilities with dependencies. eg.
+    * `snyk test --docker alpine`.
+* [Github: garethr/multi-stage-build-example] - Talk givers example.
+* [Docker: Multistage Build].
+
+Suggested `Dockerfile` workflow:
+
+* BUILD - dependencies for Release.
+* RELEASE - `COPY` in code & build.
+* DEV/TEST - dev dependencies on top of RELEASE image.
+    * `COPY` in code again (avoid cache misses).
+* Then `CMD` calls in new aliases that build off RELEASE/DEV/TEST.
+* Could use a `Makefile` to drive the different docker stages.
+    * `make <build,dev,test,release,doc,check(lint)>`.
+* See: [Github: garethr/multi-stage-build-example].
+
+Summary:
+
+* Config as Code.
+* Share patterns & practices.
+* Maintenance across projects.
+* Do less.
+
+
 [O'Reilly: Velocity (EU)]: https://conferences.oreilly.com/velocity/vl-eu
 [O'Reilly: Velocity 2018-11-01 Schedule]: https://conferences.oreilly.com/velocity/vl-eu/schedule/2018-11-01
 [O'Reilly: Velocity 2018-11-02 Schedule]: https://conferences.oreilly.com/velocity/vl-eu/schedule/2018-11-02
@@ -91,3 +157,10 @@ blog may be interesting if you are more hardware/rack biased.
 
 [Things you can't cloud your way out of (Jessica Brown, Fastly)]: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/72252
 [Fastly: Balancing Requets]: https://www.fastly.com/blog/building-and-scaling-fastly-network-part-2-balancing-requests
+[Advanced Docker image build patterns (Gareth Rushgrove, Docker)]: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/72411
+[Github: wagoodman/dive]: https://github.com/wagoodman/dive
+[Github: hadolint/hadolint]: https://github.com/hadolint/hadolint
+[Github: GoogleContainerTools/container-structure-test]: https://github.com/GoogleContainerTools/container-structure-test
+[Snyk: Snyk for Docker]: https://snyk.io/docs/snyk-for-docker
+[Docker: Multistage Build]: https://docs.docker.com/develop/develop-images/multistage-build/
+[Github: garethr/multi-stage-build-example]: https://github.com/garethr/multi-stage-build-example
