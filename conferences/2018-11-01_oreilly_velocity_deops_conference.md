@@ -50,6 +50,34 @@ Link suggestions given:
 Talks
 =====
 
+[Things you can't cloud your way out of (Jessica Brown, Fastly)]
+----------------------------------------------------------------
+
+Fastly are a global Cloud provider that aim to make life easier for customers
+to spin up applications on. Okay talk, but I don't need to re-watch. They're
+blog may be interesting if you are more hardware/rack biased.
+
+* Issues:
+    * POPs (Point of Presence).
+    * Auto scale instances issues:
+        * Getting hardware (if bespoke) = cost/planning scale.
+    * Load Balancer issues:
+        * DNS TTL (Time To Live) timeouts.
+    * Managing apps across lots of nodes issues.
+        * CHR (Cache Hit Ratio) - Percentage increases = High costs for
+          customers.
+* Solutions:
+    * Load Balancers: Use `faild` (in-house) load balancer on their switches.
+        * Handles _"drain"_ scenarios.
+        * See: [Fastly: Balancing Requets].
+    * Managing Apps:
+        * Isolation of _"Canaries"_.
+* Get your deployment working well:
+    * Easy to spin up for Canaries / DR / dev / test...
+    * Roll out / Upgrades, should be _"unnoticed"_.
+* Fastly still need to care about Hardware/DCs.
+* Abstract technical intricacies.
+* Inter/Intra-team communications.
 
 
 [O'Reilly: Velocity (EU)]: https://conferences.oreilly.com/velocity/vl-eu
@@ -59,3 +87,7 @@ Talks
 
 [Amazon: Docker on Windows (Elton Stoneman)]: https://www.amazon.co.uk/Docker-Windows-101-Production-ebook/dp/B0711Y4J9K
 [SafariBooks: Distributed Systems Observability (Cindy Sridharan)]: https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/
+
+
+[Things you can't cloud your way out of (Jessica Brown, Fastly)]: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/72252
+[Fastly: Balancing Requets]: https://www.fastly.com/blog/building-and-scaling-fastly-network-part-2-balancing-requests
