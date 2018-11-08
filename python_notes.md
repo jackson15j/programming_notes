@@ -200,17 +200,22 @@ Tooling
 > any known security bugs.
 
 
-CLI
-===
+UI
+==
 
-[plac]
-------
+### [pyperclip] ###
+
+* Cross-platform copy/past to/from System's clipboard.
+
+CLI
+---
+
+### [plac] ###
 
 * **INVESTIGATE**
 * CLI parser.
 
-[click]
--------
+### [click] ###
 
 * **INVESTIGATE**
 * CLI UI generation (Like [Flask] for the CLI).
@@ -272,6 +277,7 @@ Databases
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
 
+[pyperclip]: https://pyperclip.readthedocs.io/en/latest/introduction.html
 
 [plac]: http://micheles.github.io/plac/
 [click]: http://click.pocoo.org/5/
