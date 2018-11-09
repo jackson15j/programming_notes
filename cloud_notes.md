@@ -1,17 +1,19 @@
 Cloud Notes
 ===========
 
+* [12 Factor] principles.
+
 [Principles of Chaos Engineering]
 ---------------------------------
 
 * [Principles of Chaos Engineering] covers experimenting on a deployment/system
   to uncover systemic issues:
     * Define a measurable _"steady state"_.
-	* Expectation that _"steady state"_ should continue in both control/test
+    * Expectation that _"steady state"_ should continue in both control/test
       groups.
-	* Introduce _"real world"_ events (crashes, connectivity failures,
+    * Introduce _"real world"_ events (crashes, connectivity failures,
       infrastructure failures,...).
-	* Disprove expectations.
+    * Disprove expectations.
 * Confidence comes from extremes it takes to disprove the control vs test
   expectation,
 
@@ -20,9 +22,24 @@ Cloud Notes
 
 * See:
     * [Gihub: chaosmonkey].
-	* [Netflix: OSS].
+    * [Netflix: OSS].
 * Verify your stateless/statefull cloud application/infrastructure deployments
   resilience by randomly nuking nodes.
+
+Docker/Kubernetes
+-----------------
+
+Docker:
+
+* [Docker: Dockerfile reference].
+* [Github: garethr/multi-stage-build-example]. See: [Velocity: Advanced Docker
+  image build patterns (Gareth Rushgrove, Docker)].
+
+Kubernetes:
+
+* [Kubernetes Basics].
+* [Kubernetes Deployment].
+* [Kubernetes Service].
 
 INVESTIGATE
 ===========
@@ -32,13 +49,13 @@ Link dump of things I need to **INVESTIGATE** or document further:
 * [GCloud: Pusing Docker images].
 * [GCloud: JSON Key Authentication].
 * [GCloud: Configuring Domain Names & Static IPs].
-* [Kubernetes Basics].
-* [Kubernetes Deployment].
-* [Kubernetes Service].
 * [Labels & Selectors].
+* [Github: CloudNativeWales/container.training].
+* [Google: SRE (Site Reliability Engineering) Handbook].
+* [NovemberFive: PyPI repo on AWS S3].
 
 
-
+[12 Factor]: https://12factor.net
 [Principles of Chaos Engineering]: http://principlesofchaos.org
 
 [ChaosMonkey]: https://netflix.github.io/chaosmonkey/
@@ -52,3 +69,9 @@ Link dump of things I need to **INVESTIGATE** or document further:
 [Kubernetes Deployment]: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 [Kubernetes Service]: https://kubernetes.io/docs/concepts/services-networking/service/
 [Labels & Selectors]: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+[Github: CloudNativeWales/container.training]: https://github.com/cloudnativewales/container.training
+[Google: SRE (Site Reliability Engineering) Handbook]: https://landing.google.com/sre/sre-book/toc/
+[NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
+[Docker: Dockerfile reference]: https://docs.docker.com/engine/reference/builder/
+[Github: garethr/multi-stage-build-example]: https://github.com/garethr/multi-stage-build-example
+[Velocity: Advanced Docker image build patterns (Gareth Rushgrove, Docker)]: conferences/2018-11-01_oreilly_velocity_devops_conference.md#advanced-docker-image-build-patterns-gareth-rushgrove-docker

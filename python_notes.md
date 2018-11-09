@@ -185,6 +185,7 @@ Tooling
 * [Black] - is a PEP8/Flake8-based CLI syntax re-formatting tool. Seems to be a
   modern version of the older PEP8 ones, which could also do (sometimes
   destructive) refactoring.
+* [NovemberFive: PyPI repo on AWS S3].
 
 [Pipenv]
 --------
@@ -273,6 +274,7 @@ Databases
 [tox]: https://tox.readthedocs.io/en/latest/
 
 [Black]: https://pypi.org/project/black/
+[NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
