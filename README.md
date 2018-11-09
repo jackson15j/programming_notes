@@ -35,7 +35,7 @@ Conferences
 [Java Notes]: java_notes.md
 [Python Notes]: python_notes.md
 
-[Git Notes]: git_notes.md
+[Git Notes]: tooling/git_notes.md
 
 [Cloud Notes]: cloud_notes.md
 
