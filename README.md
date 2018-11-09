@@ -17,6 +17,7 @@ Tooling
 -------
 
 * [Git Notes].
+* [CI Notes].
 
 _"Cloud"_
 ---------
@@ -36,6 +37,7 @@ Conferences
 [Python Notes]: python_notes.md
 
 [Git Notes]: tooling/git_notes.md
+[CI Notes]: tooling/ci_notes.md
 
 [Cloud Notes]: cloud_notes.md
 
