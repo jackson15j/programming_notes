@@ -27,7 +27,7 @@ _"Cloud"_
 Conferences
 -----------
 
-* [2018-11-01 O'Reilly Velocity (DeOps) Conference].
+* [2018-11-01 O'Reilly Velocity (DevOps) Conference].
 
 
 [Bash Notes]: bash_notes.md
@@ -41,4 +41,4 @@ Conferences
 
 [Cloud Notes]: cloud_notes.md
 
-[2018-11-01 O'Reilly Velocity (DeOps) Conference]: conferences/2018-11-01_oreilly_velocity_deops_conference.md
+[2018-11-01 O'Reilly Velocity (DevOps) Conference]: conferences/2018-11-01_oreilly_velocity_devops_conference.md
