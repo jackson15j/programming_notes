@@ -18,6 +18,7 @@ Tooling
 
 * [Git Notes].
 * [CI Notes].
+* [VPN Notes].
 
 _"Cloud"_
 ---------
@@ -39,6 +40,7 @@ Conferences
 
 [Git Notes]: tooling/git_notes.md
 [CI Notes]: tooling/ci_notes.md
+[VPN Notes]: tooling/vpn_notes.md
 
 [Cloud Notes]: cloud_notes.md
 
