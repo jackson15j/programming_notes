@@ -20,6 +20,28 @@ VPN Security/Usability (Best to Worst):
 Mostly a summary of: [SpeakNetworks: PPTP vs L2TP/IPSec vs SSTP vs IKEv2 vs
 OpenVPN].
 
+IPSec Policy vs Route based VPNs
+--------------------------------
+
+Policy-based VPN:
+
+* Uses configuration to define both sides network structure (subnets).
+* Policy determines if traffic directed at the tunnel is encrypted or not.
+* Tunnel is spun up on presence of traffic (Seems to be always up in my IKE
+  testing so far).
+* Policy creates a new SA pairing per tunnel.
+
+Route-based VPN:
+
+* Virtual interfaces for VPN Traffic.
+* All traffic directed at the tunnel is encrypted.
+* Use OS routing (`iptables`, `ip route`) to define what traffic is directed to
+  the tunnel.
+* Only need to know destination VPN (not subnet(s) behind destination VPN) in
+  routing config.
+* Simpler to manage.
+* Easier to scale to multiple VPN connections.
+
 Glossary
 --------
 
@@ -32,6 +54,8 @@ Glossary
   then transmits the encapsulated packets across the network/internet.
 * PPTP: Point to Point Tunneling Protocol - Encrypts and tunnels PPP packets.
 * L2F: Layer 2 Forwarding - Cisco designed protocol.
+* IPSec: IP Security. A suite of protocols for cryptographically securing
+  communications at the IP Packet Layer.
 * L2TP/IPSec: Combination of PPTP and L2F. Tunneling based off PPP
   specification. Encryption via IPSec.
 * SSTP: Secure Socket Tunneling Protocol - encapsulates PPP traffic over SSL
