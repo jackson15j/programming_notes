@@ -80,6 +80,11 @@ Link Dump
 * [AWS: VPN Connections].
 * [SpeakNetworks: PPTP vs L2TP/IPSec vs SSTP vs IKEv2 vs OpenVPN].
 * [Docker: hwdsl2/ipsec-vpn-server].
+* [Juniper: IPSec VPN Overview].
+* [PacketLife: Policy vs Route-based VPNs (Part 1)], [PacketLife: Policy vs
+  Route-based VPNs (Part 2)].
+* [SysTutorials: Linux Gateway with iptables & route].
+* [SysTutorials: Port forwarding using iptables].
 
 
 [StrongSwan]: https://strongswan.org
@@ -96,3 +101,9 @@ Link Dump
 [AWS: VPN Connections]: https://docs.aws.amazon.com/vpc/latest/userguide/vpn-connections.html
 [SpeakNetworks: PPTP vs L2TP/IPSec vs SSTP vs IKEv2 vs OpenVPN]: https://www.speaknetworks.com/pptp-vs-l2tpipsec-vs-sstp-vs-ikev2-vs-openvpn/
 [Docker: hwdsl2/ipsec-vpn-server]: https://hub.docker.com/r/hwdsl2/ipsec-vpn-server/
+[Juniper: IPSec VPN Overview]: https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-ipsec-vpn-overview.html
+[PacketLife: Policy vs Route-based VPNs (Part 1)]: http://packetlife.net/blog/2011/aug/15/policy-based-vs-route-based-vpns-part-1/
+[PacketLife: Policy vs Route-based VPNs (Part 2)]: http://packetlife.net/blog/2011/aug/17/policy-based-vs-route-based-vpns-part-2/
+[SysTutorials: Linux Gateway with iptables & route]: https://www.systutorials.com/1372/setting-up-gateway-using-iptables-and-route-on-linux/
+[SysTutorials: Port forwarding using iptables]: https://www.systutorials.com/816/port-forwarding-using-iptables/
+
