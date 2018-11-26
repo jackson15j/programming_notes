@@ -53,6 +53,8 @@ Link dump of things I need to **INVESTIGATE** or document further:
 * [Github: CloudNativeWales/container.training].
 * [Google: SRE (Site Reliability Engineering) Handbook].
 * [NovemberFive: PyPI repo on AWS S3].
+* [Zipkin] - Distributed tracing system to diagnose latency issues within
+  microservice architectures.
 
 
 [12 Factor]: https://12factor.net
@@ -75,3 +77,4 @@ Link dump of things I need to **INVESTIGATE** or document further:
 [Docker: Dockerfile reference]: https://docs.docker.com/engine/reference/builder/
 [Github: garethr/multi-stage-build-example]: https://github.com/garethr/multi-stage-build-example
 [Velocity: Advanced Docker image build patterns (Gareth Rushgrove, Docker)]: conferences/2018-11-01_oreilly_velocity_devops_conference.md#advanced-docker-image-build-patterns-gareth-rushgrove-docker
+[Zipkin]: https://zipkin.io

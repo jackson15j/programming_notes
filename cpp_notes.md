@@ -116,6 +116,11 @@ Test Frameworks
 * [Github: Catch]
 * [Github: Google Test]
 
+Debugging
+=========
+
+* [gprof & gcov profilers].
+* GDB.
 
 Random Tips
 ===========
@@ -155,6 +160,8 @@ Random Tips
 
 [Github: Catch]: https://github.com/catchorg/Catch2
 [Github: Google Test]: https://github.com/google/googletest
+
+[gprof & gcov profilers]: https://alex.dzyoba.com/blog/gprof-gcov/
 
 [CppReference: Range For]: https://en.cppreference.com/w/cpp/language/range-for
 [CppReference: Escape Sequences]: https://en.cppreference.com/w/cpp/language/escape

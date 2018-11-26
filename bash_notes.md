@@ -14,5 +14,12 @@ ffmpeg
  ffmpeg -y -ss 8 -t 4 -i P1020397.MP4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss 8 -t 4 -i P1020397.MP4 -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output4.gif
 ```
 
+INVESTIGATE
+===========
+
+* [Linux Extended BPF (eBPF) Tracing Tools] - eBPF (Kerkeley Packet Filter) is
+  used to trace latency in Kernel and network packets.
+
 
 [FFMPEG: Convert video files to GIF]: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031
+[Linux Extended BPF (eBPF) Tracing Tools]: http://www.brendangregg.com/ebpf.html
