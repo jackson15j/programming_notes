@@ -16,8 +16,9 @@ Languages
 Tooling
 -------
 
-* [Git Notes].
 * [CI Notes].
+* [Emacs Notes].
+* [Git Notes].
 * [VPN Notes].
 
 _"Cloud"_
@@ -38,8 +39,9 @@ Conferences
 [Java Notes]: java_notes.md
 [Python Notes]: python_notes.md
 
-[Git Notes]: tooling/git_notes.md
 [CI Notes]: tooling/ci_notes.md
+[Emacs Notes]: tooling/emacs_notes.md
+[Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
 
 [Cloud Notes]: cloud_notes.md
