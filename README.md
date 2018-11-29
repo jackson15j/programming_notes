@@ -21,6 +21,11 @@ Tooling
 * [Git Notes].
 * [VPN Notes].
 
+Infrastructure
+--------------
+
+* [Ubiquiti Unifi AP].
+
 _"Cloud"_
 ---------
 
@@ -43,6 +48,8 @@ Conferences
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
+
+[Ubiquiti Unifi AP]: infrastructure/ubiquiti_unifi_ap.md
 
 [Cloud Notes]: cloud_notes.md
 
