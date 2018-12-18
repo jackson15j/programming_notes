@@ -25,6 +25,7 @@ Infrastructure
 --------------
 
 * [Ubiquiti Unifi AP].
+* [Arch bad upgrade on encrypted partition fix].
 
 _"Cloud"_
 ---------
@@ -50,6 +51,7 @@ Conferences
 [VPN Notes]: tooling/vpn_notes.md
 
 [Ubiquiti Unifi AP]: infrastructure/ubiquiti_unifi_ap.md
+[Arch bad upgrade on encrypted partition fix]: infrastructure/arch_bad_upgrade_on_encrypted_partition_fix.md
 
 [Cloud Notes]: cloud_notes.md
 
