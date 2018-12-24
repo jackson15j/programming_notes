@@ -55,6 +55,7 @@ Link dump of things I need to **INVESTIGATE** or document further:
 * [NovemberFive: PyPI repo on AWS S3].
 * [Zipkin] - Distributed tracing system to diagnose latency issues within
   microservice architectures.
+* [Loader.io] - Free load tester for Web App API's.
 
 
 [12 Factor]: https://12factor.net
@@ -78,3 +79,4 @@ Link dump of things I need to **INVESTIGATE** or document further:
 [Github: garethr/multi-stage-build-example]: https://github.com/garethr/multi-stage-build-example
 [Velocity: Advanced Docker image build patterns (Gareth Rushgrove, Docker)]: conferences/2018-11-01_oreilly_velocity_devops_conference.md#advanced-docker-image-build-patterns-gareth-rushgrove-docker
 [Zipkin]: https://zipkin.io
+[Loader.io]: https://loader.io
