@@ -29,6 +29,13 @@ Fix steps
 * `cp /mnt/x/boot/* /mnt/boot/` - Copy the new kernel to the boot partition (if
   you have a separate boot partition.
 
+If you're having issues with broken packages, a quick and dirty way to
+reinstall packages is:
+
+```bash
+pacman -Qnq | sudo pacman -S -
+```
+
 Link Dump
 ---------
 
