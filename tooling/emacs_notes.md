@@ -24,7 +24,32 @@ Emacs Notes
     * `<find> regex` return, `<replace> string` return.
     * Confirm/deny replace with the usual: `!`, `y`, `n`.
 
+Language Setup
+==============
+
+
+* [Github: jackson15j/dot_emacs] - personal Emacs dotfiles.
+* [cpp_notes: Editor Config].
+
+
+Link Dump
+=========
+
+* [John D Cook: Emacs on Windows].
+* [Steve Losh: A Road to Common Lisp].
+* [EmacsNotes: Highlight symbols].
+* [Github: wagoodman/dive] - Docker management in emacs.
+
+
 [StackOverflow: Tramp ssh + sudo]: https://stackoverflow.com/questions/2177687/open-file-via-ssh-and-sudo-with-emacs
 [StackOverflow: Tramp with Public Key]: https://stackoverflow.com/questions/1353297/editing-remote-files-with-emacs-using-public-key-authentication
 [ErgoEmacs: Find Replace in directories]: http://ergoemacs.org/emacs/find_replace_inter.html
 [GNU Emacs: Replacing text across multiple files]: https://www.gnu.org/software/emacs/manual/html_node/efaq/Replacing-text-across-multiple-files.html
+
+[Github: jackson15j/dot_emacs]: https://github.com/jackson15j/dot_emacs
+[cpp_notes: Editor Config]: ../cpp_notes.md#editor-config
+
+[John D Cook: Emacs on Windows]: https://www.johndcook.com/blog/emacs_windows/
+[Steve Losh: A Road to Common Lisp]: http://stevelosh.com/blog/2018/08/a-road-to-common-lisp/
+[EmacsNotes: Highlight symbols]: https://emacsnotes.wordpress.com/2018/09/11/highlight-symbols-and-other-miscellanea-in-your-program-code/
+[Github: wagoodman/dive]: https://github.com/wagoodman/dive

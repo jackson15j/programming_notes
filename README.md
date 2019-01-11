@@ -20,6 +20,7 @@ Tooling
 * [Emacs Notes].
 * [Git Notes].
 * [VPN Notes].
+* [Docker Notes].
 
 Infrastructure
 --------------
@@ -49,6 +50,7 @@ Conferences
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
+[Docker Notes]: tooling/docker_notes.md
 
 [Ubiquiti Unifi AP]: infrastructure/ubiquiti_unifi_ap.md
 [Arch bad upgrade on encrypted partition fix]: infrastructure/arch_bad_upgrade_on_encrypted_partition_fix.md

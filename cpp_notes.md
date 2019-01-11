@@ -140,6 +140,11 @@ Random Tips
 * `g++` is _apparently_ preferred to: `gcc -lstdc++` to pull in the standard
   C++ libraries. See: [StackOverflow: Undefined Std library reference].
 
+Editor Config
+=============
+
+* [tudho: c-ide].
+* [Boston Uni: emacs programing].
 
 
 [C++ Standards Committee: ISOCPP]: http://www.open-std.org/JTC1/SC22/WG21/
@@ -169,3 +174,6 @@ Random Tips
 [RAII]: https://en.cppreference.com/w/cpp/language/raii
 [Python's `with` Context Manager]: https://docs.python.org/3/reference/compound_stmts.html#with
 [StackOverflow: Undefined Std library reference]: https://stackoverflow.com/questions/28236870/undefined-reference-to-stdcout#28236905
+
+[tudho: c-ide]: https://tuhdo.github.io/c-ide.html
+[Boston Uni: emacs programing]: https://www.cs.bu.edu/teaching/tool/emacs/programming/
