@@ -97,7 +97,7 @@ Typically used for external connections (network/databases) to:
     * Remember debugging `inlineCallbacks` to be an absolute pain with stack
       traces pointing at the reactor, when it finally is torn down. Always
       better to change the code to be fully async.
-	* Remember Async & Blocking code looks vastly different. Especially
+    * Remember Async & Blocking code looks vastly different. Especially
       disappointing after recently playing with C#'s `async`/`await` that are
       tacked onto blocking code with minimal changes.
 
@@ -129,8 +129,8 @@ Task Queuing
   Redis, other) for queuing tasks and result backends (RPC (RabbitMQ/AMQP),
   Redis, SQLAchemy/Django ORM, Memcached, other) for tracking state.
       * Looks like [Flask] with the `app` definition and decorators.
-	  * Python configuration file.
-	  * See: [Flask: Celery Background Tasks].
+      * Python configuration file.
+      * See: [Flask: Celery Background Tasks].
 
 
 Test Frameworks
@@ -186,6 +186,9 @@ Tooling
   modern version of the older PEP8 ones, which could also do (sometimes
   destructive) refactoring.
 * [NovemberFive: PyPI repo on AWS S3].
+* [Pip: Requirement Specifiers] - add platform info inline in a requirements
+  file.
+
 
 [Pipenv]
 --------
@@ -275,6 +278,7 @@ Databases
 
 [Black]: https://pypi.org/project/black/
 [NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
+[Pip: Requirement Specifiers]: https://pip.pypa.io/en/stable/reference/pip_install/#requirement-specifiers
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
