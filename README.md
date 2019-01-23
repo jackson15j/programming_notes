@@ -16,6 +16,7 @@ Languages
 Tooling
 -------
 
+* [Bash].
 * [CI Notes].
 * [Emacs Notes].
 * [Git Notes].
@@ -46,6 +47,7 @@ Conferences
 [Java Notes]: java_notes.md
 [Python Notes]: python_notes.md
 
+[Bash]: tooling/bash.md
 [CI Notes]: tooling/ci_notes.md
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
