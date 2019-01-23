@@ -1,8 +1,13 @@
 Ubiquiti Unifi AP
 =================
 
-Recently bought a pair of Unifi Lite AP's to build a Mesh WiFi at home. Here's
-the tips and pain points.
+Recently bought a pair of Unifi Lite AP's to build a Mesh WiFi at home after
+reading these reviews:
+
+* [Arstechnica: UniFi (long) Review].
+* [Arstechnica: UniFi (long) Review 3 year follow up].
+
+Here's the tips and pain points.
 
 Controller Setup
 ----------------
@@ -116,3 +121,6 @@ AP fails _"Provisioning"_
 [Ubnt Forum: Downgrade firmware]: https://community.ubnt.com/t5/UniFi-Wireless/Downgrade-firmware-UAP-AP-AC-PRO/td-p/1634144
 [Ubnt Forum: Unifi AP isolated state]: http://www.edugeek.net/forums/wireless-networks/146889-unifi-ap-isolated-state-2.html
 [Ubnt Forum: set-inform Decrypt Error]: https://community.ubnt.com/t5/UniFi-Wireless/UAP-PRO-2-3-6-set-inform-Decrypt-Error/td-p/341312
+
+[Arstechnica: UniFi (long) Review]: https://arstechnica.com/gadgets/2015/10/review-ubiquiti-unifi-made-me-realize-how-terrible-consumer-wi-fi-gear-is/
+[Arstechnica: UniFi (long) Review 3 year follow up]: https://arstechnica.com/information-technology/2018/07/enterprise-wi-fi-at-home-part-two-reflecting-on-almost-three-years-with-pro-gear/
