@@ -238,6 +238,18 @@ Databases
 * eg. [Flask]'s ORM is [SQLAlchemy], which uses a database connector
   `MySQL-python`/`psycopg` for MySQL/PostgreSQL.
 
+Additional Notes
+================
+
+Export `PYTHONPATH`, Windows vs Linux:
+
+```bash
+# Windows:
+set PYTHONPATH=%PYTHONPATH%;C:\path\to\export
+# Linux:
+export PYTHONPATH=$PYTHONPATH:/path/to/export
+```
+
 
 [The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org
 [Python Packaging User Guide]: https://packaging.python.org
