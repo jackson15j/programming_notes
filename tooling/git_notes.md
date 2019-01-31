@@ -5,7 +5,7 @@ Git Notes
  ([StackOverflow: Move files between Git repos preserving history]):
 
 ```bash
-git log --pretty=email --patch-with-stat --reverse -- path/to/file_or_folder | (cd /path/to/new_repository && git am)
+git log --pretty=email --patch-with-stat --reverse --binary -- path/to/file_or_folder | (cd /path/to/new_repository && git am)
 ```
 
 * [StackOverflow: Get the last commit hash from a remote repo without cloning].
