@@ -41,6 +41,23 @@ Kubernetes:
 * [Kubernetes Deployment].
 * [Kubernetes Service].
 
+AWS
+===
+
+Latest AMI's
+------------
+
+AMI's are rapidly updated, so here are the commands to get back the latest
+Linux/Windows AMI paths, which can then be used to get the latest ID for a
+specific path:
+
+```bash
+# All latest Amazon Linux AMI's:
+aws ssm get-parameters-by-path --path "/aws/service/ami-amazon-linux-latest" --region <region> --profile <profile>
+# All latest Windows AMI's:
+aws ssm get-parameters-by-path --path "/aws/service/ami-windows-latest" --region <region> --profile <profile>
+```
+
 INVESTIGATE
 ===========
 
