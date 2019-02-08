@@ -136,6 +136,12 @@ Task Queuing
 Test Frameworks
 ===============
 
+Mocking
+-------
+
+* [Alex Marandon: Python Mock Gotchas].
+* [Toptal: An introduction to mocking in Python].
+
 [unittest]
 ----------
 
@@ -282,6 +288,8 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 [PyTest]: https://docs.pytest.org/en/latest/
 [C# Notes: xUnit]: csharp_notes.md#xunit
 
+[Alex Marandon: Python Mock Gotchas]: http://alexmarandon.com/articles/python_mock_gotchas/
+[Toptal: An introduction to mocking in Python]: https://www.toptal.com/python/an-introduction-to-mocking-in-python
 [Lettuce]: http://lettuce.it
 [Cucumber]: https://docs.cucumber.io
 [Github: cucumber]: https://github.com/cucumber/cucumber
