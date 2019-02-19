@@ -195,6 +195,7 @@ Tooling
 * [Pip: Requirement Specifiers] - add platform info inline in a requirements
   file.
 * [Sphinx: function definitions].
+* [Python Docs: Profilers] - eg. `cprofile`.
 
 [Pipenv]
 --------
@@ -300,6 +301,7 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 [NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
 [Pip: Requirement Specifiers]: https://pip.pypa.io/en/stable/reference/pip_install/#requirement-specifiers
 [Sphinx: function definitions]: https://pythonhosted.org/an_example_pypi_project/sphinx.html#function-definitions
+[Python Docs: Profilers]: https://docs.python.org/3/library/profile.html
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
