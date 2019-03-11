@@ -20,6 +20,7 @@ Libraries
 * [Boost] is a _"well regarded"_ collection of cross-platform libraries.
 * Some Boost libraries have been migrated into the C++ Standard Libraries.
 * See: [Test Frameworks](#test-frameworks) for [Boost.Test] notes.
+* [BlindGuru: boost::python and boost::variant].
 
 
 Build Tools
@@ -155,6 +156,7 @@ Editor Config
 [Boost]: https://www.boost.org
 [Github boost]: https://github.com/boostorg/boost
 [Boost: Getting started guide]: https://www.boost.org/more/getting_started/index.html
+[BlindGuru: boost::python and boost::variant]: https://blind.guru/boost_python-and-boost_variant.html
 [Boost.Build]: https://boostorg.github.io/build/
 [Boost.Build: Tutorial]: https://boostorg.github.io/build/tutorial.html
 [Boost.Test]: https://www.boost.org/doc/libs/1_68_0/libs/test/doc/html/index.html
