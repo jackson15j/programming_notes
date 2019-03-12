@@ -21,6 +21,9 @@ Libraries
 * Some Boost libraries have been migrated into the C++ Standard Libraries.
 * See: [Test Frameworks](#test-frameworks) for [Boost.Test] notes.
 * [BlindGuru: boost::python and boost::variant].
+    * [StackOverflow: What are the differences between `std::variant` and
+      `boost::variant`?].
+    * [ISO CPP: The (std::)variant Saga: A happy ending?]
 
 
 Build Tools
@@ -157,6 +160,8 @@ Editor Config
 [Github boost]: https://github.com/boostorg/boost
 [Boost: Getting started guide]: https://www.boost.org/more/getting_started/index.html
 [BlindGuru: boost::python and boost::variant]: https://blind.guru/boost_python-and-boost_variant.html
+[StackOverflow: What are the differences between `std::variant` and `boost::variant`?]: https://stackoverflow.com/questions/40201371/what-are-the-differences-between-stdvariant-and-boostvariant
+[ISO CPP: The (std::)variant Saga: A happy ending?]: https://isocpp.org/blog/2015/11/the-variant-saga-a-happy-ending
 [Boost.Build]: https://boostorg.github.io/build/
 [Boost.Build: Tutorial]: https://boostorg.github.io/build/tutorial.html
 [Boost.Test]: https://www.boost.org/doc/libs/1_68_0/libs/test/doc/html/index.html
