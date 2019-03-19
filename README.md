@@ -38,8 +38,9 @@ _"Cloud"_
 Conferences
 -----------
 
-* [2018-11-01 O'Reilly Velocity (DevOps) Conference].
+* [2019-03-04 Cloud Native Wales].
 * [2018-11-08 Cloud Native Wales].
+* [2018-11-01 O'Reilly Velocity (DevOps) Conference].
 
 
 [Bash Notes]: bash_notes.md
@@ -61,5 +62,6 @@ Conferences
 
 [Cloud Notes]: cloud_notes.md
 
-[2018-11-01 O'Reilly Velocity (DevOps) Conference]: conferences/2018-11-01_oreilly_velocity_devops_conference.md
+[2019-03-04 Cloud Native Wales]: conferences/2019-03-14_cloud_native_wales.md
 [2018-11-08 Cloud Native Wales]: conferences/2018-11-08_cloud_native_wales.md
+[2018-11-01 O'Reilly Velocity (DevOps) Conference]: conferences/2018-11-01_oreilly_velocity_devops_conference.md
