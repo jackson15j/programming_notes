@@ -41,6 +41,7 @@ Conferences
 * [2019-03-04 Cloud Native Wales].
 * [2018-11-08 Cloud Native Wales].
 * [2018-11-01 O'Reilly Velocity (DevOps) Conference].
+* [2018-08-18 PyData Meetup].
 
 
 [Bash Notes]: bash_notes.md
@@ -65,3 +66,4 @@ Conferences
 [2019-03-04 Cloud Native Wales]: conferences/2019-03-14_cloud_native_wales.md
 [2018-11-08 Cloud Native Wales]: conferences/2018-11-08_cloud_native_wales.md
 [2018-11-01 O'Reilly Velocity (DevOps) Conference]: conferences/2018-11-01_oreilly_velocity_devops_conference.md
+[2018-08-18 PyData Meetup]: conferences/2018-08-18_pydata_meetup.md
