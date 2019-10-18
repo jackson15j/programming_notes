@@ -210,6 +210,10 @@ Tooling
 > has super useful `pipenv check` which will tell you if your dependencies have
 > any known security bugs.
 
+[logging]
+---------
+
+* List all loggers: `logging.root.manager.loggerDict`.
 
 UI
 ==
@@ -305,6 +309,8 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
+
+{logging]: https://docs.python.org/3/library/logging.html
 
 [pyperclip]: https://pyperclip.readthedocs.io/en/latest/introduction.html
 
