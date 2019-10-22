@@ -215,6 +215,11 @@ Tooling
 
 * List all loggers: `logging.root.manager.loggerDict`.
 
+[ipython]
+---------
+
+* Dump history from current running window: `%history -g -f <filename>`
+
 UI
 ==
 
@@ -310,7 +315,9 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
 
-{logging]: https://docs.python.org/3/library/logging.html
+[logging]: https://docs.python.org/3/library/logging.html
+
+[ipython]: https://ipython.org
 
 [pyperclip]: https://pyperclip.readthedocs.io/en/latest/introduction.html
 
