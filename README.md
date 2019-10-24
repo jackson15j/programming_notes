@@ -22,6 +22,7 @@ Tooling
 * [Git Notes].
 * [VPN Notes].
 * [Docker Notes].
+* [RapsberryPi Notes].
 
 Infrastructure
 --------------
@@ -56,6 +57,7 @@ Conferences
 [Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
 [Docker Notes]: tooling/docker_notes.md
+[RapsberryPi Notes]: tooling/raspberrypi_notes.md
 
 [Ubiquiti Unifi AP]: infrastructure/ubiquiti_unifi_ap.md
 [Arch bad upgrade on encrypted partition fix]: infrastructure/arch_bad_upgrade_on_encrypted_partition_fix.md
