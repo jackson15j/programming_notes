@@ -69,6 +69,11 @@ Configuring CI the Gitlab way:
 ---------
 
 * [Jenkins: Declarative Pipeline Syntax].
+* Get all _"Keep Forever"_ builds for a job:
+
+  ```
+  <jenkins_url>/job/<job_name>/api/xml?depth=2&xpath=//build[keepLog=%22true%22]/number&wrapper=forever
+  ```
 
 
 [Travis]: https://travis-ci.com
