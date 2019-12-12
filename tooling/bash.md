@@ -15,6 +15,11 @@ Ladder Diagrams
 * [mscgen] - render ladder diagrams from text (`*.msc`) files.
 * [mscgen js] - Javascript Rendering Webpage + Example files..
 
+Remote Desktop (RDP)
+--------------------
+
+* RDP to system on a Windows Domain:
+  `xfreerdp /w:1920 /h:1080 /u:<username> /d:<domain> /v:<host>`
 
 [Github: Tmux]: https://github.com/tmux/tmux
 
