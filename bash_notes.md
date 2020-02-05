@@ -59,6 +59,18 @@ Fix:
   # Repeat for remaining partitions and then clean up unused keys.
   # Reboot after changing keys to verify time to desktop from drive decryption.
   ```
+Links:
+
+* https://linux-blog.anracom.com/2018/11/30/full-encryption-with-luks-sha512-aes-xts-plain64-grub2-really-slow/
+* https://forum.manjaro.org/t/decryption-problem/25284/17
+* https://resources.infosecinstitute.com/luks-swap-root-boot-partitions/
+* https://wiki.archlinux.org/index.php/Dm-crypt/System_configuration#cryptkey
+* https://linux.die.net/man/8/cryptsetup
+* https://linux.die.net/man/1/ecryptfs-setup-swap
+* https://www.reddit.com/r/linuxquestions/comments/bjyvt7/luks_keyfile_not_working_no_key_available_with/
+* https://evilshit.wordpress.com/2012/10/29/how-to-mount-luks-encrypted-partitions-manually/
+* https://forum.proxmox.com/threads/luks-keyfile-not-working-no-key-available-with-this-passphrase.53935/
+
 
 [FFMPEG: Convert video files to GIF]: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031
 [Linux Extended BPF (eBPF) Tracing Tools]: http://www.brendangregg.com/ebpf.html
