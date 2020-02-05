@@ -14,6 +14,26 @@ ffmpeg
  ffmpeg -y -ss 8 -t 4 -i P1020397.MP4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss 8 -t 4 -i P1020397.MP4 -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output4.gif
 ```
 
+Tmux
+----
+
+* [Github: Tmux].
+* Reconnect to a socket: `tmux -S </path/to/socket> attach`.
+* If the above doesn't work, you can recreate the socket: `kill -s USR1 <pid>`,
+  and then try again. Search for `SIGUSR1` in the tmux man page.
+
+Ladder Diagrams
+---------------
+
+* [mscgen] - render ladder diagrams from text (`*.msc`) files.
+* [mscgen js] - Javascript Rendering Webpage + Example files..
+
+Remote Desktop (RDP)
+--------------------
+
+* RDP to system on a Windows Domain:
+  `xfreerdp /w:1920 /h:1080 /u:<username> /d:<domain> /v:<host>`
+
 INVESTIGATE
 ===========
 
@@ -73,6 +93,10 @@ Links:
 
 
 [FFMPEG: Convert video files to GIF]: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031
+[Github: Tmux]: https://github.com/tmux/tmux
+
+[mscgen]: http://www.mcternan.me.uk/mscgen/
+[mscgen js]: https://mscgen.js.org
 [Linux Extended BPF (eBPF) Tracing Tools]: http://www.brendangregg.com/ebpf.html
 [Manjaro]: https://manjaro.org/get-manjaro/
 [linux-blog: slow grub luks decryption]: https://linux-blog.anracom.com/2018/11/30/full-encryption-with-luks-sha512-aes-xts-plain64-grub2-really-slow/

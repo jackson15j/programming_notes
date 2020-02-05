@@ -16,7 +16,6 @@ Languages
 Tooling
 -------
 
-* [Bash].
 * [CI Notes].
 * [Emacs Notes].
 * [Git Notes].
