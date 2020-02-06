@@ -23,6 +23,7 @@ Tooling
 * [Docker Notes].
 * [RapsberryPi Notes].
 * [WebOS Notes].
+* [Virtualistation Notes].
 
 Infrastructure
 --------------
@@ -59,6 +60,7 @@ Conferences
 [Docker Notes]: tooling/docker_notes.md
 [RapsberryPi Notes]: tooling/raspberrypi_notes.md
 [WebOS Notes]: tooling/webos_notes.md
+[Virtualistation Notes]: tooling/virtualisation_notes.md
 
 [Ubiquiti Unifi AP]: infrastructure/ubiquiti_unifi_ap.md
 [Arch bad upgrade on encrypted partition fix]: infrastructure/arch_bad_upgrade_on_encrypted_partition_fix.md
