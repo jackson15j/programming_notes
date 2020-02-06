@@ -4,6 +4,7 @@ C# Notes
 References:
 
 * [Microsoft: C# Tour].
+* [Microsoft: ASP.NET MVC Pattern].
 
 Tidbits
 =======
@@ -973,6 +974,7 @@ Pipelines
 
 
 [Microsoft: C# Tour]: https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/index
+[Microsoft: ASP.NET MVC Pattern]: https://dotnet.microsoft.com/apps/aspnet/mvc
 [SO: readonly benefits]: https://stackoverflow.com/questions/277010/what-are-the-benefits-to-marking-a-field-as-readonly-in-c#277117
 [MSDN: Generic Lists]: https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx "MSDN: Generic Lists (dynamic lists)"
 [SO: dynamic array]: https://stackoverflow.com/questions/594853/dynamic-array-in-c-sharp
