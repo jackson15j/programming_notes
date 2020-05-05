@@ -1,6 +1,13 @@
 Docker Notes
 ============
 
+* `docker run -it -d -p<host:container> --name=<name>
+  <image_name:image_version>` - Run up an container, name the instance,
+  passthrough ports, detach.
+* `docker start <name>` - Start a named container.
+* `docker ps` - check running instances.
+* `docker exec -it <name> <cmd>` - Execute command inside running instance.
+* `docker stop <name>`
 
 Link Dump
 =========
