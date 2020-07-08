@@ -183,6 +183,10 @@ Mocking
 * **INVESTIGATE**
 * _Apparently_ is on the way out for [Pipenv].
 
+[Locust]
+--------
+
+* API/URL scale testing with worker nodes + human readable graphs.
 
 Tooling
 =======
@@ -210,6 +214,11 @@ Tooling
 > has super useful `pipenv check` which will tell you if your dependencies have
 > any known security bugs.
 
+* `pipenv check` (check packages for security issues) fails with API key
+  warning:
+    * [Github: pipenv issue: Your API Key is invalid #4188].
+    * Workaround: `export PIPENV_PYUP_API_KEY=""`.
+
 [logging]
 ---------
 
@@ -225,7 +234,7 @@ UI
 
 ### [pyperclip] ###
 
-* Cross-platform copy/past to/from System's clipboard.
+* Cross-platform copy/paste to/from System's clipboard.
 
 CLI
 ---
@@ -240,6 +249,10 @@ CLI
 * **INVESTIGATE**
 * CLI UI generation (Like [Flask] for the CLI).
 
+Packaging
+=========
+
+* [setuptools] - Packaging `eggs`.
 
 Databases
 =========
@@ -306,6 +319,8 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 
 [tox]: https://tox.readthedocs.io/en/latest/
 
+[Locust]: https://locust.io
+
 [Black]: https://pypi.org/project/black/
 [NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
 [Pip: Requirement Specifiers]: https://pip.pypa.io/en/stable/reference/pip_install/#requirement-specifiers
@@ -314,6 +329,7 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 
 [Pipenv]: https://docs.pipenv.org
 [virtualenv]: https://virtualenv.pypa.io/en/stable/
+[Github: pipenv issue: Your API Key is invalid #4188]: https://github.com/pypa/pipenv/issues/4188
 
 [logging]: https://docs.python.org/3/library/logging.html
 
@@ -324,6 +340,7 @@ export PYTHONPATH=$PYTHONPATH:/path/to/export
 [plac]: http://micheles.github.io/plac/
 [click]: http://click.pocoo.org/5/
 
+[setuptools]: https://setuptools.readthedocs.io/en/latest/setuptools.html
 
 [ORM]: https://www.fullstackpython.com/object-relational-mappers-orms.html
 [SQLAlchemy]: https://www.fullstackpython.com/sqlalchemy.html
