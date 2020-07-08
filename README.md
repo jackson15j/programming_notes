@@ -37,6 +37,11 @@ _"Cloud"_
 
 * [Cloud Notes].
 
+Collaboration
+-------------
+
+* [Collaboration].
+
 Conferences
 -----------
 
@@ -67,6 +72,8 @@ Conferences
 [Windows]: infrastructure/windows_notes.md
 
 [Cloud Notes]: cloud_notes.md
+
+[Collaboration]: collaboration.md
 
 [2019-03-04 Cloud Native Wales]: conferences/2019-03-14_cloud_native_wales.md
 [2018-11-08 Cloud Native Wales]: conferences/2018-11-08_cloud_native_wales.md
