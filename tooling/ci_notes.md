@@ -75,6 +75,13 @@ Configuring CI the Gitlab way:
   <jenkins_url>/job/<job_name>/api/xml?depth=2&xpath=//build[keepLog=%22true%22]/number&wrapper=forever
   ```
 
+* Validate `Jenkinsfile` against a Jenkins instance. Will return: `Jenkinsfile
+  successfully validated.` on success.:
+
+  ```
+  curl --user username:password -X POST -F "jenkinsfile=<<path/to/Jenkinsfile>" https://<jenkins_url>:<port>/pipeline-model-converter/validate
+  curl --user username:password -X POST -F "jenkinsfile=<Jenkinsfile" https://jenkins.company.com:8443/pipeline-model-converter/validate  # example
+  ```
 
 [Travis]: https://travis-ci.com
 [StackOverflow: How to run Travis CI locally]: https://stackoverflow.com/questions/21053657/how-to-run-travis-ci-locally#35972902
