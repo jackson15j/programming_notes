@@ -58,6 +58,15 @@ aws ssm get-parameters-by-path --path "/aws/service/ami-amazon-linux-latest" --r
 aws ssm get-parameters-by-path --path "/aws/service/ami-windows-latest" --region <region> --profile <profile>
 ```
 
+SSM
+---
+
+* Run PowerShell command and log to CloudWatch:
+
+  ```bash
+  aws ssm send-command --instance-ids "<instance_id>" --profile <profile> --cloud-watch-output-config "CloudWatchLogGroupName=echotest,CloudWatchOutputEnabled=true" --document-name AWS-RunPowerShellScript --parameters commands="echo Hello World"
+  ```
+
 INVESTIGATE
 ===========
 
