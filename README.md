@@ -11,6 +11,7 @@ Languages
 * [C++ Notes].
 * [C# Notes].
 * [Java Notes].
+* [Javascript Notes].
 * [Python Notes].
 
 Tooling
@@ -55,6 +56,7 @@ Conferences
 [C++ Notes]: cpp_notes.md
 [C# Notes]: csharp_notes.md
 [Java Notes]: java_notes.md
+[Javascript Notes]: javascript_notes.md
 [Python Notes]: python_notes.md
 
 [Bash]: tooling/bash.md
