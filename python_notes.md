@@ -270,15 +270,22 @@ Databases
 Additional Notes
 ================
 
-Export `PYTHONPATH`, Windows vs Linux:
+* Export `PYTHONPATH`, Windows vs Linux:
 
-```bash
-# Windows:
-set PYTHONPATH=%PYTHONPATH%;C:\path\to\export
-# Linux:
-export PYTHONPATH=$PYTHONPATH:/path/to/export
-```
+  ```bash
+  # Windows:
+  set PYTHONPATH=%PYTHONPATH%;C:\path\to\export
+  # Linux:
+  export PYTHONPATH=$PYTHONPATH:/path/to/export
+  ```
 
+* `subprocess` command but use virtualenv python interpreter.
+
+  ```python
+  import sys
+  from subprocess import run
+  run([sys.executable, "-m", "<command/module>", ...])
+  ```
 
 [The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org
 [Python Packaging User Guide]: https://packaging.python.org
