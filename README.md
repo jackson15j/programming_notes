@@ -8,6 +8,7 @@ Languages
 ---------
 
 * [Bash Notes].
+* [PowerShell].
 * [C++ Notes].
 * [C# Notes].
 * [Java Notes].
@@ -60,6 +61,7 @@ Conferences
 [Python Notes]: python_notes.md
 
 [Bash]: tooling/bash.md
+[PowerShell]: tooling/powershell_notes.md
 [CI Notes]: tooling/ci_notes.md
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
