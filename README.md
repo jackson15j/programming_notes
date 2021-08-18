@@ -57,7 +57,7 @@ Conferences
 [C++ Notes]: cpp_notes.md
 [C# Notes]: csharp_notes.md
 [Java Notes]: java_notes.md
-[Javascript Notes]: javascript_notes.md
+[Javascript Notes]: javascript.md
 [Python Notes]: python_notes.md
 
 [Bash]: tooling/bash.md
