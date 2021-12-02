@@ -44,6 +44,13 @@ Kubernetes:
 AWS
 ===
 
+ASW CLI
+-------
+
+* [AWS CLI docker].
+* `docker run --rm -it -v ~/.aws:/root/.aws  amazon/aws-cli --color=on --profile=development-poweruser --region=us-east-1 ec2 describe-instances`
+
+
 Latest AMI's
 ------------
 
@@ -90,6 +97,8 @@ Link dump of things I need to **INVESTIGATE** or document further:
 [ChaosMonkey]: https://netflix.github.io/chaosmonkey/
 [Gihub: chaosmonkey]: https://github.com/netflix/chaosmonkey
 [Netflix: OSS]: https://netflix.github.io
+
+[AWS CLI docker]: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html
 
 [GCloud: Pusing Docker images]: https://cloud.google.com/container-registry/docs/pushing-and-pulling
 [GCloud: JSON Key Authentication]: https://cloud.google.com/container-registry/docs/advanced-authentication#using_a_json_key_file
