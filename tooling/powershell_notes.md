@@ -3,6 +3,7 @@ PowerShell Notes
 
 * Get file version from file (eg. `.exe`/`.dll`):
   `[System.Diagnostics.FileVersionInfo]::GetVersionInfo("somefilepath").FileVersion`
+* Dump [Environment Variables]: `Get-Item -Path ENV:*`.
 
 Managing Windows IIS
 --------------------
@@ -39,5 +40,6 @@ Managing Windows IIS
       ```
 
 
+[Environment Variables]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.2
 [WebAdministration]: https://docs.microsoft.com/en-us/powershell/module/webadministration/?view=windowsserver2022-ps
 [IISAdministration]:  https://docs.microsoft.com/en-us/powershell/module/iisadministration/?view=windowsserver2022-ps
