@@ -3,3 +3,41 @@ PowerShell Notes
 
 * Get file version from file (eg. `.exe`/`.dll`):
   `[System.Diagnostics.FileVersionInfo]::GetVersionInfo("somefilepath").FileVersion`
+
+Managing Windows IIS
+--------------------
+
+* Viewing AppPool from AWS powershell connection:
+    * Via [WebAdministration]:
+
+      ```powershell
+      PS C:\Windows\system32> Import-Module WebAdministration
+      PS C:\Windows\system32> Get-ChildItem IIS:\AppPools\
+
+      Name                     State        Applications
+      ----                     -----        ------------
+      DefaultAppPool           Started      Default Web Site
+      r7AppPool                Stopped      r7WebSite
+
+
+      PS C:\Windows\system32>
+      ```
+
+    * [IISAdministration]:
+
+      ```powershell
+      PS C:\Windows\system32> Import-Module IISAdministration
+      PS C:\Windows\system32> get-iisapppool
+
+      Name                 Status       CLR Ver  Pipeline Mode  Start Mode
+      ----                 ------       -------  -------------  ----------
+      DefaultAppPool       Started      v4.0     Integrated     OnDemand
+      r7AppPool            Stopped               Integrated     OnDemand
+
+
+      PS C:\Windows\system32>
+      ```
+
+
+[WebAdministration]: https://docs.microsoft.com/en-us/powershell/module/webadministration/?view=windowsserver2022-ps
+[IISAdministration]:  https://docs.microsoft.com/en-us/powershell/module/iisadministration/?view=windowsserver2022-ps
