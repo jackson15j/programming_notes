@@ -23,6 +23,8 @@ Emacs Notes
     * Mark `m` files, then press `Q`.
     * `<find> regex` return, `<replace> string` return.
     * Confirm/deny replace with the usual: `!`, `y`, `n`.
+* [indent region], both setting keybindings for `indent-rigidly-<left|right>`
+  and `C+x TAB`, then `S+<<left>|<right>>`.
 
 Language Setup
 ==============
@@ -45,6 +47,7 @@ Link Dump
 [StackOverflow: Tramp with Public Key]: https://stackoverflow.com/questions/1353297/editing-remote-files-with-emacs-using-public-key-authentication
 [ErgoEmacs: Find Replace in directories]: http://ergoemacs.org/emacs/find_replace_inter.html
 [GNU Emacs: Replacing text across multiple files]: https://www.gnu.org/software/emacs/manual/html_node/efaq/Replacing-text-across-multiple-files.html
+[indent region]: https://dougie.io/emacs/indent-selection/
 
 [Github: jackson15j/dot_emacs]: https://github.com/jackson15j/dot_emacs
 [cpp_notes: Editor Config]: ../cpp_notes.md#editor-config
