@@ -3,7 +3,9 @@ PowerShell Notes
 
 * Get file version from file (eg. `.exe`/`.dll`):
   `[System.Diagnostics.FileVersionInfo]::GetVersionInfo("somefilepath").FileVersion`
-* Dump [Environment Variables]: `Get-Item -Path ENV:*`.
+* Dump [Environment Variables]: `Get-Item -Path ENV:* | Format-Table -Wrap
+  -AutoSize`.
+* Avoid truncation: `<command> | Format-Table -Wrap -AutoSize`.
 
 Managing Windows IIS
 --------------------
