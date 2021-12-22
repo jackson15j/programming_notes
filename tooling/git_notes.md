@@ -31,6 +31,12 @@ Git Notes
     * `git archive -v --format=<zip|tar> -o <output_file> --remote=<repo> <ref> <file/folder>`
 
 
+Github
+------
+
+* `<br />` for newlines in Github markdown tables.
+
+
 [StackOverflow: Move files between Git repos preserving history]: https://stackoverflow.com/questions/1365541/how-to-move-files-from-one-git-repo-to-another-not-a-clone-preserving-history#11426261
 [StackOverflow: Get the last commit hash from a remote repo without cloning]: https://stackoverflow.com/questions/24750215/getting-the-last-commit-hash-from-a-remote-repo-without-cloning
 [StackOVerflow: How to blame a deleted file in git?]: https://stackoverflow.com/questions/37084243/how-to-blame-a-deleted-file-in-git
