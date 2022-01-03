@@ -17,6 +17,7 @@ Develop & Deploy WebOS applications for LG TV's:
   Please check the 'Remain Session' through the device screen.
   $
   ```
+* [Github: openlgtv WebOS hacking notes].
 
 ChewieBomb
 ----------
@@ -57,3 +58,5 @@ cd /usr/local/share/webOS_TV_SDK/CLI/bin/
 
 [GiantBomb]: https://www.giantbomb.com
 [Github: smartbomb]: https://github.com/jamesmgittins/smartbomb
+
+[Github: openlgtv WebOS hacking notes]: https://gist.github.com/Informatic/1983f2e501444cf1cbd182e50820d6c1]
