@@ -8,30 +8,31 @@ Languages
 ---------
 
 * [Bash Notes].
-* [PowerShell].
 * [C++ Notes].
 * [C# Notes].
 * [Java Notes].
 * [Javascript Notes].
+* [PowerShell].
 * [Python Notes].
 
 Tooling
 -------
 
 * [CI Notes].
+* [DB Notes].
+* [Docker Notes].
 * [Emacs Notes].
 * [Git Notes].
-* [VPN Notes].
-* [Docker Notes].
 * [RapsberryPi Notes].
 * [WebOS Notes].
 * [Virtualistation Notes].
+* [VPN Notes].
 
 Infrastructure
 --------------
 
-* [Ubiquiti Unifi AP].
 * [Arch bad upgrade on encrypted partition fix].
+* [Ubiquiti Unifi AP].
 * [Windows].
 
 _"Cloud"_
@@ -43,6 +44,11 @@ Collaboration
 -------------
 
 * [Collaboration].
+
+Subjects
+--------
+
+* [NLP].
 
 Conferences
 -----------
@@ -63,6 +69,7 @@ Conferences
 [Bash]: tooling/bash.md
 [PowerShell]: tooling/powershell_notes.md
 [CI Notes]: tooling/ci_notes.md
+[Bash]: tooling/db_notes.md
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
@@ -78,6 +85,8 @@ Conferences
 [Cloud Notes]: cloud_notes.md
 
 [Collaboration]: collaboration.md
+
+[NLP]: subjects/nlp.md
 
 [2019-03-04 Cloud Native Wales]: conferences/2019-03-14_cloud_native_wales.md
 [2018-11-08 Cloud Native Wales]: conferences/2018-11-08_cloud_native_wales.md
