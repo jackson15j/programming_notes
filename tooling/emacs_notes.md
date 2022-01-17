@@ -20,7 +20,7 @@ Emacs Notes
 * [ErgoEmacs: Find Replace in directories] / [GNU Emacs: Replacing text across
   multiple files]:
     * `M-x find-name-dired`, enter filename wildcard.
-    * Mark `m` files, then press `Q`.
+    * Mark `m` files (`t` marks all files), then press `Q`.
     * `<find> regex` return, `<replace> string` return.
     * Confirm/deny replace with the usual: `!`, `y`, `n`.
 * [indent region], both setting keybindings for `indent-rigidly-<left|right>`
