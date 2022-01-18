@@ -36,6 +36,12 @@ Remote Desktop (RDP)
 * RDP to system on a Windows Domain:
   `xfreerdp /w:1920 /h:1080 /u:<username> /d:<domain> /v:<host>`
 
+Disk Operations
+---------------
+
+* Nuke an SSD (Free alternative to: [Dban]) via a distro bootdisk: `blkdiscard
+  -svz /dev/<drive>`. See: [blkdiscard discussion].
+
 INVESTIGATE
 ===========
 
@@ -102,3 +108,5 @@ Links:
 [Linux Extended BPF (eBPF) Tracing Tools]: http://www.brendangregg.com/ebpf.html
 [Manjaro]: https://manjaro.org/get-manjaro/
 [linux-blog: slow grub luks decryption]: https://linux-blog.anracom.com/2018/11/30/full-encryption-with-luks-sha512-aes-xts-plain64-grub2-really-slow/
+[Dban]: https://dban.org
+[blkdiscard discussion]: https://utcc.utoronto.ca/~cks/space/blog/linux/ErasingSSDsWithBlkdiscard?showcomments#comments
