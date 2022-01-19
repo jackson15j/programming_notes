@@ -7,8 +7,13 @@ PowerShell Notes
   -AutoSize`.
 * Avoid truncation: `<command> | Format-Table -Wrap -AutoSize`.
 
-Managing Windows IIS
---------------------
+Windows
+-------
+
+* List Windows services: [Get-Service].
+
+### Managing Windows IIS
+
 
 * Viewing AppPool from AWS powershell connection:
     * Via [WebAdministration]:
@@ -43,5 +48,6 @@ Managing Windows IIS
 
 
 [Environment Variables]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.2
+[Get-Service]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.2
 [WebAdministration]: https://docs.microsoft.com/en-us/powershell/module/webadministration/?view=windowsserver2022-ps
 [IISAdministration]:  https://docs.microsoft.com/en-us/powershell/module/iisadministration/?view=windowsserver2022-ps
