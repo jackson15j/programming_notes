@@ -42,6 +42,17 @@ Disk Operations
 * Nuke an SSD (Free alternative to: [Dban]) via a distro bootdisk: `blkdiscard
   -svz /dev/<drive>`. See: [blkdiscard discussion].
 
+Rsync
+-----
+
+* [How to setup `rsync` daemon on Linux server].
+    * Discover server `rsync` folders: `rsync -rdt rsync://<host>:873`.
+    * Inspect folders: `rsync -rdt rsync://<host>:873/<folder>`.
+* [How to use `rsync` to copy files to a server].
+    * Rsync to rsync server: `rsync -vahP --inplace --no-whole-file --delete-delay --info=BACKUP,COPY,DEL,REMOVE,SKIP,STATS --log-file="rsync_to_nas_log.txt" <source> rsync://<user>@<host>:873/<folder>`
+    * Quote and escape the folder path if there are spaces.
+* [Backup to TrueNas over SSH].
+
 INVESTIGATE
 ===========
 
@@ -110,3 +121,6 @@ Links:
 [linux-blog: slow grub luks decryption]: https://linux-blog.anracom.com/2018/11/30/full-encryption-with-luks-sha512-aes-xts-plain64-grub2-really-slow/
 [Dban]: https://dban.org
 [blkdiscard discussion]: https://utcc.utoronto.ca/~cks/space/blog/linux/ErasingSSDsWithBlkdiscard?showcomments#comments
+[How to setup `rsync` daemon on Linux server]: https://www.atlantic.net/vps-hosting/how-to-setup-rsync-daemon-linux-server/
+[How to use `rsync` to copy files to a server]: https://www.atlantic.net/vps-hosting/how-to-use-rsync-copy-sync-files-servers/
+[Backup to TrueNas over SSH]: https://www.truenas.com/community/threads/how-to-backup-files-to-truenas-with-rsync.90071/
