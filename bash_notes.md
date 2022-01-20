@@ -53,6 +53,13 @@ Rsync
     * Quote and escape the folder path if there are spaces.
 * [Backup to TrueNas over SSH].
 
+SSH
+---
+
+* SSH Forward/Tunnel requests through a tunnel (hop) Host `ssh -f <user>@<host>
+  -L <port>:<host>:<port> -N`.
+* X-session in a Window: `startx -- /usr/bin/xepher -ac -screen <hxw> -reset :1d`.
+
 INVESTIGATE
 ===========
 
