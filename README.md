@@ -48,6 +48,7 @@ Collaboration
 Subjects
 --------
 
+* [Interviews].
 * [NLP].
 
 Conferences
@@ -86,6 +87,7 @@ Conferences
 
 [Collaboration]: collaboration.md
 
+[Interviews]: subjects/interviews.md
 [NLP]: subjects/nlp.md
 
 [2019-03-04 Cloud Native Wales]: conferences/2019-03-14_cloud_native_wales.md
