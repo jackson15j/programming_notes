@@ -188,6 +188,11 @@ Mocking
 
 * API/URL scale testing with worker nodes + human readable graphs.
 
+[Schemathesis]
+--------------
+
+* Python version of [Dredd] to do API testing.
+
 Tooling
 =======
 
@@ -327,6 +332,8 @@ Additional Notes
 [tox]: https://tox.readthedocs.io/en/latest/
 
 [Locust]: https://locust.io
+[Schemathesis]: https://schemathesis.readthedocs.io/en/stable/
+[Dredd]: https://dredd.org/en/latest/index.html
 
 [Black]: https://pypi.org/project/black/
 [NovemberFive: PyPI repo on AWS S3]: https://novemberfive.co/blog/opensource-pypi-package-repository-tutorial/
