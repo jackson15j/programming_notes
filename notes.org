@@ -1,0 +1,492 @@
+#+title: Programming/Development Notes
+#+author: Craig Astill
+#+OPTIONS: toc:2
+* Bash:
+- ~ps -aef --forest~ for tree view of processes.
+** surf | suckless.org software that sucks less
+[2022-09-11 Sun 15:49]
+https://surf.suckless.org/
+
+surf is a simple web browser based on WebKit2/GTK+. It is able to display websites and follow links. It supports the XEmbed protocol which makes it possible to embed it in another application. Furthermore, one can point surf to another URI by setting its XProperties.
+* BuildTools:
+- [[https://www.gnu.org/software/make/][GNU Make: Makefiles with build targets]].
+- [[https://taskfile.dev/#/][Task: task runner / build tool that aims to be simpler than GNU Make]].
+* CI/CD:
+** Gitlab:
+- [[https://docs.gitlab.com/ee/user/project/quick_actions.html][Gitlab Docs: Quick Actions]] - slash commands in Gitlab.
+- [[https://docs.gitlab.com/ee/user/markdown.html#gitlab-specific-references][Gitlab Docs: Special markdown syntax]] - Markdown syntax to do actions from
+  commit/comments in Gitlab.
+- [[https://docs.gitlab.com/ee/administration/integration/plantuml.html][Gitlab Docs: PlantUML integration]] - Configure a docker container to generate
+  in-line PlantUML code blocks into images when rendering Markdown/Restructred
+  Text.
+- [[https://gitlab.com/gitlab-org/gitlab/-/tree/master/.gitlab/merge_request_templates][Gitlab: ~.gitlab/merge_request_templates/~]] - Gitlab's current [[https://docs.gitlab.com/ee/user/project/description_templates.html][Gitlab Docs: MR
+  templates]].
+- https://docs.gitlab.com/ee/user/project/releases/release_cicd_examples.html
+  - Release stage for an Agent to explicitly tag the repo and handle generating
+    tagged artifacts in a release job.
+    - https://docs.gitlab.com/ee/ci/yaml/#release.
+  - This is different to using a tag trigger and having a job that does work
+    when a tag has been pushed.
+    - https://docs.gitlab.com/ee/ci/yaml/#rules.
+** Gitlab Articles:
+- https://about.gitlab.com/blog/2022/09/06/speed-up-your-monorepo-workflow-in-git/
+- https://about.gitlab.com/blog/2022/08/31/the-changing-roles-in-devsecops/ - Why and How DevOps roles are changing.
+- https://about.gitlab.com/blog/2022/08/30/the-ultimate-guide-to-software-supply-chain-security/
+- https://about.gitlab.com/blog/2022/08/30/top-reasons-for-software-release-delays/
+- https://about.gitlab.com/blog/2022/07/21/quickly-onboarding-engineers-successfully/
+- https://about.gitlab.com/blog/2022/06/29/a-story-of-runner-scaling/
+- https://about.gitlab.com/blog/2022/02/16/a-community-driven-advisory-database/
+- https://about.gitlab.com/blog/2022/01/20/securing-the-container-host-with-falco/
+- https://about.gitlab.com/blog/2021/11/15/top-five-actions-owasp-2021/
+- https://about.gitlab.com/blog/2021/11/11/situational-leadership-strategy/
+- https://about.gitlab.com/blog/2021/10/11/how-ten-steps-over-ten-years-led-to-the-devops-platform/
+- https://about.gitlab.com/blog/2022/08/10/securing-the-software-supply-chain-through-automated-attestation/
+- https://about.gitlab.com/blog/2022/08/15/the-importance-of-compliance-in-devops/
+- https://about.gitlab.com/blog/2022/08/16/eight-steps-to-prepare-your-team-for-a-devops-platform-migration/
+- https://about.gitlab.com/blog/2022/08/17/why-devops-and-zero-trust-go-together/
+- https://about.gitlab.com/blog/2022/08/18/the-gitlab-guide-to-modern-software-testing/
+- https://about.gitlab.com/blog/2022/08/23/gitlabs-2022-global-devsecops-survey-security-is-the-top-concern-investment/
+** Releases:
+- https://github.com/changesets/changesets - A tool to manage versioning and changelogs
+with a focus on multi-package repositories .
+* Databases:
+** Postgres:
+- [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
+* Dev Environment Setup:
+** Mac config:
+*** iterm2
+- ~Preferences > Profiles > Keys > General > <Left/Right> Option Key = Esc+~ -
+  to fix ~Alt~ to be the ~Meta~ key again.
+- ~Preferences > Profiles > Keys > Key Mappings~ Added a new mapping: ~Send:
+  "#"~, when ~Alt+3~ is pressed. Fixes sending ~#~ when my keyboard is on the
+  Mac layer + ~Esc+~ is set above.
+- ~Preferences > Profiles > Colors~ - Tweak the Blue to be brighter to make it
+  readable.
+- ~Preferences > Profiles > Terminal > Infinite Scrollback~.
+*** System
+- changed mouse scrolling direction to be normal.
+- ~scaled~ + ~smallest~ font = native display resolution.
+- Up display timeout time in Power menu.
+- Finder: [[https://discussions.apple.com/thread/251374769][How to show hidden files in finder?]] ~Command+Shift+.~ in a Finder
+  window.
+- ~Preferences > Sharing > AirPlayReceiver~ Disabled due to port conflict
+  on 5000.
+*** Brew
+- ~brew leaves~ list packages without dependencies.
+**** emacs:
+- [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]]
+- mu.
+- aspell.
+- cmake.
+- cmake-docs
+- ~markdown~ (markdown-preview).
+**** Dev:
+- [[https://postgrest.org/en/stable/][postgrest]] (~brew services stop postgres~ to avoid conflict with an eigen
+  container).
+- git-lfs (had to pin, see wiki).
+- ~helm~.
+- ~lens~ (GUI Kubernetes).
+- ~awscli~
+- ~xquartz~ for X11 server.
+- ~wget~
+- ~swig~.
+- ~miniforge~ (M1 macs need this instead of miniconda to work).
+- ~poetry~.
+- ~docker --cask~ to pull down the Docker Desktop (https://formulae.brew.sh/cask/docker).
+- ~dive~ (inspect size of docker layers).
+- ~yq~ (YAML/XML/TOML CLI
+  processor)(https://github.com/kislyuk/yq)(https://github.com/wagoodman/dive/issues/300
+  ~yq -r .services[].image docker-compose.yml | xargs -n 1 dive --ci~
+- ~hadolint~ - lint dockerfiles (https://github.com/hadolint/hadolint))
+**** Experiments:
+- ~rust~, ~rustup~.
+**** laptop:
+- iterm2
+- rectangle (snap to area shortcuts).
+- [[https://github.com/Dimentium/homebrew-autoraise][Github: Dimentium/homebrew-autoraise]] - focus follows mouse.
+- [[https://github.com/ankitpokhrel/jira-cli][Github: ankitpokhrel/jira-cli]].
+*** FireFox
+- ~about:config~ ~browser.tabs.tabMinWidth = 0~ to disable tab scrolling.
+*** Docker
+**** Best-Practices
+- https://pythonspeed.com/articles/poetry-vs-docker-caching/
+**** Run AMD64 containers on ADM64:
+- https://erica.works/docker-on-mac-m1/
+- https://forums.macrumors.com/threads/docker-on-m1-max-horrible-performance.2321545/
+- https://stackoverflow.com/questions/70649002/running-docker-amd64-images-on-arm64-architecture-apple-m1-without-rebuilding
+- https://enjoi.dev/posts/2021-07-23-docker-using-amd64-images-on-apple-m1/
+- https://www.reddit.com/r/docker/comments/o7u8uy/run_linuxamd64_images_on_m1_mac/
+- https://medium.com/homullus/beating-some-performance-into-docker-for-mac-f5d1e732032c
+-
+**** Building AMD64 containers on ARM64:
+- https://docs.docker.com/desktop/multi-arch/
+- https://hublog.hubmed.org/archives/002027
+- [[https://github.com/docker/for-mac/issues/5364][Github: docker/for-mac: "platform" option in docker-compose.yml ignored (preview version) #5364]]
+- https://tongfamily.com/2021/12/15/the-weirdness-that-is-amd64-on-apple-m1-silicon/
+- http://www.randallkent.com/2021/12/31/how-to-build-an-amd64-and-arm64-docker-image-on-a-m1-mac/
+- https://docs.docker.com/buildx/working-with-buildx/
+-
+**** Podman (Docker alternative)
+- https://medium.com/team-rockstars-it/how-to-implement-a-docker-desktop-alternative-in-macos-with-podman-bbf728d033da
+- https://stackoverflow.com/questions/70892894/run-docker-compose-with-podman-as-a-backend-on-macos
+- [[https://github.com/containers/podman/issues/13456][Github: containers/podman -  MacOS helper daemon (podman-mac-helper) fails to start and "mount" /var/run/docker.sock #13456]]
+- https://devopscube.com/podman-tutorial-beginners/
+-
+**** Tooling
+- [[https://github.com/emacs-lsp/dap-mode/issues/406][Github emacs-lsp/dap-mode: Feature request: support docker #406]]
+** Raspberry Pi:
+*** [[https://forum.manjaro.org/t/guide-install-manjaro-arm-minimal-headless-on-rpi4-with-wifi/96515][Manjaro headless install directly to a MicroSD card]]:
+- Download minimal ARM iso from: https://manjaro.org/download/.
+- Unpack compressed image.
+- Burn to MicroSD card with: ~sudo dd if=~/Downloads/Manjaro-ARM-minimal*.img of=/dev/mmcblk0 bs=1M status=progress && sync~
+- Mount ~ROOT_MNJRO~
+  - Click in Thunar, which auto-mounts to: ~/var/run/media/root/~.
+  - Or: ~sudo mount -o rw /dev/mmcblk0p2 /mnt~.
+- Add WiFi config:
+  #+BEGIN_SRC bash
+    sudo mkdir -p /mnt/var/lib/iwd
+    sudo touch /mnt/var/lib/iwd/<ssid>.psk
+    echo "[Security]" >> /mnt/var/lib/<ssid>.psk
+    echo "Passphrase=<password>" >> /mnt/var/lib/<ssid>.psk
+  #+END_SRC
+- Unmount and plug into the Pi and boot.
+- ~ssh root@<ip>~
+- You'll connect into the CLI Wizard.
+* Docker:
+- [[https://www.youtube.com/watch?v=fqMOX6JJhGo][YouTube: Docker Tutorial for Beginners - A Full DevOps Course on How to Run
+  Applications in Containers]].
+** Clean-up:
+- Removing containers, volumes and dangling images:
+
+  #+BEGIN_EXAMPLE shell
+  docker container prune -f
+  docker volume prune -f
+  docker image prune -f
+  #+END_EXAMPLE
+- Remove unused images: ~docker image prune --all~.
+** Networks:
+- Can use container name to connect between containers.
+- ~docker run -d --name=app1 --link db:db my-app1~ The `--link` command writes
+  the provided Container Name (+IP) into: ~/etc/hosts~, so that all references
+  to the linked Container work.
+*** ~bridge~:
+- The default network that all docker containers (without network config) are
+  created in.
+- Assigns private IP's to each container (eg. ~172.17.0.x~).
+- Requires explicit create command to create additional bridge networks.
+- DNS defaults to: ~127.0.0.11~.
+- Port Mapping to expose Container Ports to the Host.
+  - Can run multiple Containers with the same internal port.
+*** ~none~:
+- Network with no external access.
+*** ~Host~:
+- Directly map Containers onto the Hosts IP + Port range.
+- No ~port~ config required for mapping.
+- Cannot support multiple Containers re-using the same Port, due to Host-side
+  conflicts.
+** Performance:
+- Uses ~cgroups~ (Control Groups) to allocate Hosts CPU/Memory to containers.
+- Use ~--cpu/--memory~~ to constrain the running container.
+** Reduce image size:
+- If using ~COPY~ to pull in directories. Add a ~.dockeringnore~ file to add
+  exclusions. eg. ~.git~, ~**/tests~, ~**/*.ts~.
+- Generate/install in the image at build time instead of ~COPY~ = Docker layer
+  caching.
+- Check for ~-slim~/~alpine~ versions of the base image.
+- Move ~COPY~ commands near end of the file. Avoid Cache misses!
+- Pull in versioned OS-packages. Avoid Cache misses, but more Platform burden!
+- Use multi-stage docker files to build code in a fat stage, but copy in the
+  artifacts in to the thin stage with an ~ENTRYPOINT~
+
+  #+BEGIN_EXAMPLE dockerfile
+    FROM microsoft/dotnet:2.2-sdk AS builder
+    # 1730MB Fat Stage.
+    WORKDIR /app
+
+    COPY *.csproj  .
+    RUN dotnet restore
+
+    COPY . .
+    RUN dotnet publish --output /out/ --configuration Release
+
+    FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine
+    # 161MB Thin stage.
+    WORKDIR /app
+    COPY --from=builder /out .
+    EXPOSE 80
+    ENTRYPOINT ["dotnet", "aspnet-core.dll"]
+  #+END_EXAMPLE
+* Emacs:
+** org-mode:
+- ~org-eww-copy-for-org-mode~ to copy text + links from Eww to Org. ~C-y~ to
+  paste.
+*** Formatting:
+- [[https://orgmode.org/manual/Emphasis-and-Monospace.html][Emphasis and Monospace]]
+- *bold*
+- /italic/
+- _underlined_
+- =verbatim=
+- ~code~
+- +strike-through+
+- src_python{inline python}  # ~src_<lang>[<header_arguments>]{<code>}~ [[https://orgmode.org/manual/Structure-of-Code-Blocks.html#Structure-of-Code-Blocks][Structure of Code Blocks]]
+- code blocks
+#+NAME: <name>
+#+BEGIN_SRC <language> <switches> <header arguments>
+  <body>
+#+END_SRC
+- quote blocks
+  #+BEGIN_QUOTE
+  <body>
+  #+END_QUOTE
+*** PlantUML + Org Babel:
+- https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html
+- plantuml block
+  #+begin_src plantuml :file designs/hello-uml.png
+  Bob -> Alice : Hello World!
+  #+end_src
+** DAP:
+~~~
+(dap-register-debug-template
+  "Python :: Run pytest (projectX buffer)"
+  (list :type "python"
+        :args ""
+        :cwd "/Users/<user>/projects/projectX/"
+        :program nil
+        :module "pytest"
+        :arguments "-p no:warnings"
+        :request "launch"
+        :name "Python :: Run pytest (projectX buffer)"))
+
+~~~
+** Jupyter:
+- https://discourse.julialang.org/t/jupyter-integration-with-emacs/21496/5 -
+  basic ~IJulia~ + ~jupyter~ install steps (no use-package).
+* Git:
+- https://www.conventionalcommits.org/en/v1.0.0/ - A specification for adding
+  human and machine readable meaning to commit messages.
+- https://github.com/conventional-changelog/conventional-changelog - Generate
+  changelogs and release notes from a project's commit messages and metadata.
+- https://github.com/conventional-changelog/releaser-tools - Create a
+  GitHub/GitLab/etc. release using a project's commit messages and metadata.
+* Job hunting:
+- https://github.com/readme/guides/technical-interviews
+- https://www.codinginterview.com/
+* Kubernetes:
+- [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
+** Helm Charts:
+- Hierarchical to call sub-charts as sub-dependencies.
+- Values to be passed into the charts.
+*** [[https://eigentech.slack.com/archives/CH1CHKYP8/p1650553648237999][how does one deploy from a local helm chart without publishing it?]]
+- ~helm upgrade --install <deployment_name> <local_chart_dir>~
+*** Dagster docs + dump current helm chart values: https://docs.dagster.io/deployment/guides/kubernetes/deploying-with-helm
+*** [[https://helm.sh/docs/chart_template_guide/debugging/][Debugging Templates]]:
+- ~helm lint~ is your go-to tool for verifying that your chart follows best
+  practices.
+- ~helm install --dry-run --debug~ or ~helm template --debug~: We've seen this
+  trick already. It's a great way to have the server render your templates,
+  then return the resulting manifest file.
+- ~helm get manifest~: This is a good way to see what templates are installed
+  on the server.
+- **NOTE:** variable substitution still happens on commented out code in
+  templates, so comment out broken sections if it fails to render with ~helm
+  install --dry-run --debug~.
+- YAML node typing eg. ~age: !!str 21~, or: ~port: !!int "80"~.
+**** TODO Document Debugging Workflow
+- Are there docs already on Confluence on debugging.
+- Raise Task to add vscode/emacs debug tasks to ~eigen~.
+- Document the workflow with the debugger (include vscode/emacs tutorial links).
+- How to debug into a Docker container? - new DockerFile section with ~debugpy~ ??
+*** [[https://stackoverflow.com/questions/72126048/error-exec-plugin-invalid-apiversion-client-authentication-k8s-io-v1alpha1-c][SO: invalid apiVersion "client.authentication.k8s.io/v1alpha1"]]
+- ~aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME} --region ${REGION}~.
+*** [[https://github.com/bitnami/charts/issues/10539][Github/bitnami: Helm charts repository ~index.yaml~ retention policy #10539]] - Drama!!
+** Kubernetes Networks:
+*** Ingress:
+- [[https://www.youtube.com/watch?v=GhZi4DxaxxE][YouTube: Kubernetes Ingress Explained Completely for Beginners]].
+- Ingress is the LoadBalancer/Routing defined within the Kubernetes Cluster
+  config.
+- Still require an external, to the Cluster, Load Balancer (or Proxy) but this
+  will just have to deal with a single root URL that is passed into your
+  Cluster's Ingress (and then routed to the correct Service's Pod(s)).
+- Equivalent to a reverse-proxy like: nginx, HaProxy, Traefik.
+**** Ingress Controller:
+- Commonly use nginx (or others) as an Ingress Controller
+  (eg. ~nginx-ingress-controller~ image).
+- Deployment/Service/ConfigMap/Auth Yaml's.
+**** Ingress Resource:
+- Handles routing to respective service based off the requested URL.
+- Can handle 1 or multiple Domain Paths, by creating a ~rule~ for each ~path~.
+- ~kubectl describe ingress <image>~
+** Local Development:
+- https://necessaryeval.com/2021/09/01/kubernetes-primer/ - Local development
+  with ~minikube~.
+- https://kubernetes.io/blog/2018/05/01/developing-on-kubernetes/
+  - Local vs. remote development.
+  - Tools:
+    - https://github.com/Azure/draft - aims to help you get started deploying
+      any app to Kubernetes. It is capable of applying heuristics as to what
+      programming language your app is written in and generates a Dockerfile
+      along with a Helm chart. It then runs the build for you and deploys
+      resulting image to the target cluster via the Helm chart. It also allows
+      user to setup port forwarding to localhost very easily.
+    - https://github.com/GoogleCloudPlatform/skaffold - tool that aims to
+      provide portability for CI integrations with different build system,
+      image registry and deployment tools.
+    - https://github.com/solo-io/squash - consists of a debug server that is
+      fully integrated with Kubernetes, and a IDE plugin.
+    - https://www.telepresence.io/ - connects containers running on developer’s
+      workstation with a remote Kubernetes cluster using a two-way proxy and
+      emulates in-cluster environment as well as provides access to config maps
+      and secrets.
+    - https://github.com/vapor-ware/ksync - Synchronizes application code (and
+      configuration) between your local machine and the container running in
+      Kubernetes.
+- https://kubernetes.io/docs/tasks/debug/debug-cluster/local-debugging/ -
+  Developing and debugging services locally using telepresence.
+- http://next.nemethgergely.com/blog/using-kubernetes-for-local-development -
+  Local development via ~minikube~ & ~skaffold~.
+** [[https://docs.replicated.com/][Replicated]]:
+- https://docs.replicated.com/ - Replicated allows software vendors to package
+  and securely distribute their application to diverse customer environments,
+  including both on-premises and cloud environments.
+- https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/
+* ML:
+** ML Articles:
+- https://simonwillison.net/2022/Jul/9/gpt-3-explain-code/
+** DagFlow
+- [[https://docs.dagster.io/deployment/guides/kubernetes/deploying-with-helm][Dagster: deploying with Helm]].
+* Networks:
+** DNS:
+- https://root-servers.org/ - Root DNS servers at the top of the DNS
+  hierarchy. These root servers farm out requests down to Top-Level
+  (io/com/net/edu/...) servers who farm out to down to Secondary-Level
+  (amazon.com/github.com/...) DNS servers to complete Name-IP lookups.
+- *Local Resolver Library:* Local DNS Cache.
+- *Local DNS Server:* Hosted by ISP's as a DNS Cache + inspect
+  traffic/requests.
+* Python:
+** Python Articles:
+- https://pythonspeed.com/
+- https://about.gitlab.com/blog/2022/09/06/test-your-software-supply-chain-security-know-how/
+- https://pythoninsider.blogspot.com/2022/09/python-releases-3107-3914-3814-and-3714.html -
+  Python releases 3.10.7, 3.9.14, 3.8.14, and 3.7.14 are now available + CVE fix.
+** Build Tools:
+- https://github.com/benfogle/crossenv - Virtual Environments for
+  Cross-Compiling Python Extension Modules.
+** CLI packages:
+- https://github.com/pallets/click - Command Line Interface Creation Kit
+- https://cloup.readthedocs.io/en/stable/ - Click + Option Groups.
+- https://github.com/astanin/python-tabulate - Pretty-print tabular data.
+- https://github.com/termcolor/termcolor - Abstract out setting text colours.
+** Debugging:
+- https://github.com/ztlevi/LSP-Debug/blob/master/README.md#L4-L9 - debug
+  python via DAP - editor support.
+- https://github.com/bloomberg/memray - Python memory profiler.
+- https://github.com/benfred/py-spy - Python sampling profiler.
+** Django:
+- [[https://books.agiliq.com/projects/django-admin-cookbook/en/latest/index.html][Django Admin Cookbook]].
+- [[https://django-extensions.readthedocs.io/en/latest/graph_models.html][django-extensions: Graph Models]].
+** Celery:
+*** Debugging:
+**** Celery's remote debugger:
+  #+BEGIN_EXAMPLE python
+  from celery.contrib import rdb
+  ...
+  rdb.set_trace()
+  #+END_EXAMPLE
+- Then connect over telnet: ~telnet localhost 6900~.
+- If in docker:
+  - add: ~CELERY_RDB_HOST=0.0.0.0~ to ~.env~.
+  - Expose Celery debug port in ~docker.compose.yml~. eg. ~6901~
+  - ~telnet localhost 6901~ from host.
+**** Debug Celery via PDB in Django:
+- Add ~CELERY_TASK_ALWAYS_EAGER=True~ in: ~settings.py~.
+** Conda:
+- https://conda-forge.org/blog/posts/2020-10-29-macos-arm64/ - macOS ARM builds
+  on conda-forge.
+- [[https://github.com/conda/conda/issues/9957][conda/conda - conda update breaks conda with ImportError: libffi.so.6: cannot open shared object file #9957]]
+*** Conda + Emacs:
+- [[https://github.com/necaris/conda.el/issues/39][necaris/conda.el - Cannot activate any env on OSX #39]]
+*** Conda + Docker:
+- https://uwekorn.com/2021/03/01/deploying-conda-environments-in-docker-how-to-do-it-right.html
+*** Mamba instead of Conda:
+- https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
+- https://labs.epi2me.io/conda-or-mamba-for-production/
+** poetry:
+- [[https://python-poetry.org/docs/managing-environments/#switching-between-environments][Set poetry python version]]: ~poetry env use python<x.y>~.
+- ~poetry show --tree~ for poetry dependency graph.
+*** TODO https://github.com/opeco17/poetry-audit-plugin
+*** [[https://github.com/python-poetry/poetry/issues/2094#issuecomment-1243195601][python-poetry/poetry: Poetry is extremely slow when resolving the dependencies (#2094)]]:
+@Kache, It appears to search through dependencies depth-first, rather than breadth-first. As a result, you've probably got a something earlier in your pyproject.toml that depends on ddtrace, so the dependency resolver grabbed that version and tried to resolve using that, rather than the ddtrace version you've specified.
+
+I've had some success moving the dependencies I want exact version logic prioritizing earlier in the pyproject.toml file.
+
+(I also disabled IPv6, upgraded to poetry 1.2x, and have reduced the possible space for the troubling aws libraries (boto3 and awsci, for me) so those go at the very end of my dependency file and have only a few recent versions to chew through.
+
+I'm seeing dependency resolution time between 5 and 35 seconds most of the time now.
+** pytest:
+- [[https://docs.pytest.org/en/6.2.x/warnings.html#disabling-warning-capture-entirely][Disable warnings]] with: ~-p no:warnings~.
+** Security:
+- https://github.com/sonatype-nexus-community/jake - report vulnerabilities.
+- https://adamj.eu/tech/2019/04/10/how-to-score-a+-for-security-headers-on-your-django-website/
+** Templating:
+- https://www.makotemplates.org/ - Mako is a template library written in
+  Python. It provides a familiar, non-XML syntax which compiles into Python
+  modules for maximum performance.
+* React:
+- View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
+- ~redux~ is the store of all BE DB state in the FE.
+- Add ~&profile~ to an API call to get performance output!!
+- ~npm install --target_arch=x64~ - until there is arm support.
+- https://github.com/marmelab/react-admin
+- Print all object properties: ~console.log(Object.getOwnPropertyNames(obj))~.
+** AST (Abstract Syntax Tree):
+What is Abstract Syntax Tree?
+
+#+BEGIN_QUOTE
+It is a hierarchical program representation that presents source code structure
+according to the grammar of a programming language, each AST node corresponds
+to an item of a source code.
+#+END_QUOTE
+
+- https://itnext.io/ast-for-javascript-developers-3e79aeb08343
+* Security:
+** Security Bodies/Sites:
+- [[https://www.first.org/cvss/][CVSS (Common Vulnerability Scoring System)]] - Used in the scoring of PEN Tests.
+- [[https://www.cve.org/][CVE (CyberSecurity Vulnerabilities)]] ([[https://cve.mitre.org/index.html][Old CVE site (Should be dead in
+  2023)]]). - collection of all security vulnerabilities.
+- [[https://owasp.org/][OWASP (Open Web Application Security Project)]] - Nonprofit looking to improve
+  security through Open-Source projects.
+- https://infosec.mozilla.org/guidelines/web_security
+** Terminology:
+*** Vertical Separation Flaw:
+- Access resources granted to more privileged accounts.
+- eg. gaining Administrator privileges.
+*** Horizontal Separation Flaw:
+- Access to resources granted to a similarly configured account.
+- eg. modifying data belonging to a different User of the same Application.
+** Security Articles:
+- https://www.cve.org/ -  Identify, define, and catalog publicly disclosed
+  cybersecurity vulnerabilities.
+- https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html
+- https://owasp.org/ - The Open Web Application Security Project® (OWASP) is a
+  nonprofit foundation that works to improve the security of software.
+- https://owasp.org/www-project-top-ten/
+- https://signal.org/blog/building-faster-oram/
+- https://arstechnica.com/?p=1872326 - 10 malicious Python packages exposed in
+  latest repository attack.
+- https://www.synopsys.com/blogs/software-security/sast-vs-dast-difference/ -
+  Static (White box) vs Dynamic (Black box) Application Security Testing.
+** Tools:
+- https://www.rapid7.com/products/insightappsec/ - InsightAppSec performs
+  black-box security testing to automate identification, triage
+  vulnerabilities, prioritize actions, and remediate application risk.
+- https://www.rapid7.com/products/insightvm/ - Discover risks across all your
+  endpoints, cloud, and virtualized infrastructure.
+*** WireGuard: fast, modern, secure VPN tunnel
+[2022-09-11 Sun 15:47]
+https://www.wireguard.com/
+
+WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+* Training Sites:
+- https://www.educative.io/ - Text-based teaching resources (instead of video)
+  and web-based coding environments.`
