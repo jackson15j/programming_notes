@@ -4,6 +4,8 @@ Programming Notes
 Personal dump of programming notes for various languages. May be incorrect or
 out of date, so happy for corrections.
 
+See: [notes.org] for my newer notes in [org-mode] format.
+
 Languages
 ---------
 
@@ -94,3 +96,6 @@ Conferences
 [2018-11-08 Cloud Native Wales]: conferences/2018-11-08_cloud_native_wales.md
 [2018-11-01 O'Reilly Velocity (DevOps) Conference]: conferences/2018-11-01_oreilly_velocity_devops_conference.md
 [2018-08-18 PyData Meetup]: conferences/2018-08-18_pydata_meetup.md
+
+[notes.org]: notes.org
+[org-mode]: https://orgmode.org/
