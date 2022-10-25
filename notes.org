@@ -245,7 +245,8 @@ with a focus on multi-package repositories .
   Bob -> Alice : Hello World!
   #+end_src
 ** DAP:
-~~~
+*** Registering a debug template for: ~dap-mode~, to use.
+#+BEGIN_EXAMPLE emacs-lisp
 (dap-register-debug-template
   "Python :: Run pytest (projectX buffer)"
   (list :type "python"
@@ -256,8 +257,7 @@ with a focus on multi-package repositories .
         :arguments "-p no:warnings"
         :request "launch"
         :name "Python :: Run pytest (projectX buffer)"))
-
-~~~
+#+END_EXAMPLE
 ** Jupyter:
 - https://discourse.julialang.org/t/jupyter-integration-with-emacs/21496/5 -
   basic ~IJulia~ + ~jupyter~ install steps (no use-package).
