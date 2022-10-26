@@ -164,6 +164,11 @@ with a focus on multi-package repositories .
   docker image prune -f
   #+END_EXAMPLE
 - Remove unused images: ~docker image prune --all~.
+** ~docker-compose~:
+- ~docker-compose up --build~ to force a rebuild (and ignore any previous
+  built images).
+- ~docker-compose down~ stops (~docker-compose stop~) all running containers in
+  the docker compose file and then cleans up containers/networks/images.
 ** Networks:
 - Can use container name to connect between containers.
 - ~docker run -d --name=app1 --link db:db my-app1~ The `--link` command writes
