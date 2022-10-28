@@ -498,6 +498,11 @@ to an item of a source code.
   vulnerabilities, prioritize actions, and remediate application risk.
 - https://www.rapid7.com/products/insightvm/ - Discover risks across all your
   endpoints, cloud, and virtualized infrastructure.
+- https://www.keycloak.org/ - Open Source Identity and Access Management Add
+  authentication to applications and secure services with minimum effort.  No
+  need to deal with storing users or authenticating users.  Keycloak provides
+  user federation, strong authentication, user management, fine-grained
+  authorization, and more.
 *** WireGuard: fast, modern, secure VPN tunnel
 [2022-09-11 Sun 15:47]
 https://www.wireguard.com/
