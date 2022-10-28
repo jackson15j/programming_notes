@@ -53,6 +53,17 @@ with a focus on multi-package repositories .
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 * Dev Environment Setup:
+** Factory Reset / Erase / Format / Wipe:
+*** Mac:
+- Reboot and hold ~Command + r~ until you see the Apple logo and/or hear a
+  chime.
+- A macOS Utilities window should pop up.
+- Select: ~Disk Utility > Drive > Erase~.
+**** Secure erase an SSD:
+Need to get to the ~Secure Erase Options~ to do full disk erasing.
+- Pick: ~Mac OS Extended (Journaled, Encrypted)~ and set an easy password.
+- After first erase, change to: ~Mac OS Extended (Journaled)~ and then select
+  a: ~Secure Erase Options~, to do full disk wipe.
 ** Mac config:
 *** iterm2
 - ~Preferences > Profiles > Keys > General > <Left/Right> Option Key = Esc+~ -
