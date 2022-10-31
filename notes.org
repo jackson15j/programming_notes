@@ -439,8 +439,6 @@ I've had some success moving the dependencies I want exact version logic priorit
 (I also disabled IPv6, upgraded to poetry 1.2x, and have reduced the possible space for the troubling aws libraries (boto3 and awsci, for me) so those go at the very end of my dependency file and have only a few recent versions to chew through.
 
 I'm seeing dependency resolution time between 5 and 35 seconds most of the time now.
-** pytest:
-- [[https://docs.pytest.org/en/6.2.x/warnings.html#disabling-warning-capture-entirely][Disable warnings]] with: ~-p no:warnings~.
 ** Security:
 - https://github.com/sonatype-nexus-community/jake - report vulnerabilities.
 - https://adamj.eu/tech/2019/04/10/how-to-score-a+-for-security-headers-on-your-django-website/
@@ -448,6 +446,16 @@ I'm seeing dependency resolution time between 5 and 35 seconds most of the time 
 - https://www.makotemplates.org/ - Mako is a template library written in
   Python. It provides a familiar, non-XML syntax which compiles into Python
   modules for maximum performance.
+** Testing:
+*** [[https://hypothesis.readthedocs.io/en/latest/][hypothesis]]:
+Hypothesis is a Python library for creating unit tests which are simpler to
+write and more powerful when run, finding edge cases in your code you wouldn’t
+have thought to look for. It is stable, powerful and easy to add to any
+existing test suite.
+- https://hypothesis.works/
+- Uses ML to do [[https://en.wikipedia.org/wiki/QuickCheck][\"Property-based testing\".]]
+*** pytest:
+- [[https://docs.pytest.org/en/6.2.x/warnings.html#disabling-warning-capture-entirely][Disable warnings]] with: ~-p no:warnings~.
 * React:
 - View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
 - ~redux~ is the store of all BE DB state in the FE.
