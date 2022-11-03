@@ -317,6 +317,7 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 * Job hunting:
 - https://github.com/readme/guides/technical-interviews
 - https://www.codinginterview.com/
+- https://www.pramp.com/#/
 * Kubernetes:
 - [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
 ** Helm Charts:
