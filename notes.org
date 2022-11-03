@@ -50,6 +50,25 @@ surf is a simple web browser based on WebKit2/GTK+. It is able to display websit
 - https://github.com/changesets/changesets - A tool to manage versioning and changelogs
 with a focus on multi-package repositories .
 * Databases:
+** CAP Theorem:
+You can only achieve 2 of these 3 properties of databases:
+
+- *Consistency:* All Clients see the same data at the same time, regardless of
+  Node connected to.
+- *Availability:* Respond to Client Requests, even during partial Node failure.
+- *Partition Tolerance:* System can tolerate network partitions (breaks)
+  between some Nodes.
+*** Distributed Database:
+Typically will have a CP or AP database cluster since CA is not possible in a
+distributed scenario due to needing to handle network partitions! ie. *There
+will always be partitions, so the choices is Consistency vs Availability!*
+
+- *Consistency (CP):* requires block further writes to all other nodes until data is
+  written across them all. Need to return warnings during this
+  period. eg. Banking.
+- *Availability (AP):*
+  - Reads: Keep accepting, but may return stale data.
+  - Writes: Keep accepting writes, sync once network partition is resolved.
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 * Dev Environment Setup:
