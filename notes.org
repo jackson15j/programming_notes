@@ -182,6 +182,17 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - Unmount and plug into the Pi and boot.
 - ~ssh root@<ip>~
 - You'll connect into the CLI Wizard.
+*** Kiosk mode:
+- *TODO:* Fill out with other details (retroactively looking at an existing
+  Pi3B+ with a [[https://shop.pimoroni.com/products/hyperpixel-4?variant=12569539706963][Pimoroni: HyperPixel 4.0 (non-touch) display).]]
+- Autostart Chromium by editing:
+  ~/rootfs/home/pi/.config/lxsession/LXDE-pi/autostart~ with:
+  #+BEGIN_EXAMPLE shell
+    @xset s off
+    @xset -dpms
+    @xset s noblank
+    @chromium-browser --kiosk http://<ip/fqdn> --start-fullscreen --incognito
+  #+END_EXAMPLE
 * Docker:
 - [[https://www.youtube.com/watch?v=fqMOX6JJhGo][YouTube: Docker Tutorial for Beginners - A Full DevOps Course on How to Run
   Applications in Containers]].
