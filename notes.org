@@ -320,6 +320,9 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - https://www.pramp.com/#/
 * Kubernetes:
 - [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
+- https://docs.k3s.io - Lightweight Kubernetes. Easy to install, half the
+  memory, all in a binary of less than 100 MB.
+- https://www.cncf.io/kubecon-cloudnativecon-events/
 ** Helm Charts:
 - Hierarchical to call sub-charts as sub-dependencies.
 - Values to be passed into the charts.
