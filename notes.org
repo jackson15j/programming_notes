@@ -318,6 +318,8 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - https://github.com/readme/guides/technical-interviews
 - https://www.codinginterview.com/
 - https://www.pramp.com/#/
+- https://hackingthesystemsdesigninterview.com
+- https://www.siliconmilkroundabout.com - London-based Job Fair.
 * Kubernetes:
 - [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
 - https://docs.k3s.io - Lightweight Kubernetes. Easy to install, half the
