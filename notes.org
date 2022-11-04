@@ -210,6 +210,21 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
   built images).
 - ~docker-compose down~ stops (~docker-compose stop~) all running containers in
   the docker compose file and then cleans up containers/networks/images.
+** Docker Swarm:
+Orchestrator (similar to Kubernetes) but built by the Docker Team.
+*** Visualize Docker Swarm Containers across Nodes:
+- [[https://github.com/dockersamples/docker-swarm-visualizer][Github: dockersamples/docker-swarm-visualizer]] - Constrain to the Master node
+  to visualise the containers across all nodes from the Web Browser.
+
+  Vlisualizer deployed via ~docker run~:
+  #+BEGIN_EXAMPLE shell
+    docker run -it -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
+  #+END_EXAMPLE
+
+  Visualizer deployed via Docker Swarms ~docker service~:
+  #+BEGIN_EXAMPLE shell
+    docker service create --name=viz --publish=8080:8080/tcp --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock dockersamples/visualizer
+  #+END_EXAMPLE
 ** Networks:
 - Can use container name to connect between containers.
 - ~docker run -d --name=app1 --link db:db my-app1~ The `--link` command writes
