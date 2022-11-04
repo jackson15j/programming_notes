@@ -196,6 +196,26 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 * Docker:
 - [[https://www.youtube.com/watch?v=fqMOX6JJhGo][YouTube: Docker Tutorial for Beginners - A Full DevOps Course on How to Run
   Applications in Containers]].
+** Best Practices:
+*** No Root Access:
+A container should never be run with root-level access. A role-based access
+control system will reduce the possibility of accidental access to other
+processes running in the same namespace. Either:
+
+- Create a non-root user in the container:
+  #+BEGIN_EXAMPLE dockerfile
+    FROM python:3.5
+    RUN groupadd -r myuser && useradd -r -g myuser myuser
+    <HERE DO WHAT YOU HAVE TO DO AS A ROOT USER LIKE INSTALLING PACKAGES ETC.>
+    USER myuser
+  #+END_EXAMPLE
+- Or while running a container from the image use, ~docker run -u 4000
+  python:3.5~. This will run the container as a non-root user.
+*** Trusted Image Source:
+- Docker 1.8 feature that is disabled by default.
+- ~export DOCKER_CONTENT_TRUST=1~ to enable.
+- Verifies the integrity, authenticity, and publication date of all Docker
+  images from the Docker Hub registry, by preventing access to unsigned images.
 ** Clean-up:
 - Removing containers, volumes and dangling images:
 
