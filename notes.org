@@ -301,6 +301,9 @@ Orchestrator (similar to Kubernetes) but built by the Docker Team.
 ** org-mode:
 - ~org-eww-copy-for-org-mode~ to copy text + links from Eww to Org. ~C-y~ to
   paste.
+*** Build Your Website with Org Mode - System Crafters
+[2022-11-05 Sat 08:50]
+https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 *** Formatting:
 - [[https://orgmode.org/manual/Emphasis-and-Monospace.html][Emphasis and Monospace]]
 - *bold*
