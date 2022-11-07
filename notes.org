@@ -76,6 +76,8 @@ will always be partitions, so the choices is Consistency vs Availability!*
 *** Mac:
 - Reboot and hold ~Command + r~ until you see the Apple logo and/or hear a
   chime.
+  - On an M1 mac, you need to hold the power button down until the ~Start up
+    Options~ appears.
 - A macOS Utilities window should pop up.
 - Select: ~Disk Utility > Drive > Erase~.
 **** Secure erase an SSD:
