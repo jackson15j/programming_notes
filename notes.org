@@ -384,7 +384,7 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
   templates, so comment out broken sections if it fails to render with ~helm
   install --dry-run --debug~.
 - YAML node typing eg. ~age: !!str 21~, or: ~port: !!int "80"~.
-**** TODO Document Debugging Workflow
+**** TODO Document Debugging Workflow                              :WORKFLOW:
 - Are there docs already on Confluence on debugging.
 - Raise Task to add vscode/emacs debug tasks to ~eigen~.
 - Document the workflow with the debugger (include vscode/emacs tutorial links).
@@ -507,7 +507,7 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 ** poetry:
 - [[https://python-poetry.org/docs/managing-environments/#switching-between-environments][Set poetry python version]]: ~poetry env use python<x.y>~.
 - ~poetry show --tree~ for poetry dependency graph.
-*** TODO https://github.com/opeco17/poetry-audit-plugin
+*** https://github.com/opeco17/poetry-audit-plugin                     :READ:
 *** [[https://github.com/python-poetry/poetry/issues/2094#issuecomment-1243195601][python-poetry/poetry: Poetry is extremely slow when resolving the dependencies (#2094)]]:
 @Kache, It appears to search through dependencies depth-first, rather than breadth-first. As a result, you've probably got a something earlier in your pyproject.toml that depends on ddtrace, so the dependency resolver grabbed that version and tried to resolve using that, rather than the ddtrace version you've specified.
 
