@@ -359,7 +359,7 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 - https://www.codinginterview.com/
 - https://www.pramp.com/#/
 - https://hackingthesystemsdesigninterview.com
-- https://blog.bytebytego.com - Newsletter by Alex Xu (Author of: \"System Design Interview\").
+- https://blog.bytebytego.com - Newsletter by Alex Xu (Author of: /"System Design Interview/").
 - https://www.siliconmilkroundabout.com - London-based Job Fair.
 * Kubernetes:
 - [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
@@ -530,7 +530,7 @@ write and more powerful when run, finding edge cases in your code you wouldn’t
 have thought to look for. It is stable, powerful and easy to add to any
 existing test suite.
 - https://hypothesis.works/
-- Uses ML to do [[https://en.wikipedia.org/wiki/QuickCheck][\"Property-based testing\".]]
+- Uses ML to do [[https://en.wikipedia.org/wiki/QuickCheck][/"Property-based testing/".]]
 *** pytest:
 - [[https://docs.pytest.org/en/6.2.x/warnings.html#disabling-warning-capture-entirely][Disable warnings]] with: ~-p no:warnings~.
 * React:
