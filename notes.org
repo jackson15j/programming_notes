@@ -599,6 +599,19 @@ to an item of a source code.
 https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+* System Design:
+** Queues:
+*** Glossary:
+**** Message Broker:
+- Direct communication between explicit Services (one-to-one).
+- Responsibilities: Validate, Route, Store, Deliver messages to designated
+  recipient.
+- Intermediary between Services/Applications.
+  - ie. *Decouple knowledge of Receivers/Consumers location from Sender*.
+  - May have: 0, 1, Many Consumers (unknown to Sender).
+**** Publish/Subscribe:
+- Message distribution pattern.
+- Broadcast-style distribution (one-to-many).
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
