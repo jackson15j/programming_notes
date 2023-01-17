@@ -72,7 +72,7 @@ Conferences
 [Bash]: tooling/bash.md
 [PowerShell]: tooling/powershell_notes.md
 [CI Notes]: tooling/ci_notes.md
-[Bash]: tooling/db_notes.md
+[DB Notes]: tooling/db_notes.md
 [Emacs Notes]: tooling/emacs_notes.md
 [Git Notes]: tooling/git_notes.md
 [VPN Notes]: tooling/vpn_notes.md
