@@ -648,6 +648,37 @@ See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka
 - *Topology:* Pub/Sub.
 - *Payload Size:* Default 1MB limit.
 - *Usage Cases:* Massive data / High throughput cases.
+*** MSSQL [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/building-applications-with-service-broker?view=sql-server-ver16][Service Broker]]:
+Applies to: ￼ SQL Server (all supported versions) ￼ Azure SQL Managed Instance
+
+Any program that can run *Transact-SQL statements* can use Service Broker. A
+Service Broker application can be implemented as a program running outside of
+SQL Server, or as a stored procedure written in Transact-SQL or a .NET
+language.
+
+A program that uses Service Broker is typically composed of a number of
+components working together to accomplish a task. A program that initiates a
+conversation creates and sends a message to another service. That program may
+wait for a response, or exit immediately and rely on another program to process
+the response. For a service that is the target of a conversation, the program
+receives an incoming message from the queue for the service, reads the message
+data, does any necessary processing, and then creates and sends a response
+message if appropriate.
+
+Service Broker extends Transact-SQL. An application does not need a special
+object model or library to work with Service Broker. Instead, programs send
+Transact-SQL commands to SQL Server and process the results of those
+commands. An application can be activated by Service Broker, can run as a
+background service, can run as a scheduled job, or can be started in response
+to an event.
+**** Uses:
+- [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/messages?view=sql-server-ver16][Messages]].
+- [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/queues?view=sql-server-ver16][Queues]].
+**** Why?:
+- Consolidation if already in Windows (MSSQL) Eco-system.
+  - Service Broker is a part of the MSSQL deployment.
+  - Messages are R/W from the same DB that Application(s) uses.
+  - Offload message queuing outside of the Application to the Platform (DB).
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
