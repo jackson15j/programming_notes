@@ -603,6 +603,45 @@ https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 * System Design:
+** Distributed Networking:
+*** [[https://www.envoyproxy.io/][Envoy Proxy]] ([[https://www.envoyproxy.io/docs/envoy/latest/][Envoy docs]]):
+#+BEGIN_QUOTE
+The network should be transparent to applications. When network and application
+problems do occur it should be easy to determine the source of the problem.
+#+END_QUOTE
+
+As on the ground microservice practitioners quickly realize, the majority of
+operational problems that arise when moving to a distributed architecture are
+ultimately grounded in two areas: networking and observability. It is simply an
+orders of magnitude larger problem to network and debug a set of intertwined
+distributed services versus a single monolithic application.
+
+Originally built at Lyft, Envoy is a high performance C++ distributed proxy
+designed for single services and applications, as well as a communication bus
+and “universal data plane” designed for large microservice “service mesh”
+architectures. Built on the learnings of solutions such as NGINX, HAProxy,
+hardware load balancers, and cloud load balancers, Envoy runs alongside every
+application and abstracts the network by providing common features in a
+platform-agnostic manner. When all service traffic in an infrastructure flows
+via an Envoy mesh, it becomes easy to visualize problem areas via consistent
+observability, tune overall performance, and add substrate features in a single
+place.
+
+- Out of Process Architecture - Self-contained, low memory footprint server
+  that runs alongside Application.
+- HTTP/2, (HTTP/3 in alpha ~1.19.0~) gRPC support.
+  - Transparent HTTP/1.1 / HTTP/2 proxy.
+- Load Balancing - retries, circuit breaking, global rate limiting, request
+  shadowing, zone local load balancing, etc.
+- Configuration management API's.
+- Service Discovery - eg. via DNS resolution.
+- Front/Edge Proxy Support.
+- Observability - L7 traffic, distributed tracing, wire-level observations of
+  MongoDB, DynamoDB, Redis, Postgres.
+- Health Checking - Assume Eventual Consistency.
+- YAML config files.
+
+See: [[https://www.envoyproxy.io/docs/envoy/latest/intro/life_of_a_request][Envoy (Docs): Life of a Request]].
 ** Queues:
 *** Glossary:
 **** Message Broker:
