@@ -539,6 +539,9 @@ existing test suite.
 - Uses ML to do [[https://en.wikipedia.org/wiki/QuickCheck][/"Property-based testing/".]]
 *** pytest:
 - [[https://docs.pytest.org/en/6.2.x/warnings.html#disabling-warning-capture-entirely][Disable warnings]] with: ~-p no:warnings~.
+** Web Frameworks:
+- [[https://www.tornadoweb.org/en/stable/][Tornado]] - Python web framework and asynchronous networking library. Ideal for
+  long polling, WebSockets and other long-lived connections.
 * React:
 - View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
 - ~redux~ is the store of all BE DB state in the FE.
@@ -679,6 +682,16 @@ to an event.
   - Service Broker is a part of the MSSQL deployment.
   - Messages are R/W from the same DB that Application(s) uses.
   - Offload message queuing outside of the Application to the Platform (DB).
+*** Python Module Queues:
+These are low-level queues that can be used within Python Applications, where
+the same module is used on both sides of the queue:
+
+- [[https://docs.python.org/3/library/asyncio-queue.html][~asyncio.queue~]] - Async. Not thread-safe, but designed for ~async~ / ~await~
+  code.
+- [[https://docs.python.org/3/library/queue.html#module-queue][~queue~ (built-in)]] - Synchronous. Thread-safe. Multi-Producer /
+  Multi-Consumer queues.
+- [[https://www.tornadoweb.org/en/stable/queues.html?highlight=queue][~tornado.queues~]] - Async. Queues for Tornado coroutines, like:
+  [[https://docs.python.org/3/library/asyncio-queue.html][~asyncio.queue~]].
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
