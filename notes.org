@@ -692,6 +692,33 @@ the same module is used on both sides of the queue:
   Multi-Consumer queues.
 - [[https://www.tornadoweb.org/en/stable/queues.html?highlight=queue][~tornado.queues~]] - Async. Queues for Tornado coroutines, like:
   [[https://docs.python.org/3/library/asyncio-queue.html][~asyncio.queue~]].
+*** [[https://www.rabbitmq.com][RabbitMQ]]:
+- Distributed Message Broker
+  - Deploy a Cluster of Nodes = HA.
+- *Push-based*
+  - Consumer prefetch limits.
+  - Low-latency messaging.
+  - Ideal for:
+    - Complex (non-trivial) routing to multiple Consumers/Applications.
+    - High-throughput & reliable background jobs.
+    - Rapid request-response.
+    - Load balance across Worker nodes (20k+ messages/second).
+    - Long running tasks.
+    - Communication/Integration between and within Applications.
+- Implements AMQP natively (and AMQP (future versions), HTTP, STOMP, MQTT via
+  plugins).
+- Large official support for popular languages + plugins.
+**** Breakdown:
+
+See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka VS RabitMQ]].
+
+- *Performance:* 4k-10k messages per second.
+- *Message Retention:* Acknowledgement-based.
+- *Data Type:* Transactional.
+- *Consumer Mode:* Smart Broker / Dumb Consumer.
+- *Topology:* Exchange Type: Direct, Fan out, Topic, Header-based.
+- *Payload Size:* No constraints.
+- *Usage Cases:* Simple use cases.
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
