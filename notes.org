@@ -612,6 +612,42 @@ WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-o
 **** Publish/Subscribe:
 - Message distribution pattern.
 - Broadcast-style distribution (one-to-many).
+*** [[http://kafka.apache.org/][Kafka]]:
+Apache Kafka is an open-source distributed event *streaming* platform used by
+thousands of companies for high-performance data pipelines, streaming
+analytics, data integration, and mission-critical applications.
+- 2011.
+- Java/Scala-based.
+  - SDK for adding custom support of other languages.
+- Streams.
+  - Ideal for *A* to *B* streaming for max throughput and simple routing.
+  - Ideal for:
+    - Event Sourcing.
+    - Stream Processing.
+    - Modelling Changes to a System as a Sequence of Events.
+    - Processing Data in multi-stage pipelines.
+    - Routine System auditing.
+    - Storing messages permanently.
+  - *Framework for storing, reading, re-reading and analysing streaming data.*
+- Throughput.
+- Uses Pub/Sub pattern.
+- Uses a Message Log, instead of a Message Queue.
+  - *Pull-based*
+  - Consumer must request to get batches of messages (offsets).
+    - PRO: network efficiency.
+    - CON: High-latency.
+- *Use Data Lake analysis tools to efficiently store, manage, analyse the Kafka
+  streams.*
+**** Breakdown:
+See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka VS RabitMQ]].
+
+- *Performance:* 1 million messages per second.
+- *Message Retention:* Policy-based.
+- *Data Type:* Operational.
+- *Consumer Mode:* Dumb Broker / Smart Consumer.
+- *Topology:* Pub/Sub.
+- *Payload Size:* Default 1MB limit.
+- *Usage Cases:* Massive data / High throughput cases.
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
