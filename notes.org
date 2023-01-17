@@ -1,6 +1,12 @@
 #+title: Programming/Development Notes
 #+author: Craig Astill
 #+OPTIONS: toc:2
+* Arch:
+** Package Management:
+*** [[https://forum.manjaro.org/t/how-do-i-limit-pamac-or-yays-cpu-core-usage-while-compiling/55043][How do I limit Pamac or yay's CPU core usage while compiling?]]
+- Edit ~/etc/makepkg.conf~.
+- Modify: ~MAKEFLAGS="-j$(($(nproc)+1))"~ to another value.
+  - eg. ~MAKEFLAGS="-j$(($(nproc)-2))"~, to leave 2 cores free.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** surf | suckless.org software that sucks less
