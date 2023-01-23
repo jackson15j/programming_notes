@@ -603,8 +603,43 @@ https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 * System Design:
-** Distributed Networking:
-*** [[https://www.envoyproxy.io/][Envoy Proxy]] ([[https://www.envoyproxy.io/docs/envoy/latest/][Envoy docs]]):
+** Ask Why a System Works?:
+- learn how popular applications work at a high-level.
+- Start to understand why some component is used instead of another.
+- Build serious side projects. Start simple and iterate to improve & refine it.
+- Build a system from scratch and get familiar with all the processes and details of its construction.
+- Focus less on mechanics and more on trade-offs.
+- Focus on the high-level. Low-level will crop up.
+** Breakdown strategies:
+- Ask refining questions.
+  - *Functional:* Requirements the Client needs directly. eg. Send messages in near real-time to contacts.
+  - *Non-functional:* indirect requirements. eg. Performance shouldn't degrade with load.
+  - Clarify assumptions.
+  - Honesty when ignorant.
+- Handle the data.
+  - Data size now?
+  - Data growth rate?
+  - How data is consumed by User or othe SubSystems?
+  - Read / Write heavy?
+  - Strict or Eventual Consistency?
+  - what's the durability target of the data?
+  - Privacy/Regulatory concerns for storing/transferring User data?
+- Discuss the components.
+  - Highlight reasoning.
+  - Talk around conflicts with examples of pain/components needed to work the other options.
+  - High-level API design for User clarity.
+- Discuss trade-offs.
+  - Pros/Cons.
+  - Monetary/Technical complexity (aim for Resource efficiency).
+  - Plan for this designs weakness.
+  - Highlight and explain weaknesses. eg. Design won't scale, but added monitoring, to reduce cost and time to do a new design.
+  - Add fault tolerance and security to the design.
+** Abstractions:
+- Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
+-
+** Components in Detail:
+*** Distributed Networking:
+**** [[https://www.envoyproxy.io/][Envoy Proxy]] ([[https://www.envoyproxy.io/docs/envoy/latest/][Envoy docs]]):
 #+BEGIN_QUOTE
 The network should be transparent to applications. When network and application
 problems do occur it should be easy to determine the source of the problem.
@@ -642,19 +677,19 @@ place.
 - YAML config files.
 
 See: [[https://www.envoyproxy.io/docs/envoy/latest/intro/life_of_a_request][Envoy (Docs): Life of a Request]].
-** Queues:
-*** Glossary:
-**** Message Broker:
+*** Queues:
+**** Glossary:
+***** Message Broker:
 - Direct communication between explicit Services (one-to-one).
 - Responsibilities: Validate, Route, Store, Deliver messages to designated
   recipient.
 - Intermediary between Services/Applications.
   - ie. *Decouple knowledge of Receivers/Consumers location from Sender*.
   - May have: 0, 1, Many Consumers (unknown to Sender).
-**** Publish/Subscribe:
+***** Publish/Subscribe:
 - Message distribution pattern.
 - Broadcast-style distribution (one-to-many).
-*** [[http://kafka.apache.org/][Kafka]]:
+**** [[http://kafka.apache.org/][Kafka]]:
 Apache Kafka is an open-source distributed event *streaming* platform used by
 thousands of companies for high-performance data pipelines, streaming
 analytics, data integration, and mission-critical applications.
@@ -680,7 +715,7 @@ analytics, data integration, and mission-critical applications.
     - CON: High-latency.
 - *Use Data Lake analysis tools to efficiently store, manage, analyse the Kafka
   streams.*
-**** Breakdown:
+***** Breakdown:
 See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka VS RabitMQ]].
 
 - *Performance:* 1 million messages per second.
@@ -690,7 +725,7 @@ See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka
 - *Topology:* Pub/Sub.
 - *Payload Size:* Default 1MB limit.
 - *Usage Cases:* Massive data / High throughput cases.
-*** MSSQL [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/building-applications-with-service-broker?view=sql-server-ver16][Service Broker]]:
+**** MSSQL [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/building-applications-with-service-broker?view=sql-server-ver16][Service Broker]]:
 Applies to: ￼ SQL Server (all supported versions) ￼ Azure SQL Managed Instance
 
 Any program that can run *Transact-SQL statements* can use Service Broker. A
@@ -713,15 +748,15 @@ Transact-SQL commands to SQL Server and process the results of those
 commands. An application can be activated by Service Broker, can run as a
 background service, can run as a scheduled job, or can be started in response
 to an event.
-**** Uses:
+***** Uses:
 - [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/messages?view=sql-server-ver16][Messages]].
 - [[https://learn.microsoft.com/en-us/sql/database-engine/service-broker/queues?view=sql-server-ver16][Queues]].
-**** Why?:
+***** Why?:
 - Consolidation if already in Windows (MSSQL) Eco-system.
   - Service Broker is a part of the MSSQL deployment.
   - Messages are R/W from the same DB that Application(s) uses.
   - Offload message queuing outside of the Application to the Platform (DB).
-*** Python Module Queues:
+**** Python Module Queues:
 These are low-level queues that can be used within Python Applications, where
 the same module is used on both sides of the queue:
 
@@ -731,7 +766,7 @@ the same module is used on both sides of the queue:
   Multi-Consumer queues.
 - [[https://www.tornadoweb.org/en/stable/queues.html?highlight=queue][~tornado.queues~]] - Async. Queues for Tornado coroutines, like:
   [[https://docs.python.org/3/library/asyncio-queue.html][~asyncio.queue~]].
-*** [[https://www.rabbitmq.com][RabbitMQ]]:
+**** [[https://www.rabbitmq.com][RabbitMQ]]:
 - Distributed Message Broker
   - Deploy a Cluster of Nodes = HA.
 - *Push-based*
@@ -747,7 +782,7 @@ the same module is used on both sides of the queue:
 - Implements AMQP natively (and AMQP (future versions), HTTP, STOMP, MQTT via
   plugins).
 - Large official support for popular languages + plugins.
-**** Breakdown:
+***** Breakdown:
 
 See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka VS RabitMQ]].
 
@@ -758,7 +793,7 @@ See: [[https://www.simplilearn.com/kafka-vs-rabbitmq-article][SimpliLearn: Kafka
 - *Topology:* Exchange Type: Direct, Fan out, Topic, Header-based.
 - *Payload Size:* No constraints.
 - *Usage Cases:* Simple use cases.
-*** [[https://zeromq.org][ZeroMQ]]:
+**** [[https://zeromq.org][ZeroMQ]]:
 ZeroMQ (also known as ØMQ, 0MQ, or zmq) looks like an embeddable networking
 library but acts like a concurrency framework. It gives you sockets that carry
 atomic messages across various transports like in-process, inter-process, TCP,
@@ -767,40 +802,6 @@ pub-sub, task distribution, and request-reply. It's fast enough to be the
 fabric for clustered products. Its asynchronous I/O model gives you scalable
 multicore applications, built as asynchronous message-processing tasks. It has
 a score of language APIs and runs on most operating systems.
-** Ask Why a System Works?:
-- learn how popular applications work at a high-level.
-- Start to understand why some component is used instead of another.
-- Build serious side projects. Start simple and iterate to improve & refine it.
-- Build a system from scratch and get familiar with all the processes and details of its construction.
-- Focus less on mechanics and more on trade-offs.
-- Focus on the high-level. Low-level will crop up.
-** Breakdown strategies:
-- Ask refining questions.
-  - *Functional:* Requirements the Client needs directly. eg. Send messages in near real-time to contacts.
-  - *Non-functional:* indirect requirements. eg. Performance shouldn't degrade with load.
-  - Clarify assumptions.
-  - Honesty when ignorant.
-- Handle the data.
-  - Data size now?
-  - Data growth rate?
-  - How data is consumed by User or othe SubSystems?
-  - Read / Write heavy?
-  - Strict or Eventual Consistency?
-  - what's the durability target of the data?
-  - Privacy/Regulatory concerns for storing/transferring User data?
-- Discuss the components.
-  - Highlight reasoning.
-  - Talk around conflicts with examples of pain/components needed to work the other options.
-  - High-level API design for User clarity.
-- Discuss trade-offs.
-  - Pros/Cons.
-  - Monetary/Technical complexity (aim for Resource efficiency).
-  - Plan for this designs weakness.
-  - Highlight and explain weaknesses. eg. Design won't scale, but added monitoring, to reduce cost and time to do a new design.
-  - Add fault tolerance and security to the design.
-** Abstractions:
-- Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
--
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
