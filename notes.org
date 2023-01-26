@@ -511,6 +511,21 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 - https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
 - https://labs.epi2me.io/conda-or-mamba-for-production/
 ** Packaging:
+*** [[https://hatch.pypa.io/latest/][Hatch]]:
+Not tried it yet but:
+
+#+BEGIN_QUOTE
+Hatch is a modern, extensible Python project manager.
+
+Features:
+
+- Standardized build system with reproducible builds by default.
+- Robust environment management with support for custom scripts.
+- Easy publishing to PyPI or other indexes.
+- Version management.
+- Configurable project generation with sane defaults.
+- Responsive CLI, ~2-3x faster than equivalent tools.
+#+END_QUOTE
 *** poetry:
 - [[https://python-poetry.org/docs/managing-environments/#switching-between-environments][Set poetry python version]]: ~poetry env use python<x.y>~.
 - ~poetry show --tree~ for poetry dependency graph.
