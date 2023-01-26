@@ -523,6 +523,34 @@ I've had some success moving the dependencies I want exact version logic priorit
 (I also disabled IPv6, upgraded to poetry 1.2x, and have reduced the possible space for the troubling aws libraries (boto3 and awsci, for me) so those go at the very end of my dependency file and have only a few recent versions to chew through.
 
 I'm seeing dependency resolution time between 5 and 35 seconds most of the time now.
+*** [[https://setuptools.pypa.io/en/latest/index.html][setuptools]] + [[https://github.com/pypa/setuptools_scm/][setuptools_scm]]:
+~setuptools~ & ~pip~ / /"PyPa/" have moved on to fully support
+~pyproject.toml~-only Python packages. With just a ~pyproject.toml~ file we
+have:
+
+- Metadata.
+- Isolated builds.
+- Tooling config.
+- Dynamic versioning from Git.
+
+#+BEGIN_EXAMPLE shell
+  python -m venv .venv
+  source .venv/bin/activate
+  pip install .
+  pip install .[<group>]
+  python -m build  # `pip install build` if not in `pyproject.toml`.
+#+END_EXAMPLE
+
+See:
+
+- [[https://github.com/pypa/setuptools_scm/][Github: pypa/setuptools_scm]] - Dynamic Versioning.
+- [[https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html][SetupTools Docs: Configuring setuptools using ~pyproject.toml~ files]].
+- [[https://peps.python.org/pep-0633/][PEP 633 – Dependency specification in pyproject.toml using an exploded TOML
+  table]] - Detail on current TOML definitions.
+- [[https://peps.python.org/pep-0621/][PEP 621 – Storing project metadata in ~pyproject.toml~]].
+- [[https://packaging.python.org/en/latest/tutorials/packaging-projects/][Python Docs: Packaging Python Projects]].
+- [[https://github.com/jackson15j/python_homework_config_file_parser][Github: jackson15j/python_homework_config_file_parser]] - a project that is
+  pure python packaging and ~project.toml~-only.
 ** Security:
 - https://github.com/sonatype-nexus-community/jake - report vulnerabilities.
 - https://adamj.eu/tech/2019/04/10/how-to-score-a+-for-security-headers-on-your-django-website/
