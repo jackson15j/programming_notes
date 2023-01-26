@@ -510,11 +510,12 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 *** Mamba instead of Conda:
 - https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
 - https://labs.epi2me.io/conda-or-mamba-for-production/
-** poetry:
+** Packaging:
+*** poetry:
 - [[https://python-poetry.org/docs/managing-environments/#switching-between-environments][Set poetry python version]]: ~poetry env use python<x.y>~.
 - ~poetry show --tree~ for poetry dependency graph.
-*** https://github.com/opeco17/poetry-audit-plugin                     :READ:
-*** [[https://github.com/python-poetry/poetry/issues/2094#issuecomment-1243195601][python-poetry/poetry: Poetry is extremely slow when resolving the dependencies (#2094)]]:
+**** https://github.com/opeco17/poetry-audit-plugin                    :READ:
+**** [[https://github.com/python-poetry/poetry/issues/2094#issuecomment-1243195601][python-poetry/poetry: Poetry is extremely slow when resolving the dependencies (#2094)]]:
 @Kache, It appears to search through dependencies depth-first, rather than breadth-first. As a result, you've probably got a something earlier in your pyproject.toml that depends on ddtrace, so the dependency resolver grabbed that version and tried to resolve using that, rather than the ddtrace version you've specified.
 
 I've had some success moving the dependencies I want exact version logic prioritizing earlier in the pyproject.toml file.
