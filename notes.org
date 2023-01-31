@@ -360,6 +360,18 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
   changelogs and release notes from a project's commit messages and metadata.
 - https://github.com/conventional-changelog/releaser-tools - Create a
   GitHub/GitLab/etc. release using a project's commit messages and metadata.
+** Git Hooks:
+- [[https://pre-commit.com][~pre-commit~]] - A framework for managing and maintaining mutli-language
+  pre-commit hooks. Repo of hooks in YAML format.
+*** Why is the failing exit code ignored and not blocking commits??
+Calling commands like:~go-task~, will run in a separate sub-shell, but the exit
+code is not passed to the shell running the ~pre-commit~. ~|| exit $?~, pipes
+the exit code to the main shell process. See: [[https://stackoverflow.com/questions/29969093/exit-1-in-pre-commit-doesnt-abort-git-commit][SO: Exit in a ~pre-commit~ does
+not abort ~git commit~]].
+
+#+BEGIN_EXAMPLE shell
+  go-task lint || exit $?
+#+END_EXAMPLE
 * Job hunting:
 - https://github.com/readme/guides/technical-interviews
 - https://www.codinginterview.com/
