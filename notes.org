@@ -858,6 +858,19 @@ pub-sub, task distribution, and request-reply. It's fast enough to be the
 fabric for clustered products. Its asynchronous I/O model gives you scalable
 multicore applications, built as asynchronous message-processing tasks. It has
 a score of language APIs and runs on most operating systems.
+** Design Tools:
+*** [[https://plantuml.com][PlantUML:]]
+- Renders UML into multiple formats (ASCII, PNG, SVG, PDF).
+- Supports designing multiple Design diagrams (Sequence, Flow, Block, Class,
+  User, Gantt, etc...).
+- Java-based, supplied as a `jar`.
+- Integrates with everything. See: [[https://plantuml.com/running][PlantUML: Running (Integrations)]].
+*** [[https://mermaid.js.org][Mermaid]]:
+JavaScript based diagramming and charting tool that renders Markdown-inspired
+text definitions to create and modify diagrams dynamically.
+
+- [[https://github.com/mermaid-js/mermaid][Github: mermaid-js/mermaid]].
+- [[https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/][Github Blog: Include diagrams in your Markdown files with Mermaid]].
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
