@@ -493,6 +493,14 @@ not abort ~git commit~]].
   python via DAP - editor support.
 - https://github.com/bloomberg/memray - Python memory profiler.
 - https://github.com/benfred/py-spy - Python sampling profiler.
+*** [[https://github.com/pdbpp/pdbpp][Github: pdbpp/pdbpp]]:
+Drop in replacement for ~pdb~ that does dot completions and syntax
+highlighting.
+
+- ~pytest --pdb~ to drop into a ~pdb~ session on test failure.
+- ~list~ - show surrounding code at point.
+- ~where|whatis~ - show traceback.
+- Original ~pdb~ import is under: ~pdb.pdb.*~.
 ** Django:
 - [[https://books.agiliq.com/projects/django-admin-cookbook/en/latest/index.html][Django Admin Cookbook]].
 - [[https://django-extensions.readthedocs.io/en/latest/graph_models.html][django-extensions: Graph Models]].
