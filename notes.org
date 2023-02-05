@@ -883,6 +883,15 @@ text definitions to create and modify diagrams dynamically.
 
 - [[https://github.com/mermaid-js/mermaid][Github: mermaid-js/mermaid]].
 - [[https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/][Github Blog: Include diagrams in your Markdown files with Mermaid]].
+* Testing Philosophy:
+** TDD:
+TDD (Test Driven Development), is the practice of defining (and implementing)
+tests before writing Production code. Links:
+
+- [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd][Uncle Bob: The Three Rules of TDD]].
+- [[https://www.codecademy.com/article/tdd-red-green-refactor][Codecademy: TDD Red/Green/Refactor]].
+- [[https://www.jamesshore.com/v2/blog/2005/red-green-refactor][James Shore: Red/Green/Refactor]].
+- [[elisp:(elfeed-tube-fetch "https://www.youtube.com/watch?v=EZ05e7EMOLM")][TDD, Where Did It All Go Wrong (Ian Cooper)]].
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
