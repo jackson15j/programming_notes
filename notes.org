@@ -306,6 +306,10 @@ Orchestrator (similar to Kubernetes) but built by the Docker Team.
     ENTRYPOINT ["dotnet", "aspnet-core.dll"]
   #+END_EXAMPLE
 * Emacs:
+** Core:
+*** Change font size in GUI Emacs buffer:
+- Increase: ~C-xC-+~.
+- Decrease: ~C-xC--~.
 ** org-mode:
 - ~org-eww-copy-for-org-mode~ to copy text + links from Eww to Org. ~C-y~ to
   paste.
