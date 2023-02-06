@@ -9,15 +9,23 @@
   - eg. ~MAKEFLAGS="-j$(($(nproc)-2))"~, to leave 2 cores free.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
-** surf | suckless.org software that sucks less
-[2022-09-11 Sun 15:49]
-https://surf.suckless.org/
-
-surf is a simple web browser based on WebKit2/GTK+. It is able to display websites and follow links. It supports the XEmbed protocol which makes it possible to embed it in another application. Furthermore, one can point surf to another URI by setting its XProperties.
+** Curl:
+- [[https://tldr.ostera.io/curl][Curl examples - tldr]] | simplified, community driven man pages. Transfers data
+  from or to a server. Supports most protocols, including HTTP, FTP, and
+  POP3. More information: https://curl.se.
+- [[http://cht.sh/curl][cheat.sh/curl]].
+** [[https://surf.suckless.org/][surf | suckless.org]] software that sucks less
+surf is a simple web browser based on WebKit2/GTK+. It is able to display
+websites and follow links. It supports the XEmbed protocol which makes it
+possible to embed it in another application. Furthermore, one can point surf to
+another URI by setting its XProperties.
 * BuildTools:
 - [[https://www.gnu.org/software/make/][GNU Make: Makefiles with build targets]].
 - [[https://taskfile.dev/#/][Task: task runner / build tool that aims to be simpler than GNU Make]].
 * CI/CD:
+** Azure DevOps:
+- [[https://marketplace.visualstudio.com/items?itemName=tingle-software.dependabot][Dependabot - Visual Studio Marketplace]].
+- [[https://oshamrai.wordpress.com/2019/12/27/automated-creation-of-git-pull-requests-through-azure-devops-build-pipelines/][Automated creation of GIT Pull Requests through Azure DevOps Build pipelines]].
 ** Gitlab:
 - [[https://docs.gitlab.com/ee/user/project/quick_actions.html][Gitlab Docs: Quick Actions]] - slash commands in Gitlab.
 - [[https://docs.gitlab.com/ee/user/markdown.html#gitlab-specific-references][Gitlab Docs: Special markdown syntax]] - Markdown syntax to do actions from
@@ -52,6 +60,7 @@ surf is a simple web browser based on WebKit2/GTK+. It is able to display websit
 - https://about.gitlab.com/blog/2022/08/17/why-devops-and-zero-trust-go-together/
 - https://about.gitlab.com/blog/2022/08/18/the-gitlab-guide-to-modern-software-testing/
 - https://about.gitlab.com/blog/2022/08/23/gitlabs-2022-global-devsecops-survey-security-is-the-top-concern-investment/
+- [[https://about.gitlab.com/blog/2022/09/20/mobile-devops-with-gitlab-part-1/][Mobile DevOps with GitLab, Part 1 - Code signing with Project-level Secure Files]].
 ** Releases:
 - https://github.com/changesets/changesets - A tool to manage versioning and changelogs
 with a focus on multi-package repositories .
@@ -78,6 +87,17 @@ will always be partitions, so the choices is Consistency vs Availability!*
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 * Dev Environment Setup:
+** Drawing tablets:
+- [[https://linuxwacom.github.io/][The Linux Wacom Project]] – Wacom device support on Linux.
+- [[https://docs.krita.org/en/index.html][Krita Manual]] — Krita is a sketching and painting program designed for digital
+  artists.
+- [[https://linux.die.net/man/1/xsetwacom][xsetwacom(1)]] - commandline utility to query and modify wacom driver settings.
+- [[https://github.com/Huion-Linux/DIGImend-kernel-drivers-for-Huion
+][Github: Huion-Linux/DIGImend-kernel-drivers-for-Huion]] - This is a collection of
+  huion graphics tablet drivers for the Linux kernel, produced and maintained
+  by the DIGImend project.
+- [[https://github.com/linuxwacom/xf86-input-wacom/wiki/Calibration
+][Github: linuxwacom/xf86-input-wacom - Wiki/Calibration]].
 ** Factory Reset / Erase / Format / Wipe:
 *** Mac:
 - Reboot and hold ~Command + r~ until you see the Apple logo and/or hear a
@@ -201,6 +221,14 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
     @xset s noblank
     @chromium-browser --kiosk http://<ip/fqdn> --start-fullscreen --incognito
   #+END_EXAMPLE
+** Window Managers:
+- [[https://polybar.github.io/][Polybar]] - A fast and easy-to-use tool for creating status bars
+- [[https://suckless.org/][Dwm, dmenu | suckless.org]] software that sucks less. Home of dwm, dmenu and
+  other quality software with a focus on simplicity, clarity, and frugality.
+- [[https://github.com/i3/i3/discussions][Github: i3/i3 - Discussions]].
+** Terminals:
+- [[https://github.com/alacritty/alacritty][Github: alacritty/alacritty]]: A cross-platform, OpenGL terminal emulator.
+- [[https://sw.kovidgoyal.net/kitty/][kitty]] - The fast, feature-rich, GPU based terminal emulator.
 * Docker:
 - [[https://www.youtube.com/watch?v=fqMOX6JJhGo][YouTube: Docker Tutorial for Beginners - A Full DevOps Course on How to Run
   Applications in Containers]].
