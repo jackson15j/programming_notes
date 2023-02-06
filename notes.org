@@ -891,7 +891,38 @@ tests before writing Production code. Links:
 - [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd][Uncle Bob: The Three Rules of TDD]].
 - [[https://www.codecademy.com/article/tdd-red-green-refactor][Codecademy: TDD Red/Green/Refactor]].
 - [[https://www.jamesshore.com/v2/blog/2005/red-green-refactor][James Shore: Red/Green/Refactor]].
-- [[elisp:(elfeed-tube-fetch "https://www.youtube.com/watch?v=EZ05e7EMOLM")][TDD, Where Did It All Go Wrong (Ian Cooper)]].
+*** [[elisp:(elfeed-tube-fetch "https://www.youtube.com/watch?v=EZ05e7EMOLM")][TDD, Where Did It All Go Wrong (Ian Cooper)]].          :TRAINING:WORKFLOW:
+- **Test behaviours, not implementation!**
+  - Refactor/Re-implementation **must not** require code changes!!
+  - Implementation tests slow changes due to keeping sync.
+- **Test contract boundaries, not classes!**
+  - eg. modules/API's/ports.
+  - Avoid mocks!
+  - Speed at all cost!
+- **Don't test internal functions!**
+- **Can write exploratory implementation tests, but always delete afterwards!!**
+  - Controversial, but it makes sense. I believe the implementation
+    knowledge/reasoning should then be written into good Production-side
+    implementation docs.
+- [[*Red, Green, Refactor:][Red, Green, Refactor]].
+- [[*TDD Books:][Books]].
+*** Red, Green, Refactor:
+- Red:
+  - Write simplest behaviour tests.
+- Green:
+  - Duct-tape/dirty code to get test passing quickly.
+  - Copy from StackOverflow.
+  - no structure.
+- Refactor:
+  - Don't write new tests!
+  - Remove duplication!
+  - Apply pattern(s).
+  - Remove code smells.
+  - Clean up.
+*** TDD Books:
+- [[https://www.amazon.co.uk/Refactoring-Improving-Existing-Addison-Wesley-Technology-ebook/dp/B007WTFWJ6/ref=sr_1_4][Refactoring: Improving the Design of Existing Code (1st Edition)(Martin Fowler)]].
+- [[https://www.amazon.co.uk/Refactoring-Improving-Existing-Addison-Wesley-Technology/dp/0134757599/ref=sr_1_1][Refactoring: Improving the Design of Existing Code (2nd Edition)(Martin Fowler)]].
+- [[https://www.amazon.co.uk/Test-Driven-Development-Addison-Wesley-Signature/dp/0321146530/ref=sr_1_1][Test Driven Development: By Example (Kent Beck)]].
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
