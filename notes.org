@@ -599,7 +599,7 @@ Features:
 *** poetry:
 - [[https://python-poetry.org/docs/managing-environments/#switching-between-environments][Set poetry python version]]: ~poetry env use python<x.y>~.
 - ~poetry show --tree~ for poetry dependency graph.
-**** https://github.com/opeco17/poetry-audit-plugin                    :READ:
+**** https://github.com/opeco17/poetry-audit-plugin
 **** [[https://github.com/python-poetry/poetry/issues/2094#issuecomment-1243195601][python-poetry/poetry: Poetry is extremely slow when resolving the dependencies (#2094)]]:
 @Kache, It appears to search through dependencies depth-first, rather than breadth-first. As a result, you've probably got a something earlier in your pyproject.toml that depends on ddtrace, so the dependency resolver grabbed that version and tried to resolve using that, rather than the ddtrace version you've specified.
 
@@ -920,7 +920,7 @@ tests before writing Production code. Links:
 - [[http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd][Uncle Bob: The Three Rules of TDD]].
 - [[https://www.codecademy.com/article/tdd-red-green-refactor][Codecademy: TDD Red/Green/Refactor]].
 - [[https://www.jamesshore.com/v2/blog/2005/red-green-refactor][James Shore: Red/Green/Refactor]].
-*** [[elisp:(elfeed-tube-fetch "https://www.youtube.com/watch?v=EZ05e7EMOLM")][TDD, Where Did It All Go Wrong (Ian Cooper)]].          :TRAINING:WORKFLOW:
+*** [[elisp:(elfeed-tube-fetch "https://www.youtube.com/watch?v=EZ05e7EMOLM")][TDD, Where Did It All Go Wrong (Ian Cooper)]].
 - **Test behaviours, not implementation!**
   - Refactor/Re-implementation **must not** require code changes!!
   - Implementation tests slow changes due to keeping sync.
