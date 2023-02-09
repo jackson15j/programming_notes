@@ -403,6 +403,25 @@ to an item of a source code.
 #+END_QUOTE
 
 - https://itnext.io/ast-for-javascript-developers-3e79aeb08343
+** UI Testing:
+*** [[https://playwright.dev/][playwright]]:
+~playwright~ is a modern equivalent to [[https://www.selenium.dev][Selenium]]. Benefits include:
+
+- Speed.
+- Handles installation of isolated browsers to test/debug against.
+- Support for [[https://playwright.dev/docs/test-parallel][sharding/parallelisation]] of tests.
+- auto-wait.
+- Built-in: [[https://playwright.dev/docs/trace-viewer-intro][Tracing]], [[https://playwright.dev/docs/codegen-intro][Recording (via Codegen)]], [[https://playwright.dev/docs/running-tests#test-reports][Reporting]].
+- Good [[https://playwright.dev/docs/intro][Docs]].
+- Cross-Platform.
+- Cross-language API.
+- Native [[https://playwright.dev/docs/ci-intro][CI]]/Local development support. eg. Auto-Trace on first retry (but not
+  subsequent failures).
+- [[https://playwright.dev/docs/test-snapshots][Visual Comparisons]] of screenshots.
+- Uses [[https://playwright.dev/docs/test-assertions][Assertions]] via [[https://jestjs.io/docs/expect][~expect~]] library.
+- Automatic install of Dependencies/CI on first install.
+
+[[https://playwright.dev/docs/best-practices][Best Practices]].
 * Git:
 - https://www.conventionalcommits.org/en/v1.0.0/ - A specification for adding
   human and machine readable meaning to commit messages.
