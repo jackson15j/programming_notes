@@ -385,6 +385,24 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
 ** Jupyter:
 - https://discourse.julialang.org/t/jupyter-integration-with-emacs/21496/5 -
   basic ~IJulia~ + ~jupyter~ install steps (no use-package).
+* FrontEnd:
+** React:
+- View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
+- ~redux~ is the store of all BE DB state in the FE.
+- Add ~&profile~ to an API call to get performance output!!
+- ~npm install --target_arch=x64~ - until there is arm support.
+- https://github.com/marmelab/react-admin
+- Print all object properties: ~console.log(Object.getOwnPropertyNames(obj))~.
+*** AST (Abstract Syntax Tree):
+What is Abstract Syntax Tree?
+
+#+BEGIN_QUOTE
+It is a hierarchical program representation that presents source code structure
+according to the grammar of a programming language, each AST node corresponds
+to an item of a source code.
+#+END_QUOTE
+
+- https://itnext.io/ast-for-javascript-developers-3e79aeb08343
 * Git:
 - https://www.conventionalcommits.org/en/v1.0.0/ - A specification for adding
   human and machine readable meaning to commit messages.
@@ -638,23 +656,6 @@ existing test suite.
 ** Web Frameworks:
 - [[https://www.tornadoweb.org/en/stable/][Tornado]] - Python web framework and asynchronous networking library. Ideal for
   long polling, WebSockets and other long-lived connections.
-* React:
-- View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
-- ~redux~ is the store of all BE DB state in the FE.
-- Add ~&profile~ to an API call to get performance output!!
-- ~npm install --target_arch=x64~ - until there is arm support.
-- https://github.com/marmelab/react-admin
-- Print all object properties: ~console.log(Object.getOwnPropertyNames(obj))~.
-** AST (Abstract Syntax Tree):
-What is Abstract Syntax Tree?
-
-#+BEGIN_QUOTE
-It is a hierarchical program representation that presents source code structure
-according to the grammar of a programming language, each AST node corresponds
-to an item of a source code.
-#+END_QUOTE
-
-- https://itnext.io/ast-for-javascript-developers-3e79aeb08343
 * Security:
 ** Security Bodies/Sites:
 - [[https://www.first.org/cvss/][CVSS (Common Vulnerability Scoring System)]] - Used in the scoring of PEN Tests.
