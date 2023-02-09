@@ -543,6 +543,20 @@ not abort ~git commit~]].
 - *Local Resolver Library:* Local DNS Cache.
 - *Local DNS Server:* Hosted by ISP's as a DNS Cache + inspect
   traffic/requests.
+* People Skills:
+** Winning Arguments:
+*** Tech Debt:
+
+**** The benefits of upgrading Languages/Dependencies.
+It can be hard to justify doing upgrades vs. Feature Development. Try following
+Solutions:
+
+- Make it so easy to do the task that it can be done, without scheduling,
+  alongside Feature Development.
+- Identify the User Value. eg. /"As a User I want to minimize the chances of
+  being hacked by the flaws in current version of: <Language/dependency>./"
+
+See: [[https://www.youtube.com/watch?v=vSuJqMRG1WM][YouTube: TECHNICAL STORIES DON'T WORK]].
 * Python:
 ** Python Articles:
 - https://pythonspeed.com/
