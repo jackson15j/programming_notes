@@ -969,18 +969,29 @@ tests before writing Production code. Links:
 - [[*Red, Green, Refactor:][Red, Green, Refactor]].
 - [[*TDD Books:][Books]].
 *** Red, Green, Refactor:
+Baby steps to always releasable code from constantly cycling through design,
+hypothesis & validation.
+- Think:
+  - Invest time.
+  - What test will move code towards completion.
 - Red:
+  - ~30secs.
   - Write simplest behaviour tests.
 - Green:
+  - ~30secs.
   - Duct-tape/dirty code to get test passing quickly.
   - Copy from StackOverflow.
   - no structure.
 - Refactor:
+  - Invest time.
   - Don't write new tests!
   - Remove duplication!
   - Apply pattern(s).
   - Remove code smells.
   - Clean up.
+- Repeat:
+  - ~20-40 cycles per hour.
+  - Expect cycle time to ebb & flow.
 *** TDD Books:
 - [[https://www.amazon.co.uk/Refactoring-Improving-Existing-Addison-Wesley-Technology-ebook/dp/B007WTFWJ6/ref=sr_1_4][Refactoring: Improving the Design of Existing Code (1st Edition)(Martin Fowler)]].
 - [[https://www.amazon.co.uk/Refactoring-Improving-Existing-Addison-Wesley-Technology/dp/0134757599/ref=sr_1_1][Refactoring: Improving the Design of Existing Code (2nd Edition)(Martin Fowler)]].
