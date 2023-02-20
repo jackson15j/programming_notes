@@ -768,6 +768,92 @@ WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-o
 - Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
 -
 ** Components in Detail:
+*** Data Pipelines:
+Data Pipelines are used to [[*Normalisation:][normalise]] raw(/"messy/", not directly usable)
+source(s) of data (eg. API's, No/SQL DBs, Files) into a /"structured/" target
+DB schema for later [[*EDA (Exploratory Data Analysis):][EDA (Exploratory Data Analysis)]]/Processing/Storage (eg. [[*ML (Machine Learning):][ML
+(Machine Learning)]], Data Lakes/BI (Business Intelligence) Dashboards).
+
+Data Pipelines can do the processing either by:
+
+- *Batch:*
+  - Load data in /"batches/" (scheduled/off-peak).
+  - /Usually/ optimal if there is no immediate need for the data.
+  - Typically closely tied to an [[*ETL (Extract, Transform, Load):][ETL]] data integration process.
+- *Streaming:*
+  - Requirement for /Real-Time/ data.
+    - Low-latency to [[*Data Repository:][Data Repository]] due to processing shortly after occurring.
+  - [[*Event:][Events]] are transported by a [[*Message Broker:][Message Broker]] or Messaging System ([[*Queues:][Queue]]).
+  - Less Reliable - Messages /may/ be dropped/lost or stuck in a queue.
+    - Reduced by Message Broker acknowledgements by Consumer to remove from the
+      queue.
+  - Tooling: [[http://kafka.apache.org/][Kafka]].
+
+The Core of a Data Pipeline is:
+
+- [[*Data Ingestion:][Data Ingestion]].
+- Data Transformation (see: [[*Normalisation:][Normalisation]]).
+- Data Storage (See: [[*Data Repository:][Data Repository]]).
+
+**** Glossary:
+***** Data Ingestion:
+The process of reading in raw data from Un/Structured Data sources.
+
+*Suggestion:* Store the raw data (eg. Cloud Data Warehouse) before processing.
+Allows re-processing in the future.
+
+Streaming name convention: Producers/Publishers/Senders.
+***** Data Repository:
+The Target DB that the Data Pipeline writes into. Often called a /"Data
+Warehouse/" or /"Data Lake/".
+
+Streaming name convention is: Consumers/Subscribers/Recipients.
+***** Data Visualisation:
+Visually display the Data (Charts/graphics/animations/etc), to communicate
+complex data relationships and data-driven insights into an understandable
+form. See: [[https://www.ibm.com/topics/data-visualization][IBM: Data Visualisation]].
+***** EDA (Exploratory Data Analysis):
+EDA is used be Data Scientists to analyse/investigate data sets and summarise
+their main characteristics. Often using [[*Data Visualisation:][Data Visualisation]] to discover
+patterns/anomalies, test hypothesis/assumptions. See: [[https://www.ibm.com/topics/exploratory-data-analysis][IBM: Exploratory Data
+Analysis]].
+***** ETL (Extract, Transform, Load):
+When batch processing Data into the target DB Schema, you would often write an
+ETL integration process to normalise the data.
+
+An ETL Pipeline is a sub-category of a Data Pipeline, because:
+
+- ETL is strictly Extract/Transform/Load(store in a [[*Data Repository:][Data Repository]]), but a
+  Data Pipeline may not follow this sequence.
+- ETL is typically Batch Processing-only.
+***** Event:
+Data that describes a single /"action/". eg. A sale at a checkout.
+***** ML (Machine Learning):
+Machine learning is a branch of artificial intelligence (AI) and computer
+science which focuses on the use of data and algorithms to imitate the way that
+humans learn, gradually improving its accuracy. Through the use of statistical
+methods, algorithms are trained to make classifications or predictions,
+uncovering key insights within data mining projects.
+***** Normalisation:
+The process of converting/serialising messy (/"noisy/") source data to the
+structured target DB Schema. The types of data transformation steps that may be
+done are:
+
+- Filtering.
+- Masking.
+- Aggregation/Merging.
+- Summarising.
+
+The above steps are usually chained together as a pipeline of
+steps. eg. =Ingestion > filtering to X columns > aggregation > ...=, that
+eventually write into the [[*Data Repository:][Data Repository]].
+***** Stream:
+Same as [[*Topic:][Topic]].
+***** Topic:
+A grouping of Related [[*Event:][Events]]. eg. Adding an item to a checkout.
+**** Links:
+- [[https://www.ibm.com/topics/data-pipeline][IBM: Data Pipelines]].
+- [[https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/what-is-datapipeline.html][AWS Docs: What is AWS Data Pipeline?]]
 *** Distributed Networking:
 **** [[https://www.envoyproxy.io/][Envoy Proxy]] ([[https://www.envoyproxy.io/docs/envoy/latest/][Envoy docs]]):
 #+BEGIN_QUOTE
