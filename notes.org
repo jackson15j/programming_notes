@@ -7,6 +7,10 @@
 - Edit ~/etc/makepkg.conf~.
 - Modify: ~MAKEFLAGS="-j$(($(nproc)+1))"~ to another value.
   - eg. ~MAKEFLAGS="-j$(($(nproc)-2))"~, to leave 2 cores free.
+*** [[https://www.reddit.com/r/archlinux/comments/woh8fr/list_packages_installed_by_yay/][List packages installed by yay?]]
+- List packages: ~<yay|pacman> -Qm~.
+- List Dependencies for a package: ~yay -Rcps <package>~.
+- Remove package + dependencies: ~yay -Rcs <package>~.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** Curl:
