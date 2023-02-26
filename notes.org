@@ -15,6 +15,15 @@
 ** Go:
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
+*** Temporarily rewrite mod to use an unpublished package.
+From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
+locally for an unpublished package instead of looking up from the
+namespace. ie. no Code changes between local/remote packages.
+
+#+BEGIN_EXAMPLE shell
+  go mod edit -replace <namespace/of/package>=<../local/path/to/package>
+  go mod tidy
+#+END_EXAMPLE
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** Curl:
