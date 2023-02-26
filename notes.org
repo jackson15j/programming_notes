@@ -11,6 +11,10 @@
 - List packages: ~<yay|pacman> -Qm~.
 - List Dependencies for a package: ~yay -Rcps <package>~.
 - Remove package + dependencies: ~yay -Rcs <package>~.
+* BackEnd:
+** Go:
+- [[https://go.dev/][go dev site]].
+- [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** Curl:
