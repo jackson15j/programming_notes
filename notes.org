@@ -149,7 +149,16 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 *** Brew
 - ~brew leaves~ list packages without dependencies.
 **** emacs:
-- [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]]
+- [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]] set to the latest branch:
+  #+BEGIN_SRC sh
+    brew tap d12frosted/emacs-plus
+    brew install emacs-plus@30 --with-native-comp --with-imagemagick --with-mailutils --with-dbus
+  #+END_SRC
+- *NOTE:* need to do the reinstall dance because of the use of options:
+  #+BEGIN_SRC sh
+    brew uninstall emacs-plus@30
+    brew install emacs-plus@30 --with-native-comp --with-imagemagick --with-mailutils --with-dbus
+  #+END_SRC
 - mu.
 - aspell.
 - cmake.
