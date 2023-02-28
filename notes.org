@@ -147,6 +147,10 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - ~Preferences > Sharing > AirPlayReceiver~ Disabled due to port conflict
   on 5000.
 *** Brew
+- [[https://brew.sh][Homebrew]].
+  #+BEGIN_SRC sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  #+END_SRC
 - ~brew leaves~ list packages without dependencies.
 **** emacs:
 - [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]] set to the latest branch:
