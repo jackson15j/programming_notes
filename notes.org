@@ -459,6 +459,21 @@ to an item of a source code.
   changelogs and release notes from a project's commit messages and metadata.
 - https://github.com/conventional-changelog/releaser-tools - Create a
   GitHub/GitLab/etc. release using a project's commit messages and metadata.
+** Configure git repo with explicit SSH Key:
+In cases where you need to use an explicit SSH key for a repo, eg. Personal +
+Work Github account, and you want a personal repo accessiable by both
+personal/work systems. Github prevents the re-use of an SSH key across Github
+Accounts ([[https://docs.github.com/en/authentication/troubleshooting-ssh/error-key-already-in-use][Github Docs: Error: Key already in use]]). Therefore you need to create
+a Personal SSH key on the Work System to clone the Personal repo.
+
+#+BEGIN_EXAMPLE sh
+  git clone git@provider.com:userName/projectName.git --config core.sshCommand="ssh -i ~/.ssh/private_ssh_key"
+#+END_SRC
+
+Or after the fact with:
+#+BEGIN_EXAMPLE sh
+  git config --local --add core.sshCommand "ssh -i ~/.ssh/private_ssh_key"
+#+END_EXAMPLE
 ** Git Hooks:
 - [[https://pre-commit.com][~pre-commit~]] - A framework for managing and maintaining mutli-language
   pre-commit hooks. Repo of hooks in YAML format.
