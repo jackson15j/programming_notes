@@ -15,6 +15,7 @@
 ** Go:
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
+- [[https://www.jetbrains.com/go/][Jetbrains: GoLand]] editor.
 *** Temporarily rewrite mod to use an unpublished package.
 From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
 locally for an unpublished package instead of looking up from the
