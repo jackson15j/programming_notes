@@ -169,6 +169,9 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - cmake.
 - cmake-docs
 - ~markdown~ (markdown-preview).
+***** Fix =Ctrl+<arrow>= getting swallowed.
+Check =Settings > Keyboard Shortcuts > Mission Control=, to see if they have
+the control arrow keys (=^<arrow>=) in use.
 **** Dev:
 - [[https://postgrest.org/en/stable/][postgrest]] (~brew services stop postgres~ to avoid conflict with an eigen
   container).
