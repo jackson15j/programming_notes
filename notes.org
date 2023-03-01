@@ -189,6 +189,16 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - ~hadolint~ - lint dockerfiles (https://github.com/hadolint/hadolint))
 **** Experiments:
 - ~rust~, ~rustup~.
+**** Fix symlink not making =<program>.app= show up in spotlight:
+Problem is that standard symlinks (~ln -s /path/to/program.app /Applications/~)
+doesn't work as an alias for discovery in spotlight since the Mac may confuse
+the link as a path to a folder (~.app~ files are really folders).
+
+[[https://apple.stackexchange.com/questions/106249/spotlight-and-alfred-cant-find-alias-to-emacs-app][Workaround]]:
+
+- Open =Finder= and search for Program e.g. ~Cmd+Shift+G~ type path.
+- Create an alias by ~Cmd+Opt~ clicking Program and dragging to ~/Applications/
+  folder.
 **** laptop:
 - iterm2
 - rectangle (snap to area shortcuts).
