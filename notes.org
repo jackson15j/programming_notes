@@ -412,6 +412,25 @@ https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
   #+begin_src plantuml :file designs/hello-uml.png
   Bob -> Alice : Hello World!
   #+end_src
+** regex:
+*** How to rejoin multi-line hyphen split words?
+The following example is how to replace a hyphen split word across multiple
+lines and place it back onto one line. ie.
+
+#+BEGIN_EXAMPLE text
+# Before:
+Sentence split across multi-
+ple lines.
+
+# After:
+Sentence split across
+multiple lines.
+#+END_EXAMPLE
+
+#+BEGIN_SRC emacs-lisp
+M-x replace-regexp
+\s-q\(\w+\)-\(^J\)\(\w+\) → ^J\1\3
+#+END_SRC
 ** DAP:
 *** Registering a debug template for: ~dap-mode~, to use.
 #+BEGIN_EXAMPLE emacs-lisp
