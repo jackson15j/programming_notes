@@ -195,6 +195,15 @@ the control arrow keys (=^<arrow>=) in use.
   processor)(https://github.com/kislyuk/yq)(https://github.com/wagoodman/dive/issues/300
   ~yq -r .services[].image docker-compose.yml | xargs -n 1 dive --ci~
 - ~hadolint~ - lint dockerfiles (https://github.com/hadolint/hadolint))
+***** python:
+You can install python via brew, but it doesn't symlink: ~python3~ to
+~python~. This is how to install + fix:
+
+#+BEGIN_SRC shell :results silent
+  brew install python
+  rm -rf /usr/local/bin/python
+  ln -s /usr/local/bin/python3 /usr/local/bin/python
+#+END_SRC
 **** Experiments:
 - ~rust~, ~rustup~.
 **** Fix symlink not making =<program>.app= show up in spotlight:
