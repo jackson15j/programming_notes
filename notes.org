@@ -105,6 +105,11 @@ will always be partitions, so the choices is Consistency vs Availability!*
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 * Dev Environment Setup:
+** Browsers:
+*** Chrome:
+**** How to enable scrolling the tab strip?
+- Goto: =chrome://flags/#scrollable-tabstrip=
+- Select one of the options to enable.
 ** Drawing tablets:
 - [[https://linuxwacom.github.io/][The Linux Wacom Project]] – Wacom device support on Linux.
 - [[https://docs.krita.org/en/index.html][Krita Manual]] — Krita is a sketching and painting program designed for digital
