@@ -224,6 +224,10 @@ the link as a path to a folder (~.app~ files are really folders).
 *** FireFox
 - ~about:config~ ~browser.tabs.tabMinWidth = 0~ to disable tab scrolling.
 *** Docker
+**** Install [[https://formulae.brew.sh/cask/docker][Docker Desktop]]:
+#+BEGIN_SRC shell :results silent
+  brew install --cask docker
+#+END_SRC
 **** Best-Practices
 - https://pythonspeed.com/articles/poetry-vs-docker-caching/
 **** Run AMD64 containers on ADM64:
