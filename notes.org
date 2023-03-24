@@ -102,6 +102,15 @@ will always be partitions, so the choices is Consistency vs Availability!*
 - *Availability (AP):*
   - Reads: Keep accepting, but may return stale data.
   - Writes: Keep accepting writes, sync once network partition is resolved.
+** DB Admin:
+- [[https://hub.docker.com/_/adminer/][Docker Hub: adminer]] - Adminer (formerly phpMinAdmin) is a full-featured
+  database management tool written in PHP. Conversely to phpMyAdmin, it consist
+  of a single file ready to deploy to the target server. Adminer is available
+  for MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB,
+  Elasticsearch and MongoDB.
+  - https://www.adminer.org/ - Replace phpMyAdmin with Adminer and you will get
+    a tidier user interface, better support for MySQL features, higher
+    performance and more security.
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 * Dev Environment Setup:
