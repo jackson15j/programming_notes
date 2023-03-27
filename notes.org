@@ -187,8 +187,6 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 Check =Settings > Keyboard Shortcuts > Mission Control=, to see if they have
 the control arrow keys (=^<arrow>=) in use.
 **** Dev:
-- [[https://postgrest.org/en/stable/][postgrest]] (~brew services stop postgres~ to avoid conflict with an eigen
-  container).
 - git-lfs (had to pin, see wiki).
 - ~helm~.
 - ~lens~ (GUI Kubernetes).
@@ -204,6 +202,23 @@ the control arrow keys (=^<arrow>=) in use.
   processor)(https://github.com/kislyuk/yq)(https://github.com/wagoodman/dive/issues/300
   ~yq -r .services[].image docker-compose.yml | xargs -n 1 dive --ci~
 - ~hadolint~ - lint dockerfiles (https://github.com/hadolint/hadolint))
+***** postgres:
+- Utilities (like =psql=) without installing =postgres=: :results drawer
+  #+BEGIN_SRC shell
+    brew reinstall libpq
+  #+END_SRC
+  - Then add: ~export PATH="/usr/local/opt/libpq/bin:$PATH"~, to: =~/.zshrc=.
+  - See: [[https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos][StackOverflow: Correct way to install =psql= without full postgress on MacOS]].
+***** [[https://postgrest.org/en/stable/][postgrest]]:
+PostgREST is a standalone web server that turns your PostgreSQL database
+directly into a RESTful API. The structural constraints and permissions in the
+database determine the API endpoints and operations.
+
+- ~brew services stop postgres~ to avoid conflict with any dev containers.
+- Install:
+  #+BEGIN_EXAMPLE shell
+    brew install postgrest
+  #+END_EXAMPLE
 ***** python:
 You can install python via brew, but it doesn't symlink: ~python3~ to
 ~python~. This is how to install + fix:
