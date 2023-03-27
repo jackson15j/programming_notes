@@ -252,8 +252,28 @@ the link as a path to a folder (~.app~ files are really folders).
 #+BEGIN_SRC shell :results silent
   brew install --cask docker
 #+END_SRC
+- Follow [[https://docs.docker.com/desktop/mac/permission-requirements/][Docker Docs: Understanding permission requirements for Mac]] to update
+  =/etc/hosts= to have the following:
+  #+BEGIN_EXAMPLE shell
+    127.0.0.1	localhost
+    127.0.0.1	kubernetes.docker.internal
+  #+END_EXAMPLE
 **** Best-Practices
 - https://pythonspeed.com/articles/poetry-vs-docker-caching/
+- Create an explicit Bridge network for Host access to a container. Default
+  network is locked down. eg.
+  #+BEGIN_EXAMPLE yaml
+    services:
+      container-name:
+      image: app:tag
+      networks:
+        - backend
+
+    networks:
+      # Without setting a `driver` field, this is a User-defined `bridge` network.
+      # Which will be ideal for Production environments for inter-cluster connections.
+      backend:
+  #+END_EXAMPLE
 **** Run AMD64 containers on ADM64:
 - https://erica.works/docker-on-mac-m1/
 - https://forums.macrumors.com/threads/docker-on-m1-max-horrible-performance.2321545/
