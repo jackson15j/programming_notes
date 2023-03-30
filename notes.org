@@ -242,8 +242,15 @@ the link as a path to a folder (~.app~ files are really folders).
   folder.
 **** laptop:
 - iterm2
-- [[https://github.com/Dimentium/homebrew-autoraise][Github: Dimentium/homebrew-autoraise]] - focus follows mouse.
 - [[https://github.com/ankitpokhrel/jira-cli][Github: ankitpokhrel/jira-cli]].
+***** autoraise:
+- [[https://github.com/sbmpost/AutoRaise][Github: sbmpost/AutoRaise]] - focus follows mouse.
+- [[https://github.com/Dimentium/homebrew-autoraise][Github: Dimentium/homebrew-autoraise]] - Brew formulae.
+#+BEGIN_SRC shell :results silent
+  brew tap dimentium/autoraise
+  brew install autoraise
+  brew services start autoraise
+#+END_SRC
 ***** [[https://rectangleapp.com/][rectangle]]:
 rectangle (snap to area shortcuts).
 #+BEGIN_SRC shell :results silent
