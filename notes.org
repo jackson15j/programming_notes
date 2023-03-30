@@ -242,9 +242,13 @@ the link as a path to a folder (~.app~ files are really folders).
   folder.
 **** laptop:
 - iterm2
-- rectangle (snap to area shortcuts).
 - [[https://github.com/Dimentium/homebrew-autoraise][Github: Dimentium/homebrew-autoraise]] - focus follows mouse.
 - [[https://github.com/ankitpokhrel/jira-cli][Github: ankitpokhrel/jira-cli]].
+***** [[https://rectangleapp.com/][rectangle]]:
+rectangle (snap to area shortcuts).
+#+BEGIN_SRC shell :results silent
+  brew install rectangle
+#+END_SRC
 *** FireFox
 - ~about:config~ ~browser.tabs.tabMinWidth = 0~ to disable tab scrolling.
 *** Docker
