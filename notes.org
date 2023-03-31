@@ -113,6 +113,7 @@ will always be partitions, so the choices is Consistency vs Availability!*
     performance and more security.
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
+- [[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/][Docker Blog: How to use the Postgres Docker Official Image]].
 * Dev Environment Setup:
 ** Browsers:
 *** Chrome:
