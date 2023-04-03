@@ -102,6 +102,28 @@ will always be partitions, so the choices is Consistency vs Availability!*
 - *Availability (AP):*
   - Reads: Keep accepting, but may return stale data.
   - Writes: Keep accepting writes, sync once network partition is resolved.
+** Database vs Data Lake vs Data Warehouse:
+Quick summary: [[https://youtu.be/-bSkREem8dM][YouTube: Database vs Data Warehouse vs Data Lake | What is the
+Difference?]]
+*** Database:
+- OLTP - Designed to capture and record data (transactions).
+- Live, Real-time data.
+- Highly detailed data.
+- Flexible Schema.
+- Can be a bottleneck for Application/System processing.
+*** Data Lake:
+- Designed to capture large amounts of raw ([un-|semi-]structured) data.
+  - ML/AI in current state.
+  - Analytics/Reporting after processing.
+- Normalised from a Lake to a Database or Data Warehosue.
+*** Data Warehouse:
+- OLAP (Online Analytical Processing) - Designed for Analytics/Reporting.
+- Data is historical to near-real-time based on when it is updated from Source
+  systems.
+  - ETL process to push data into the Warehouse..
+- Summarized data.
+- Rigid Schema (Normalised).
+- Decoupled from Application/System, so queries do not affect processing.
 ** DB Admin:
 - [[https://hub.docker.com/_/adminer/][Docker Hub: adminer]] - Adminer (formerly phpMinAdmin) is a full-featured
   database management tool written in PHP. Conversely to phpMyAdmin, it consist
