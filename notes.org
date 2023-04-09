@@ -11,6 +11,12 @@
 - List packages: ~<yay|pacman> -Qm~.
 - List Dependencies for a package: ~yay -Rcps <package>~.
 - Remove package + dependencies: ~yay -Rcs <package>~.
+*** How to view `.heic` images from an iphone on arch?
+Install `libheif` and then set to use an image application by default
+(eg. viewnior).
+#+BEGIN_SRC shell :results silent
+  yay -S libheif
+#+END_SRC
 * BackEnd:
 ** Go:
 - [[https://go.dev/][go dev site]].
