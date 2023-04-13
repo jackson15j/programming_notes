@@ -235,6 +235,11 @@ the control arrow keys (=^<arrow>=) in use.
   processor)(https://github.com/kislyuk/yq)(https://github.com/wagoodman/dive/issues/300
   ~yq -r .services[].image docker-compose.yml | xargs -n 1 dive --ci~
 - ~hadolint~ - lint dockerfiles (https://github.com/hadolint/hadolint))
+***** DBT:
+#+BEGIN_SRC shell :results silent
+  brew tap dbt-labs/dbt
+  brew install dbt-postgres
+#+END_SRC
 ***** postgres:
 - Utilities (like =psql=) without installing =postgres=: :results drawer
   #+BEGIN_SRC shell
