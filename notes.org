@@ -587,6 +587,18 @@ multiple lines.
 M-x replace-regexp
 \s-q\(\w+\)-\(^J\)\(\w+\) → ^J\1\3
 #+END_SRC
+*** How to upcase a group during ~M-x replace-regexp~?
+Emacs step if I want to replace a replacement group and upcase it. eg. from:
+~data_type: boolean~, to: ~data_type: BOOLEAN~.
+
+- ~M-x replace-regexp~.
+- Find: ~data_type: \(.*\)~.
+- Replace: ~data_type: \,(upcase \1)~.
+
+This will work for other elisp built-in's. eg.
+
+- ~\,(downcase \1)~.
+- ~\,(capitalize \1)~.
 ** DAP:
 *** Registering a debug template for: ~dap-mode~, to use.
 #+BEGIN_EXAMPLE emacs-lisp
