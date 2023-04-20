@@ -934,6 +934,17 @@ https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 * System Design:
+** Principals:
+*** [[https://en.wikipedia.org/wiki/SOLID][SOLID]]:
+- *S*ingle-responsibility principle: eg. classes should have a single
+  responsibility.
+- *O*pen-closed principle: Open for extension, but closed for modification.
+- *L*iskov substitution principle: Functions that use pointers or references to
+  base classes must be able to use objects of derived classes without knowing
+  it.
+- *I*nterface segregation principle: Don't force Clients to depend on unused
+  interfaces.
+- *D*ependency inversion principle: Depend upon abstractions, not concretions.
 ** Ask Why a System Works?:
 - learn how popular applications work at a high-level.
 - Start to understand why some component is used instead of another.
