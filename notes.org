@@ -133,6 +133,39 @@ Difference?]]
 - Summarized data.
 - Rigid Schema (Normalised).
 - Decoupled from Application/System, so queries do not affect processing.
+** Data Pipelines:
+*** ETL: Extract, Transform, Load.
+The mechanism of Extracting data from a Source (API, file, DB, Web Scraping,
+...), transforming that data (PII redaction, schema changes, ...) and then
+Loading it into a Target location (DB, Data Lake, Data Warehouse) for later
+use.
+
+- *Source(s) to Data Lake:* may be an EL or ETL process with minimal PII
+  transforms. to keep the data RAW (or near-RAW) in the Data Lake.
+- *Data Lake to Data Warehouse:* is usually an ETL process with schema
+  changing + data sanitising transforms to make it suitable for consistent
+  Analysis/Reporting.
+*** [[https://meltano.com/][Meltano]] (Data Pipeline):
+[[https://meltano.com/][meltano]] - /"Your CLI for ELT+: Open Source, Flexible, and Scalable."/
+
+/"Move, transform and test your data with confidence using a streamlined data
+engineering workflow you’ll love."/
+
+Basically it uses plugins to create an ETL (Extraction, Transform, Loader)
+pipeline, which can be configured in YAML.
+
+- [[https://docs.meltano.com/][Meltano Docs]].
+- [[https://github.com/meltano/meltano][Github: meltano/meltano]].
+- [[https://docs.meltano.com/reference/command-line-interface][Meltano Docs: CLI Reference.]]
+- [[https://youtu.be/sL3RvXZOTvE][YouTube: Meltano Speedrun 2.0]] - Quick demo of: Extraction, Loading,
+  Transformation + Dashboard of transformed data in ~7mins (Suggest play at
+  x1.5 speed).
+
+*** DBT (Transforms):
+- [[https://docs.getdbt.com/docs/quickstarts/dbt-core/quickstart][Docs DBT: DBT Core - Quick Start]] - Pretty thorough tutorial. Worth going
+  through!
+- [[https://github.com/dbt-labs/dbt-utils/][Github: dbt-labs/dbt-utils/]] - Additional utilities and test schema's.
+
 ** DB Admin:
 - [[https://hub.docker.com/_/adminer/][Docker Hub: adminer]] - Adminer (formerly phpMinAdmin) is a full-featured
   database management tool written in PHP. Conversely to phpMyAdmin, it consist
