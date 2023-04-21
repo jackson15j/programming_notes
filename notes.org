@@ -936,6 +936,12 @@ existing test suite.
 - [[https://www.tornadoweb.org/en/stable/][Tornado]] - Python web framework and asynchronous networking library. Ideal for
   long polling, WebSockets and other long-lived connections.
 * Security:
+** Best Practices:
+*** Prevent debugging Production code.
+- Prevent malicious actors attaching a debugger on Production instances to
+  decompile the code.
+- API's/Code that actively rejects Debuggers, crashes code, different code
+  paths (obfuscation), reports home. ie. fail securely.
 ** Security Bodies/Sites:
 - [[https://www.first.org/cvss/][CVSS (Common Vulnerability Scoring System)]] - Used in the scoring of PEN Tests.
 - [[https://www.cve.org/][CVE (CyberSecurity Vulnerabilities)]] ([[https://cve.mitre.org/index.html][Old CVE site (Should be dead in
