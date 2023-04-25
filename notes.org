@@ -182,6 +182,10 @@ pipeline, which can be configured in YAML.
 - https://observablehq.com/ - Jupiter Notebooks style notebooks that can
   connect to multiple data sources (no need for a Data Lake??) to provide
   customisable graphs for Analytics. Also supports comments/collaboration.
+*** ERD (Entity Relationship Diagram):
+An ERD (Entity Relationship Diagram) is used to describe the Database Schema
+with the inter-relationships between each table (entity). Typically it is a UML
+style diagram. Similar to a UML Class diagram for programming.
 * Dev Environment Setup:
 ** Browsers:
 *** Chrome:
