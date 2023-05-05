@@ -49,6 +49,7 @@ another URI by setting its XProperties.
 * BuildTools:
 - [[https://www.gnu.org/software/make/][GNU Make: Makefiles with build targets]].
 - [[https://taskfile.dev/#/][Task: task runner / build tool that aims to be simpler than GNU Make]].
+- [[https://nx.dev/][NX: Build system for FrontEnd code, with CI/Tasks/Caching]].
 * CI/CD:
 ** Azure DevOps:
 - [[https://marketplace.visualstudio.com/items?itemName=tingle-software.dependabot][Dependabot - Visual Studio Marketplace]].
