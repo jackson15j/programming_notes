@@ -17,18 +17,11 @@ Emacs Notes
       ```
 
     * Can now do `ssh remotehost` or tramp: `/ssh:remotehost:/path/to/file`.
-* [ErgoEmacs: Find Replace in directories] / [GNU Emacs: Replacing text across
-  multiple files]:
-    * `M-x find-name-dired`, enter filename wildcard.
-    * Mark `m` files (`t` marks all files), then press `Q`.
-    * `<find> regex` return, `<replace> string` return.
-    * Confirm/deny replace with the usual: `!`, `y`, `n`.
 * [indent region], both setting keybindings for `indent-rigidly-<left|right>`
   and `C+x TAB`, then `S+<<left>|<right>>`.
 
 Language Setup
 ==============
-
 
 * [Github: jackson15j/dot_emacs] - personal Emacs dotfiles.
 * [cpp_notes: Editor Config].
@@ -45,8 +38,6 @@ Link Dump
 
 [StackOverflow: Tramp ssh + sudo]: https://stackoverflow.com/questions/2177687/open-file-via-ssh-and-sudo-with-emacs
 [StackOverflow: Tramp with Public Key]: https://stackoverflow.com/questions/1353297/editing-remote-files-with-emacs-using-public-key-authentication
-[ErgoEmacs: Find Replace in directories]: http://ergoemacs.org/emacs/find_replace_inter.html
-[GNU Emacs: Replacing text across multiple files]: https://www.gnu.org/software/emacs/manual/html_node/efaq/Replacing-text-across-multiple-files.html
 [indent region]: https://dougie.io/emacs/indent-selection/
 
 [Github: jackson15j/dot_emacs]: https://github.com/jackson15j/dot_emacs

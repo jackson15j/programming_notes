@@ -607,6 +607,16 @@ This will work for other elisp built-in's. eg.
 
 - ~\,(downcase \1)~.
 - ~\,(capitalize \1)~.
+*** [[http://ergoemacs.org/emacs/find_replace_inter.html][ErgoEmacs: Find Replace in directories]] / [[https://www.gnu.org/software/emacs/manual/html_node/efaq/Replacing-text-across-multiple-files.html][GNU Emacs: Replacing text across multiple files]]:
+- Either:
+  - ~M-x find-name-dired~, enter filename wildcard.
+  - Mark ~m~ files (~t~ marks all files), then press ~Q~.
+  - ~<find> regex~ return, ~<replace> string~ return.
+  - Confirm/deny replace with the usual: ~!~, ~y~, ~n~.
+- Or:
+  - ~C-x p r~ in a =project= managed repo.
+  - ~<find> regex~ return, ~<replace> string~ return.
+  - Confirm/deny replace with the usual: ~!~, ~y~, ~n~.
 ** DAP:
 *** Registering a debug template for: ~dap-mode~, to use.
 #+BEGIN_EXAMPLE emacs-lisp
