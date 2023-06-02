@@ -969,6 +969,14 @@ existing test suite.
   long polling, WebSockets and other long-lived connections.
 * Security:
 ** Best Practices:
+- [[https://cheatsheetseries.owasp.org/index.html][OWASP: Cheat Sheet Series]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html][OWASP: Attack Surface Analysis Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html][OWASP: Authentication Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html][OWASP: Authorization Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html][OWASP: Cryptographic Storage Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html][OWASP: Docker Security Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html][OWASP: Input Validation Cheat Sheet]].
+  - [[https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html][OWASP: Threat Modeling Cheat Sheet]].
 *** Prevent debugging Production code.
 - Prevent malicious actors attaching a debugger on Production instances to
   decompile the code.
