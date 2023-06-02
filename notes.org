@@ -93,6 +93,8 @@ another URI by setting its XProperties.
 - https://github.com/changesets/changesets - A tool to manage versioning and changelogs
 with a focus on multi-package repositories .
 * Databases:
+- [[https://github.com/AltimateAI/awesome-data-contracts][Github: AltimateAI/awesome-data-contracts]] - A curated list of awesome blogs,
+  videos, tools and resources about Data Contracts.
 ** CAP Theorem:
 You can only achieve 2 of these 3 properties of databases:
 
