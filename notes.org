@@ -1075,6 +1075,10 @@ Don't Repeat Yourself.
 - Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
 -
 ** Components in Detail:
+*** API's:
+**** [[https://www.openapis.org/][OpenAPI]]:
+- [[https://learn.openapis.org/][Getting Started | OpenAPI Documentation]].
+- [[https://openapi.tools/#documentation][OpenAPI Tools]].
 *** Data Pipelines:
 Data Pipelines are used to [[*Normalisation:][normalise]] raw(/"messy/", not directly usable)
 source(s) of data (eg. API's, No/SQL DBs, Files) into a /"structured/" target
