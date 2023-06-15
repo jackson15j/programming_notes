@@ -733,6 +733,7 @@ not abort ~git commit~]].
 - https://docs.k3s.io - Lightweight Kubernetes. Easy to install, half the
   memory, all in a binary of less than 100 MB.
 - https://www.cncf.io/kubecon-cloudnativecon-events/
+- [[https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/][Kubernetes docs: Pull image from a Private Registry]].
 ** Helm Charts:
 - Hierarchical to call sub-charts as sub-dependencies.
 - Values to be passed into the charts.
