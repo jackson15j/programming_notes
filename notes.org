@@ -17,6 +17,12 @@ Install `libheif` and then set to use an image application by default
 #+BEGIN_SRC shell :results silent
   yay -S libheif
 #+END_SRC
+** Power Management:
+*** Broken Hibernate:
+Swap keeps being set to the main partition, instead of the swap partition.
+Manually updated the ~resume=~ in: ~/etc/default/grub~ to be correct, then
+regenerated Grub with: ~sudo grub-mkconfig -o /boot/grub/grub.cfg.~ See:
+https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 * BackEnd:
 ** Go:
 - [[https://go.dev/][go dev site]].
