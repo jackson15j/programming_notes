@@ -831,6 +831,43 @@ not abort ~git commit~]].
 - *Local DNS Server:* Hosted by ISP's as a DNS Cache + inspect
   traffic/requests.
 * People Skills:
+** Feedback:
+- Aim for a learning opportunity.
+- Constructive & Actionable feedback, based on facts (where possible).
+- Follow up with questions on specifics.
+*** The BID model.
+*BID* stands for *Behaviour* > *Impact* > *Dialogue*, and has the power to
+ transform relationships.
+
+- *Behaviour:* Describe the behaviour you observed, keeping it non-judgemental
+  and specific.
+- *Impact:* Describe the impact of the behaviour. Again, keep it simple and
+  non-judgemental. Note: Impact here might be at the individual emotional level
+  (how you felt), or at a more cultural level or in relation to someone, or
+  something else (the meeting over-ran, we missed our financial target).
+- *Dialogue:* Open discussion around opportunities. Be future focussed where
+  you can.
+
+*** Triggers that get in the way of feedback:
+- *Truth Trigger:* Reject feedback on belief it is factually wrong.
+- *Relationship Trigger:* Reject feedback based on person giving it.
+- *Identity Trigger:* Reject feedback that challenges your
+  identity/self-perception.
+*** Trigger Workarounds:
+- Pause.
+- Acknowledge.
+- Question.
+  - Use BID.
+  - Ask for specifics (in good/bad feedback).
+  - Don't use generic questions! (non-actionable questions/answers).
+  - /"What is the one thing I can improve on?"/ (focused)
+  - /"Can I get feedback on this new thing I am doing, after it is done?"/
+    (pre-request feedback).
+  - /"Can you walk me through that?"/
+*** Finding Feedback Situations:
+- *Look for outcomes:* Notice when someone creates a desirable one.
+- Apply *BID* for positive/negative feedback.
+- *Learn from praise:* Ask for specifics.
 ** Winning Arguments:
 *** Tech Debt:
 
