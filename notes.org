@@ -28,6 +28,15 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
 - [[https://www.jetbrains.com/go/][Jetbrains: GoLand]] editor.
+*** Go Tutorials:
+- https://gobyexample.com/ - Minimal site with lots of good examples.
+- [[https://go.dev/tour/welcome/3][Go: A Tour of Go]] - This will place a tour binary in your GOPATH's bin
+  directory (=~/go/bin/tour=). When you run the tour program, it will open a
+  web browser displaying your local version of the tour.
+  #+BEGIN_SRC shell :results quiet
+    go install golang.org/x/website/tour@latest
+  #+END_SRC
+
 *** Temporarily rewrite mod to use an unpublished package.
 From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
 locally for an unpublished package instead of looking up from the
