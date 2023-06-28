@@ -1128,6 +1128,30 @@ Don't Repeat Yourself.
 ** Abstractions:
 - Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
 -
+** Microservices:
+*** [[https://world.hey.com/dhh/how-to-recover-from-microservices-ce3803cc][How to Recover from Microservices]].
+Reaction blog to: [[https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90][Prime Video Tech: Scaling up the Prime Video audio/video
+monitoring service and reducing costs by 90%]].
+
+- Successful large, complex systems must evolve from successful small, simple
+  systems.
+- Extraction Candidates: Clearly modularized design with strong boundaries and
+  no critical-flow dependencies.
+  - Performance benefits from switching implementation?
+  - Business benefits from a silo'd team, separate to the System?
+- Focus on Microservice problems and view that Monolith's are generally
+  better + how to return to a Monolith:
+  - *Stop Digging:* Stop creating new services + add functionality to a Core
+    service, to move towards fat services.
+  - *Consolidate critical, dependent paths first:* Avoid breaking a coherent
+    Flow across multiple Services. Causes change co-ordination + sync issues.
+  - *Leave isolated performance hotspots for last:* Ideal is to have
+    narrow/isolated performance critical segment in it's own System. Rewrite in
+    a performant language.
+  - *Prioritize dropping the most esoteric implementations:* Prune down to 2
+    backend languages (General Purpose = 99%, High-Performance (hotspots) = 1%).
+  - *Partition Large Systems on Modules not Networks:* Start simple monolith,
+    then break on domain boundaries, as required.
 ** Components in Detail:
 *** Addresses (postal):
 - [[https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/][Falsehoods Programmers believe about Addresses]].
