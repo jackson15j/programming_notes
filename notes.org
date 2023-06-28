@@ -476,11 +476,11 @@ processes running in the same namespace. Either:
 ** Clean-up:
 - Removing containers, volumes and dangling images:
 
-  #+BEGIN_EXAMPLE shell
-  docker container prune -f
-  docker volume prune -f
-  docker image prune -f
-  #+END_EXAMPLE
+  #+BEGIN_SRC shell :results quiet
+    docker container prune -f
+    docker volume prune -f
+    docker image prune -f
+  #+END_SRC
 - Remove unused images: ~docker image prune --all~.
 ** ~docker-compose~:
 - ~docker-compose up --build~ to force a rebuild (and ignore any previous
