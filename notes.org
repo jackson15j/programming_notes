@@ -184,6 +184,10 @@ pipeline, which can be configured in YAML.
   through!
 - [[https://github.com/dbt-labs/dbt-utils/][Github: dbt-labs/dbt-utils/]] - Additional utilities and test schema's.
 
+*** [[https://www.metabase.com/docs/latest/][Metabase]]:
+Metabase is an open-source business intelligence platform. You can use Metabase
+to ask questions about your data, or embed Metabase in your app to let your
+customers explore their data on their own.
 ** DB Admin:
 - [[https://hub.docker.com/_/adminer/][Docker Hub: adminer]] - Adminer (formerly phpMinAdmin) is a full-featured
   database management tool written in PHP. Conversely to phpMyAdmin, it consist
