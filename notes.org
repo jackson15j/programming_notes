@@ -1129,6 +1129,8 @@ Don't Repeat Yourself.
 - Network: Use RPCs (Remote Procedure Calls) to abstract away network communications and make all calls appear to be local.
 -
 ** Components in Detail:
+*** Addresses (postal):
+- [[https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/][Falsehoods Programmers believe about Addresses]].
 *** API's:
 **** [[https://www.openapis.org/][OpenAPI]]:
 - [[https://learn.openapis.org/][Getting Started | OpenAPI Documentation]].
