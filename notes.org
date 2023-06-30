@@ -263,14 +263,24 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   #+END_SRC
 - ~brew leaves~ list packages without dependencies.
-- Backup/Restore via: ~brew bundle~:
+- Backup via: ~brew bundle~:
   #+BEGIN_SRC shell
     echo "---- Brew Bundle. Restore with: brew bundle ..."
     brew bundle dump -f --describe
     echo "---- Brew Bundle contents..."
     brew bundle list
   #+END_SRC
-
+- Restore from a brew bundle:
+  #+BEGIN_SRC shell
+    brew bundle
+  #+END_SRC
+  - Additional restore steps:
+    #+BEGIN_SRC shell
+      echo "---- Enable autoraise service ..."
+      brew services start autoraise
+      echo "---- Symlink Emacs, but also need to Command+Option drag the Emacs app to: /Applications/ to show in spotlight ..."
+      ln -s /opt/homebrew/opt/emacs-plus*/Emacs.app /Applications
+    #+END_SRC
 **** emacs:
 - [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]] set to the latest branch:
   #+BEGIN_SRC sh
