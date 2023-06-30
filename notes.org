@@ -739,6 +739,13 @@ Or after the fact with:
 #+BEGIN_EXAMPLE sh
   git config --local --add core.sshCommand "ssh -i ~/.ssh/private_ssh_key"
 #+END_EXAMPLE
+
+eg. for my personal repos to be separate on a work laptop.
+#+BEGIN_EXAMPLE sh
+  git config core.sshcommand "ssh -i ~/.ssh/id_ed25519_personal"
+  git config user.email jackson15j@hotmail.com
+#+END_EXAMPLE
+
 ** Git Hooks:
 - [[https://pre-commit.com][~pre-commit~]] - A framework for managing and maintaining mutli-language
   pre-commit hooks. Repo of hooks in YAML format.
