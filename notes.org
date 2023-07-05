@@ -36,7 +36,14 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
   #+BEGIN_SRC shell :results quiet
     go install golang.org/x/website/tour@latest
   #+END_SRC
-
+- *Closure:* A function that references (access/assign) variables from outside
+  its body. ie. the closure function is /"bound"/ to the variables.
+- *Methods:*
+  - Go has no classes, so methods apply new functionality on types.
+  - Can pass the function into the constructor as an alternative to methods.
+  - To declare a method with a receiver on a type, they *must* both be in the
+    same package!
+  - Can define methods with Pointer Receivers.
 *** Temporarily rewrite mod to use an unpublished package.
 From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
 locally for an unpublished package instead of looking up from the
