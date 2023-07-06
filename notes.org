@@ -216,6 +216,18 @@ pipeline, which can be configured in YAML.
 Metabase is an open-source business intelligence platform. You can use Metabase
 to ask questions about your data, or embed Metabase in your app to let your
 customers explore their data on their own.
+** [[https://segment.com/docs/getting-started/][Segment]]:
+- Mix of a Message Queue / Notification system + (minimal!?) Data-Pipelines, to
+  discover Customer engagement on your Site/Application.
+  - Analytics, tracking actions, past aliases, screens/pages on, group/orgs,
+    events.
+- Similar to Meltano + DBT on the data-pipelines with
+  Source/Destination/Transform concepts.
+- Segment Server (SaaS solution? Enterprise??)
+- Integration's:
+  - Sources: PHP, Javascript, iOS.
+  - Destinations: Google Analytics, Email marketing, live-chats, Data
+    Warehouse, S3.
 * Dev Environment Setup:
 ** Browsers:
 *** Chrome:
