@@ -36,6 +36,34 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
   #+BEGIN_SRC shell :results quiet
     go install golang.org/x/website/tour@latest
   #+END_SRC
+*** Syntax:
+- Type Conversion: ~T(v)~. Convert variable: =v=, to type: =T=.
+  eg. ~f := Float64(42)  // 42.0~.
+- Bitwise shift: ~<<~, ~>>~. eg. ~v := 1 << 10 // 1024~.
+- iota: Define enumerated [[https://pkg.go.dev/builtin#pkg-constants][Constants]] with iota (untyped integer ordinal
+  number). Example take from: [[https://go.dev/doc/effective_go#constants][Effective Go: Constants]].
+  #+BEGIN_SRC go
+    import "fmt"
+    type ByteSize float64
+
+    const (
+        _           = iota // ignore first value by assigning to blank identifier
+        KB ByteSize = 1 << (10 * iota)
+        MB
+        GB
+        TB
+        PB
+        EB
+        ZB
+        YB
+    )
+    v := 5 MB
+    fmt.Println(v)
+  #+END_SRC
+
+  #+RESULTS:
+
+*** Functions vs Methods:
 - *Closure:* A function that references (access/assign) variables from outside
   its body. ie. the closure function is /"bound"/ to the variables.
 - *Methods:*
@@ -44,6 +72,13 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
   - To declare a method with a receiver on a type, they *must* both be in the
     same package!
   - Can define methods with Pointer Receivers.
+- ~func Myfunc(a ...any) (n int, err error)~ Means:
+  - The [[https://pkg.go.dev/builtin#any][~any~]] type takes in any number of arguments. ie. a Variadic Parameter
+    when used in a functions parameter list.
+  - Returns both an Integer + Error.
+  - The Uppercase =M= of =Myfunc= means that this function will be exported out
+    of the package.
+  - Lowercase functions are unexported (ie. *not* exported! Or Private).
 *** Temporarily rewrite mod to use an unpublished package.
 From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
 locally for an unpublished package instead of looking up from the
