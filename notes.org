@@ -53,6 +53,12 @@ namespace. ie. no Code changes between local/remote packages.
   go mod edit -replace <namespace/of/package>=<../local/path/to/package>
   go mod tidy
 #+END_EXAMPLE
+*** Zero Values:
+- boolean: ~false~.
+- int: ~0~.
+- float: ~0.0~.
+- string: ~""~.
+- pointers, functions, interfaces, slices, channels, maps: ~nil~.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** Curl:
