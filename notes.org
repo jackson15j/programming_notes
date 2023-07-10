@@ -36,6 +36,49 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
   #+BEGIN_SRC shell :results quiet
     go install golang.org/x/website/tour@latest
   #+END_SRC
+*** Functions vs Methods:
+- *Closure:* A function that references (access/assign) variables from outside
+  its body. ie. the closure function is /"bound"/ to the variables.
+- *Methods:*
+  - Go has no classes, so methods apply new functionality on types.
+  - Can pass the function into the constructor as an alternative to methods.
+  - To declare a method with a receiver on a type, they *must* both be in the
+    same package!
+  - Can define methods with Pointer Receivers.
+- ~func Myfunc(a ...any) (n int, err error)~ Means:
+  - The [[https://pkg.go.dev/builtin#any][~any~]] type takes in any number of arguments. ie. a Variadic Parameter
+    when used in a functions parameter list.
+  - Returns both an Integer + Error.
+  - The Uppercase =M= of =Myfunc= means that this function will be exported out
+    of the package.
+  - Lowercase functions are unexported (ie. *not* exported! Or Private).
+*** [[https://go.dev/doc/tutorial/call-module-code][Multi-modules]]:
+- Create folder for the module/package.
+- Dependency Tracking: Initialise the module, so that it is added to the
+  ~go.mod~ file: ~go mod init <site>/<package>~.
+  - *NOTE:* the expectation is to have a route-able FQDN (like Java packages),
+    to the site that holds the code (eg. Company site). For local only code,
+    make it a personal namespace.
+- /OPTIONAL:/ Edit routing to unpublished package: ~go mod edit -replace
+  <site>/<package>=</path/to/<package>~.
+  - Sync Changes: ~go mod tidy~.
+- Usage: ~import "<site>/<package>"~.
+*** [[https://go.dev/doc/tutorial/workspaces][Multi-Go packages (Monorepo)]]:
+The following avoids doing replace directives across multiple modules + enables
+local monorepos:
+
+- Create a workspace/project to hold the multiple Go modules.
+- Workspace Tracking: ~go work init ./<module_folder>~ for each go module.
+- Run code: ~go run <site>/<package>~ from workspace.
+
+Additional:
+
+- ~go work use [-r] [dir]~: adds a use directive to the ~go.work~ file for dir,
+  if it exists, and removes the use directory if the argument directory doesn’t
+  exist. The =-r= flag examines subdirectories of dir recursively.
+- ~go work edit~: edits the go.work file similarly to: ~go mod edit~.
+- ~go work sync~: syncs dependencies from the workspace’s build list into each
+  of the workspace modules.
 *** Syntax:
 - Type Conversion: ~T(v)~. Convert variable: =v=, to type: =T=.
   eg. ~f := Float64(42)  // 42.0~.
@@ -62,23 +105,13 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
   #+END_SRC
 
   #+RESULTS:
-
-*** Functions vs Methods:
-- *Closure:* A function that references (access/assign) variables from outside
-  its body. ie. the closure function is /"bound"/ to the variables.
-- *Methods:*
-  - Go has no classes, so methods apply new functionality on types.
-  - Can pass the function into the constructor as an alternative to methods.
-  - To declare a method with a receiver on a type, they *must* both be in the
-    same package!
-  - Can define methods with Pointer Receivers.
-- ~func Myfunc(a ...any) (n int, err error)~ Means:
-  - The [[https://pkg.go.dev/builtin#any][~any~]] type takes in any number of arguments. ie. a Variadic Parameter
-    when used in a functions parameter list.
-  - Returns both an Integer + Error.
-  - The Uppercase =M= of =Myfunc= means that this function will be exported out
-    of the package.
-  - Lowercase functions are unexported (ie. *not* exported! Or Private).
+**** Packages:
+- Use one-word package names.
+- ~package main~ in a file that contains: ~func main() {...}~.
+- ~package <folder>~ for all other files.
+- Run code:
+  - Relative: ~go run .~.
+  - Declarative: ~go run <site>/<package>~.
 *** Temporarily rewrite mod to use an unpublished package.
 From the [[https://go.dev/doc/tutorial/call-module-code][Go Tutorial: Call Module Code]], you can set the ~go.mod~ to search
 locally for an unpublished package instead of looking up from the
