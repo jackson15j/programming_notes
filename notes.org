@@ -241,6 +241,23 @@ Difference?]]
   - https://www.adminer.org/ - Replace phpMyAdmin with Adminer and you will get
     a tidier user interface, better support for MySQL features, higher
     performance and more security.
+** Materialised View:
+- Pre-computed result set, typically for complex (time consuming) queries.
+  - Best used to quickly return a result, for non-realtime data, where the
+    calculation is prohibitively expensive (CPU, DB lock, User waiting on App
+    response).
+- Requires explicit update to pull in new data!!
+  - Redshift supports auto-refresh on changes to base tables + schedule based
+    on workload (support SLA's).
+- Can build materialised views on top of other materialised views.
+  - eg. layering different =GROUP BY='s or =JOIN='s on top of an already
+    materialised set of expensive =JOIN='s.
+
+Links:
+
+- [[https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html][AWS Redshift: Materialised Views]].
+- [[https://docs.getdbt.com/docs/build/materializations][DBT: materialisations]] - DBT uses materialisations as views for transformed
+  data by default.
 ** Postgres:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 - [[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/][Docker Blog: How to use the Postgres Docker Official Image]].
