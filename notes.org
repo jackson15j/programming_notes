@@ -882,7 +882,24 @@ not abort ~git commit~]].
   memory, all in a binary of less than 100 MB.
 - https://www.cncf.io/kubecon-cloudnativecon-events/
 - [[https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/][Kubernetes docs: Pull image from a Private Registry]].
+** Articles:
+- [[https://medium.com/qonto-way/scaling-airflow-on-kubernetes-lessons-learned-a0d3d0417fc1][Medium: Scaling Airflow on Kubernetes: lessons learned (Qonto)]].
+- [[https://medium.com/clarityai-engineering/running-airflow-in-kubernetes-and-aws-lessons-learned-part-1-77be9556846c][Medium: Running Airflow in Kubernetes and AWS: Lessons learned Part 1
+  (Clarity AI)]].
+- [[https://devpress.csdn.net/k8s/62fb6bed7e6682346618e98e.html][Devpres: Airflow: Scaling with AWS EKS]].
 ** Config:
+*** Resources/Limits:
+- Using monitoring to judge pod's average/peak usage. Repeat revaluation.
+  - What is the monitoring tools granularity?
+  - How long is your pod at peak for?
+  - Does your pod workflow change by time? (top of the hour, first of the
+    month/year, seasonal dates (eg. April (finance), Holiday sales)).
+- Try to set =limit=/=request= within x1-1.5 of each other to avoid resource
+  contention if all pods peak at the same time.
+- ={local_task_job.py:149} INFO - Task exited with return code
+  Negsignal.SIGKILL= is the Airflow message for a pod being killed from
+  exceeding set resources.
+- Use Pod Templates for resources and batch into sizes for ease.
 *** Avoid Pod destruction for long-running tasks?
 Set: ~"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"~, if doing
 long-running batch jobs (eg. ETL) and you need to avoid Kubernetes killing pods
