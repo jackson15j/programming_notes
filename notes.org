@@ -882,6 +882,15 @@ not abort ~git commit~]].
   memory, all in a binary of less than 100 MB.
 - https://www.cncf.io/kubecon-cloudnativecon-events/
 - [[https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/][Kubernetes docs: Pull image from a Private Registry]].
+** Config:
+*** Avoid Pod destruction for long-running tasks?
+Set: ~"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"~, if doing
+long-running batch jobs (eg. ETL) and you need to avoid Kubernetes killing pods
+partway through.
+
+In AWS, check: =AWS AZRebalance=, which ignores =safe-to-evict= and re-balances
+pods across Availability Zones. This feature can be deactivated through the
+suspended_processes parameter in the [[https://registry.terraform.io/modules/lablabs/eks-workers/aws/0.7.1/examples/complete?tab=inputs][Terraform "eks-worker" module]].
 ** Helm Charts:
 - Hierarchical to call sub-charts as sub-dependencies.
 - Values to be passed into the charts.
