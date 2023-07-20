@@ -1634,3 +1634,4 @@ hypothesis & validation.
 * Training Sites:
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
+- https://scratch.mit.edu/ - Programming for kids.
