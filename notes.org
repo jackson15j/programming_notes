@@ -705,6 +705,8 @@ See: [[https://www.masteringemacs.org/article/diacritics-in-emacs][Mastering Ema
 *** Build Your Website with Org Mode - System Crafters
 [2022-11-05 Sat 08:50]
 https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/
+*** Convert markdown to org:
+~docker run --rm  -v .:/data pandoc/latex -f markdown -t org -o <target.org> <source.md>~
 *** Formatting:
 - [[https://orgmode.org/manual/Emphasis-and-Monospace.html][Emphasis and Monospace]]
 - *bold*
