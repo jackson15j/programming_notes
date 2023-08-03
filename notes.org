@@ -684,6 +684,14 @@ Orchestrator (similar to Kubernetes) but built by the Docker Team.
   #+END_EXAMPLE
 * Emacs:
 ** Core:
+*** Cleaning up an org buffer:
+- ~M-x apropos~ to discover functions.
+- ~org-next-block~ jump to next Org block of any type. ~C-cC-vC-n~ only does
+  code blocks.
+- ~M-q~ fills a paragraphs in a region correctly.
+- ~C-c -~ on region to convert to an unordered (~-~) list.
+- ~M-x org-cycle-list-bullet~ to cycle between list types. Twice = ordered
+  numbered list.
 *** Change font size in GUI Emacs buffer:
 - Increase: ~C-xC-+~.
 - Decrease: ~C-xC--~.
