@@ -139,6 +139,11 @@ surf is a simple web browser based on WebKit2/GTK+. It is able to display
 websites and follow links. It supports the XEmbed protocol which makes it
 possible to embed it in another application. Furthermore, one can point surf to
 another URI by setting its XProperties.
+** PDF:
+*** How to decrypt a PDF for printing?:
+~docker run --user $UID:$GROUPS --rm -v $(pwd):/work mgodlewski/qpdf --decrypt <input>.pdf <output>.pdf~
+** How to resize a PDF + scale content?:
+~docker run --rm -v .:/app -w /app minidocks/ghostscript -o <output>_a5.pdf -sPAPERSIZE=a5 -dFIXEDMEDIA -dPDFFitPage -sDEVICE=pdfwrite <input>.pdf~
 ** RDP:
 - =xfreerdp= example connection string: ~xfreerdp /w:1920 /h:1080 /u:<username>
   /v:<hostname>~
