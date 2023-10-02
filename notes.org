@@ -1,6 +1,7 @@
 #+title: Programming/Development Notes
 #+author: Craig Astill
 #+OPTIONS: toc:2
+#+STARTUP: show2levels
 * Arch:
 ** Package Management:
 *** [[https://forum.manjaro.org/t/how-do-i-limit-pamac-or-yays-cpu-core-usage-while-compiling/55043][How do I limit Pamac or yay's CPU core usage while compiling?]]
