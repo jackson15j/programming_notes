@@ -1259,6 +1259,14 @@ WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-o
 ** Principals:
 *** [[https://en.wikipedia.org/wiki/Don%27t_repeat_yourself][DRY]]:
 Don't Repeat Yourself.
+*** [[https://www.tim-wellhausen.de/papers/ExpandAndContract/ExpandAndContract.html][Expand & Contract]]:
+Zero-downtime pattern to roll out a change in multiple, safe steps..
+
+1. Introduce new structure (eg. New DB schema + write to both).
+2. Migrate Data (ie. backfill).
+3. Operate on New Structure.
+4. Stop writing in Old Structure.
+5. Delete Old Structure.
 *** [[https://en.wikipedia.org/wiki/SOLID][SOLID]]:
 - *S*ingle-responsibility principle: eg. classes should have a single
   responsibility.
