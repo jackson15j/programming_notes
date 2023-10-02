@@ -1256,10 +1256,8 @@ https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 * System Design:
-** Principals:
-*** [[https://en.wikipedia.org/wiki/Don%27t_repeat_yourself][DRY]]:
-Don't Repeat Yourself.
-*** [[https://www.tim-wellhausen.de/papers/ExpandAndContract/ExpandAndContract.html][Expand & Contract]]:
+** Patterns
+*** [[https://www.tim-wellhausen.de/papers/ExpandAndContract/ExpandAndContract.html][Expand & Contract Pattern]]:
 Zero-downtime pattern to roll out a change in multiple, safe steps..
 
 1. Introduce new structure (eg. New DB schema + write to both).
@@ -1267,6 +1265,23 @@ Zero-downtime pattern to roll out a change in multiple, safe steps..
 3. Operate on New Structure.
 4. Stop writing in Old Structure.
 5. Delete Old Structure.
+*** [[https://martinfowler.com/bliki/StranglerFigApplication.html][StranglerFig Pattern]]:
+A pattern to choke functionality away from an existing codebase in an iterative
+manner. Since it is a pass-through proxy, functionality can be added in small
+chunks. Rollback should be runtime config to toggle routing back to old
+application.
+
+- Wrap existing application with a passthrough Proxy.
+- Siphon/divert functionality into Proxy wrapper.
+- Re-use same underlying DB.
+- /Can/ cleanup be deleting code out of old application.
+- /Eventually/ deprecate old application once all functionality has been
+  replaced.
+  - Can remain as a symbiotic relationship if some parts don't need to be
+    extracted from old application.
+** Principals:
+*** [[https://en.wikipedia.org/wiki/Don%27t_repeat_yourself][DRY]]:
+Don't Repeat Yourself.
 *** [[https://en.wikipedia.org/wiki/SOLID][SOLID]]:
 - *S*ingle-responsibility principle: eg. classes should have a single
   responsibility.
