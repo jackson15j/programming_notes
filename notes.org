@@ -128,6 +128,15 @@ namespace. ie. no Code changes between local/remote packages.
 - float: ~0.0~.
 - string: ~""~.
 - pointers, functions, interfaces, slices, channels, maps: ~nil~.
+** PHP:
+- https://onlinephp.io/ - Online PHP Repr.
+- https://github.com/felixfbecker/php-language-server,
+  https://hub.docker.com/r/felixfbecker/php-language-server - LSP server.
+- https://docs.phpunit.de/en/10.3/index.html - test framework.
+- https://github.com/mockery/mockery, https://docs.mockery.io/en/latest/ -
+  mocking library.
+- https://phpstan.org/user-guide/getting-started - static linter.
+- https://www.slimframework.com/ - Web Apps/API framework.
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
 ** Curl:
