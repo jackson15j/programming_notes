@@ -813,6 +813,7 @@ This will work for other elisp built-in's. eg.
 - https://discourse.julialang.org/t/jupyter-integration-with-emacs/21496/5 -
   basic ~IJulia~ + ~jupyter~ install steps (no use-package).
 * FrontEnd:
+- https://builtwith.com/ - Get Tech Stack that a site is built with.
 ** React:
 - View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
 - ~redux~ is the store of all BE DB state in the FE.
