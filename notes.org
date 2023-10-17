@@ -29,6 +29,9 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
 - [[https://www.jetbrains.com/go/][Jetbrains: GoLand]] editor.
+*** Cross-compiling:
+- ~go env GOARCH GOOS~ - Current Systems Architecture & OS.
+- ~GOOS=<darwin|linux|windows> go build~ - Build binary for a particular OS.
 *** Go Tutorials:
 - https://gobyexample.com/ - Minimal site with lots of good examples.
 - [[https://go.dev/tour/welcome/3][Go: A Tour of Go]] - This will place a tour binary in your GOPATH's bin
