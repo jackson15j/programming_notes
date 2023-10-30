@@ -280,10 +280,14 @@ Links:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 - [[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/][Docker Blog: How to use the Postgres Docker Official Image]].
 - [[https://ellisvalentiner.com/post/2022-01-06-flattening-json-in-postgres/#:~:text=Flattening%20JSON%20objects%20using%20jsonb_to_record,objects%2C%20and%20returns%20a%20record][Flattening JSON in postgres]].
-** Reporting/Visualisation:
+** Reporting/Tooling/Visualisation:
 - https://observablehq.com/ - Jupiter Notebooks style notebooks that can
   connect to multiple data sources (no need for a Data Lake??) to provide
   customisable graphs for Analytics. Also supports comments/collaboration.
+- https://sequel-ace.com/ - CLI. MySQL/MariaDB database management for macOS
+  (brew).
+- https://tableplus.com/ - Modern, native, and friendly GUI tool for relational
+  databases: MySQL, PostgreSQL, SQLite & more. Cross-OS.
 *** ERD (Entity Relationship Diagram):
 An ERD (Entity Relationship Diagram) is used to describe the Database Schema
 with the inter-relationships between each table (entity). Typically it is a UML
