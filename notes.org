@@ -878,7 +878,7 @@ Accounts ([[https://docs.github.com/en/authentication/troubleshooting-ssh/error-
 a Personal SSH key on the Work System to clone the Personal repo.
 
 #+BEGIN_EXAMPLE sh
-  git clone git@provider.com:userName/projectName.git --config core.sshCommand="ssh -i ~/.ssh/private_ssh_key"
+  git clone git@provider.com:userName/projectName.git --config core.sshCommand="ssh -i ~/.ssh/private_ssh_key" --config user.email="<personal_email>"
 #+END_SRC
 
 Or after the fact with:
