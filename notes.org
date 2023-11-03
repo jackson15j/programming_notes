@@ -642,6 +642,20 @@ processes running in the same namespace. Either:
     docker image prune -f
   #+END_SRC
 - Remove unused images: ~docker image prune --all~.
+** [[https://containers.dev/][DevContainers]]:
+[[https://docs.docker.com/build/guide/multi-stage/][Docker Docs: multi-stage]] containers with a /"dev"/ target that you can connect
+to from your IDE of choice to have a consistent development environment.
+
+- [[https://github.com/devcontainers/cli][Github: devcontainers/cli]] - This repository holds the dev container CLI,
+  which can take a devcontainer.json and create and configure a dev container
+  from it.
+- [[https://containers.dev/guide/dockerfile][DevContainers: Using Images, Dockerfiles, and Docker Compose]] - Steps to
+  create the files to build dev containers.
+- [[https://containers.dev/supporting][DevContainers: Supporting tools and services]] - IDE (eg. Visual Studio Code) /
+  Tools / Services notes.
+- [[https://happihacking.com/blog/posts/2023/dev-containers/][HappiHacking: Dev Containers: Consistency in Development]].
+- [[https://happihacking.com/blog/posts/2023/dev-containers-emacs/][HappiHacking: Dev Containers Part 2: Setup, the devcontainer CLI & Emacs]].
+- [[https://robbmann.io/posts/emacs-eglot-pyrightconfig/][Robbmann: Virtual Environments with Eglot, Tramp, and Pyright]].
 ** ~docker-compose~:
 - ~docker-compose up --build~ to force a rebuild (and ignore any previous
   built images).
