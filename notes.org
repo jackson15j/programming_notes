@@ -1,6 +1,8 @@
 #+title: Programming/Development Notes
 #+author: Craig Astill
 #+OPTIONS: toc:2
+#+PROPERTY: header-args:mermaid :prologue "exec 2>&1" :epilogue ":" :pupeteer-config-file ~/.puppeteerrc
+#+PROPERTY: header-args:shell :prologue "exec 2>&1" :epilogue ":" :results drawer :async
 #+STARTUP: show2levels
 * Arch:
 ** Package Management:
