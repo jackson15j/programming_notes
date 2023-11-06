@@ -950,6 +950,16 @@ not abort ~git commit~]].
 #+BEGIN_EXAMPLE shell
   go-task lint || exit $?
 #+END_EXAMPLE
+** How to show log history for a function?:
+Call: ~git log -L :<function_name>:</path/to/file> [-n
+<number_of_log_entries_to_show>]~.
+
+*NOTE:* if it fails with: =fatal: -L parameter '<function_name>' starting at
+line 1: no match=, then you need a local/global =.gitattributes= with the
+following in: =*.<ext> diff=<language>=. eg. for PHP: =*.php diff=php=
+
+Global =~/.gitattributes= can be found by: ~git config --global
+core.attributesfile ~/.gitattributes~.
 * Job hunting:
 - https://github.com/readme/guides/technical-interviews
 - https://www.codinginterview.com/
