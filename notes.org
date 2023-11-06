@@ -1132,6 +1132,9 @@ Solutions:
 See: [[https://www.youtube.com/watch?v=vSuJqMRG1WM][YouTube: TECHNICAL STORIES DON'T WORK]].
 * Python:
 ** Python Articles:
+- [[https://gregoryszorc.com/blog/2023/10/30/my-user-experience-porting-off-setup.py/][My User Experience Porting Off Setup.py]] - Very thorough article of a package
+  maintainer running the gauntlet to update their package from ~python
+  setup.py~ to current =pyproject.toml= + build tools, to support Python3.12.
 - https://pythonspeed.com/
 - https://about.gitlab.com/blog/2022/09/06/test-your-software-supply-chain-security-know-how/
 - https://pythoninsider.blogspot.com/2022/09/python-releases-3107-3914-3814-and-3714.html -
