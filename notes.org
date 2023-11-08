@@ -172,6 +172,21 @@ surf is a simple web browser based on WebKit2/GTK+. It is able to display
 websites and follow links. It supports the XEmbed protocol which makes it
 possible to embed it in another application. Furthermore, one can point surf to
 another URI by setting its XProperties.
+** wget:
+- [[https://www.digitalocean.com/community/tutorials/how-to-use-wget-to-download-files-and-interact-with-rest-apis][DigitalOcean: How To Use Wget to Download Files and Interact with REST APIs]].
+*** REST commands:
+- *GET:* ~wget -O- -q <url>~
+- *POST:*
+  - ~wget --method=post -O- --body-data=<json_string> --header="<key: value>" <url>~
+  - ~wget -O- --post-data=<json_string> --header=<key:value> <url>~
+- *PUT:* ~wget --method=put -O- --body-data=<json_string> --header="<key: value>" <url>~
+- *DELETE:* ~wget --method=delete -O- --header="<key: value>" <url>~
+
+NOTE:
+
+- =-O-= outputs to stdout.
+- =-q= quiet.
+- can have 0..many: ~--header="<key: value>"~ parameters.
 * BuildTools:
 - [[https://www.gnu.org/software/make/][GNU Make: Makefiles with build targets]].
 - [[https://taskfile.dev/#/][Task: task runner / build tool that aims to be simpler than GNU Make]].
