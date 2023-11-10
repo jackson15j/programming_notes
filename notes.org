@@ -444,12 +444,14 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
 - [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]] set to the latest branch:
   #+BEGIN_SRC sh
     brew tap d12frosted/emacs-plus
-    brew install emacs-plus@30 --with-native-comp --with-imagemagick --with-mailutils --with-dbus
+    brew install emacs-plus@30 --with-native-comp --with-mailutils --with-xwidgets
+- Then =Command+Option= drag =/opt/homebrew/opt/emacs-plus*/Emacs.app= to
   #+END_SRC
+  =/Applications= in Finder.
 - *NOTE:* need to do the reinstall dance because of the use of options:
   #+BEGIN_SRC sh
     brew uninstall emacs-plus@30
-    brew install emacs-plus@30 --with-native-comp --with-imagemagick --with-mailutils --with-dbus
+    brew install emacs-plus@30 --with-native-comp --with-mailutils --with-xwidgets
   #+END_SRC
 - mu.
 - aspell.
