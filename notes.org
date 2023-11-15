@@ -159,6 +159,26 @@ Open metrics/logging/tracing telemetry.
 - [[http://cht.sh/curl][cheat.sh/curl]].
 ** De/Compress Files:
 - Decompress =.xz=: ~unxz <file.ext.xz>~.
+** ffmpeg:
+*** [[https://trac.ffmpeg.org/wiki/Encode/H.264][FFmpeg wikiL Encode/H.264]]:
+Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~):
+
+#+BEGIN_SRC shell :var input="" output=""
+  ffmpeg -i $input -map 0 -c:v libx264 -crf 17 -preset slow -c:s copy -c:a copy $output
+#+END_SRC
+*** [[https://trac.ffmpeg.org/wiki/Encode/H.265][FFmpeg wikiL Encode/H.265]]:
+Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~):
+
+#+BEGIN_SRC shell :var input="" output=""
+  ffmpeg -i $input -map 0 -c:v libx265 -crf 23 -preset fast -c:a copy -c:s copy $output
+#+END_SRC
+
+*** [[https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031][FFMPEG:Convert video files to GIF]]:
+
+#+BEGIN_SRC shell
+  ffmpeg -y -ss <secs_to_start_from> -t <duration_in_secs> -i <source_video> -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss <secs_to_start_from> -t <duration_in_secs> -i <source_video> -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" <output.gif>
+  ffmpeg -y -ss 8 -t 4 -i P1020397.MP4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss 8 -t 4 -i P1020397.MP4 -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output4.gif
+#+END_SRC
 ** PDF:
 *** How to decrypt a PDF for printing?:
 ~docker run --user $UID:$GROUPS --rm -v $(pwd):/work mgodlewski/qpdf --decrypt <input>.pdf <output>.pdf~
