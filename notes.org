@@ -142,6 +142,13 @@ namespace. ie. no Code changes between local/remote packages.
   mocking library.
 - https://phpstan.org/user-guide/getting-started - static linter.
 - https://www.slimframework.com/ - Web Apps/API framework.
+*** PHP Dev Server complains of: =file or folder not found=, when period in path?:
+*DON't use the PHP Dev Server!*. It will try to route to a static file if you
+have a period in the path (eg. =GET /UserByEmail/fake.user@domain.com=). There
+is a WONTFIX bug: https://bugs.php.net/bug.php?id=61286 with details.
+
+Just spin up =nginx= in front of your App container, if you want to run
+functional / Contract Boundary tests!!
 ** Telemetry:
 *** [[https://opentelemetry.io/docs/][OpenTelemetry]]:
 Open metrics/logging/tracing telemetry.
