@@ -680,6 +680,12 @@ processes running in the same namespace. Either:
 - Verifies the integrity, authenticity, and publication date of all Docker
   images from the Docker Hub registry, by preventing access to unsigned images.
 ** Clean-up:
+- Nuclear remove everything:
+
+  #+BEGIN_SRC shell :results quiet
+    docker system prune -af
+  #+END_SRC
+
 - Removing containers, volumes and dangling images:
 
   #+BEGIN_SRC shell :results quiet
