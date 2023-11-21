@@ -713,6 +713,18 @@ to from your IDE of choice to have a consistent development environment.
   built images).
 - ~docker-compose down~ stops (~docker-compose stop~) all running containers in
   the docker compose file and then cleans up containers/networks/images.
+** Docker Desktop:
+*** Workaround: [[https://github.com/docker/for-mac/issues/7075][Rosetta breaking docker builds on Silicon Macs from 4.25.x]]:
+Currently hitting: [[https://github.com/docker/for-mac/issues/7075]["Use Rosetta" makes build for platform linux/amd64 extremely
+slow #7075]], where builds are breaking on Silicon Mac.
+
+Steps to downgrade Docker Desktop (until a fix is found):
+
+#+BEGIN_SRC shell
+  brew uninstall --cask docker
+  brew install --cask https://raw.githubusercontent.com/Homebrew/homebrew-cask/da8973f03a3ff7cce56b0319fa51dd6fc80a2456/Casks/d/docker.rb
+#+END_SRC
+
 ** Docker Swarm:
 Orchestrator (similar to Kubernetes) but built by the Docker Team.
 *** Visualize Docker Swarm Containers across Nodes:
