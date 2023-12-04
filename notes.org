@@ -1391,6 +1391,14 @@ existing test suite.
   need to deal with storing users or authenticating users.  Keycloak provides
   user federation, strong authentication, user management, fine-grained
   authorization, and more.
+*** [[https://www.knowbe4.com/][Knowbe4]]:
+General Security training delivered as mandatory in work. Usually on a cadence
+of quarterly/monthly, via: games, quizzes, videos. Some of it's pretty dry, but
+things are improving, especially /"The Inside Man"/ series:
+
+- [[https://insideman.knowbe4.com/][Knowbe4: The Inside Man]].
+- [[https://www.twistandshout.co.uk/][TwistAndShout]] - Production company of /"The Inside Man"/ and other security
+  videos.
 *** WireGuard: fast, modern, secure VPN tunnel
 [2022-09-11 Sun 15:47]
 https://www.wireguard.com/
