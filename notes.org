@@ -194,6 +194,8 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
 ** RDP:
 - =xfreerdp= example connection string: ~xfreerdp /w:1920 /h:1080 /u:<username>
   /v:<hostname>~
+- RDP to system on a Windows Domain:
+  ~xfreerdp /w:1920 /h:1080 /u:<username> /d:<domain> /v:<host>~
 ** [[https://surf.suckless.org/][surf | suckless.org]] software that sucks less
 surf is a simple web browser based on WebKit2/GTK+. It is able to display
 websites and follow links. It supports the XEmbed protocol which makes it
