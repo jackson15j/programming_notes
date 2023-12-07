@@ -27,6 +27,13 @@ Manually updated the ~resume=~ in: ~/etc/default/grub~ to be correct, then
 regenerated Grub with: ~sudo grub-mkconfig -o /boot/grub/grub.cfg.~ See:
 https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 * BackEnd:
+** Forth:
+Some interesting links that fell out of a chat about what programming on Forth
+was like:
+
+- [[Link: https://www.forth.com/][Forth (Swift)]].
+- [[https://forth-standard.org/][Forth (Standard)]].
+- [[Link: Link: https://wiki.c2.com/?ExampleForthCode][C2 Wiki: Example Forth Code]].
 ** Go:
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
