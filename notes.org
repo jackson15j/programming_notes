@@ -140,6 +140,138 @@ namespace. ie. no Code changes between local/remote packages.
 - float: ~0.0~.
 - string: ~""~.
 - pointers, functions, interfaces, slices, channels, maps: ~nil~.
+** node.js:
+- [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview][Mozilla Dev: JavaScript Language Overview]].
+- Backend version of Javascript.
+- Runs on the (Google) V8 engine, with latest code (Browsers are behind on the
+  language for backwards capabilities).
+- Defaults to =development= mode by default.
+  - Production mode: ~NODE_ENV=production node app.js~
+  - Conditionals by mode types:
+    #+BEGIN_EXAMPLE js
+      if (process.env.NODE_ENV === 'development') {
+        app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+      }
+
+      if (process.env.NODE_ENV === 'production') {
+        app.use(express.errorHandler());
+      }
+    #+END_EXAMPLE
+*** Asynchronous Programming:
+- JavaScript is single threaded and only supports concurrency.
+- 3 ways to write async code:
+  - Callbacks.
+    #+BEGIN_EXAMPLE js
+      fs.readFile(filename, (err, content) => {
+        // This callback is invoked when the file is read, which could be after a while
+        if (err) {
+          throw err;
+        }
+        console.log(content);
+      });
+      // Code here will be executed while the file is waiting to be read
+    #+END_EXAMPLE
+  - =Promise=-based.
+    #+BEGIN_EXAMPLE js
+      fs.readFile(filename)
+        .then((content) => {
+          // What to do when the file is read
+          console.log(content);
+        })
+        .catch((err) => {
+          throw err;
+        });
+      // Code here will be executed while the file is waiting to be read
+    #+END_EXAMPLE
+  - =async=/=await= - syntatic sugar for Promises.
+    #+BEGIN_EXAMPLE js
+      async function readFile(filename) {
+        const content = await fs.readFile(filename);
+        console.log(content);
+      }
+    #+END_EXAMPLE
+- True parallelism requires Workers!
+*** Classes:
+- Functions that must be instantiated with: =new=.
+- No code organisation enforcement (X classes per-file. Functions can return
+  classes).
+- Mixin: Arrow function that returns a class.
+  #+BEGIN_EXAMPLE js
+    const withAuthentication = (cls) =>
+      class extends cls {
+        authenticate() {
+          // …
+        }
+      };
+
+    class Admin extends withAuthentication(Person) {
+      // …
+    }
+  #+END_EXAMPLE
+- Properties:
+  - Static: prepend =static=.
+  - Private: prepend =#= (not =private=)(Think python =_=).
+    - Private is truly private. Not accessible outside or derived classes!
+*** Functions:
+- Functions are First Class Objects:
+  - Assign to variables.
+  - Passed as arguments to other functions.
+  - Returned from other functions.
+  - Closures support.
+- Arguments:
+  - Too many parameters = ignored.
+  - Unspecified parameters = =undefined=.
+  - Swallow additional parameters with: =...args= (like python =*args=).
+  - Spread/Expand a list of args when calling a function: =myFunc(...argsArray)=.
+  - No named parameters (=kwargs=), but can cheat with /"object
+    destructuring"/: =area({width:2, height:3})=.
+  - Default parameters: =function x(a, b, c = 5) {...}=.
+- Anonymous Functions:
+  - Anonymous Function: =const x = function (a, b) {}=, called by: =x()=.
+    - Equivalent to: =function x(a, b) {}=.
+  - Anonymous Arrow Function Expression: =const x = (...args) => {}=.
+  - Anonymous Immediately Invoked Function Expression (IIFE): =(function () {})();=.
+- Recursive Function:
+  =function x(a) {for (let i = 0, y; (y = a.blah[i]); i++) {x(y);}}=.
+- Nested function definitions can access variables in parents scope.
+*** Modules:
+- Host-defined module resolution: URL's or file paths (eg. relative to current
+  module (not /"Project"/ root)).
+- Import other modules via: =import { foo } from "./foo.js";=.
+- Export functionality: =export const a = 1;=.
+  - No =export= means module local variables.
+*** TypeScript on Node.js:
+- JavaScript superset with types.
+  - Can iterate on adding TypeScript to a Project for development safety/speed
+    and then compile back to JavaScript for executing.
+- Install: ~npm i -D typescript~.
+- Local compile to JavaScript with Node Package Execute (=npx=) and the
+  TypeScript compiler (=tsc=): ~npx tsc example.ts~. Generates: =*.js= files.
+- Run the generated Node.js files.
+*** WebAssembly on Node.js:
+- Multi-language support (C/C++/Rust) to compiled assembly-like binary
+  (=.wasm=) / text (=.wat=) formats.
+- Browser/Node.js supported.
+- No direct OS access.
+- Key Concepts
+  - Module: A compiled WebAssembly binary, ie a .wasm file.
+  - Memory: A resizable ArrayBuffer.
+  - Table: A resizable typed array of references not stored in Memory.
+  - Instance: An instantiation of a Module with its Memory, Table, and
+    variables.
+- Integration:
+  #+BEGIN_EXAMPLE js
+    // Assume add.wasm file exists that contains a single function adding 2 provided arguments
+    const fs = require('node:fs');
+
+    const wasmBuffer = fs.readFileSync('/path/to/add.wasm');
+    WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
+      // Exported function live under instance.exports
+      const { add } = wasmModule.instance.exports;
+      const sum = add(5, 6);
+      console.log(sum); // Outputs: 11
+    });
+  #+END_EXAMPLE
 ** PHP:
 - https://onlinephp.io/ - Online PHP Repr.
 - https://github.com/felixfbecker/php-language-server,
