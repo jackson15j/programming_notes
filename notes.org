@@ -212,6 +212,23 @@ namespace. ie. no Code changes between local/remote packages.
   - Static: prepend =static=.
   - Private: prepend =#= (not =private=)(Think python =_=).
     - Private is truly private. Not accessible outside or derived classes!
+*** [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures][Closures]] & Scopes.:
+- *Closure:* Nested functions, where the inner function is using variables from
+  the parent functions scope.
+  - Can create variables of a closure with pre-canned lexical data, so that it
+    can be reused elsewhere.
+- *Lexical scoping:* How the parser determines the scope of variables available
+  to the inner function, from the parent function.
+- =var=: Always creates in the *global* scope!
+  #+BEGIN_EXAMPLE js
+    if (...) { var a = 5; }
+    // Would fail with out of scope in other languages, but
+    // returns `5` in JS due to `var` creating in global scope.
+    console.log(a);
+  #+END_EXAMPLE
+- =let=: local scoped variables that can be re-initialised.
+- =const= local scoped variables that can't be re-initialised, but can be
+  modified (eg. adding/modifying parameters on a static object).
 *** Functions:
 - Functions are First Class Objects:
   - Assign to variables.
