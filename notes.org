@@ -1346,6 +1346,10 @@ suspended_processes parameter in the [[https://registry.terraform.io/modules/lab
 - *Local Resolver Library:* Local DNS Cache.
 - *Local DNS Server:* Hosted by ISP's as a DNS Cache + inspect
   traffic/requests.
+*** Frizt box router - LAN DNS Settings location:
+- =Home Network > Network > Network Settings=
+  - =Additional Settings > IP Addresses > IPv4 Settings=
+    - =Local DNS server=
 * People Skills:
 ** Feedback:
 - Aim for a learning opportunity.
