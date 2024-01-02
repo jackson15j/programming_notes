@@ -1338,6 +1338,35 @@ suspended_processes parameter in the [[https://registry.terraform.io/modules/lab
 ** DagFlow
 - [[https://docs.dagster.io/deployment/guides/kubernetes/deploying-with-helm][Dagster: deploying with Helm]].
 * Networks:
+** Debugging Throughput vs Latency:
+How to debug an issue from Throughput + Latency graphs?
+
+- [[https://www.youtube.com/v/f7VsHLk_Z8c?version=3][YouTube: Throughput vs Latency: How to Debug a Latency Problem]].
+  - *Intrinsic Latency:* Reqeust/Response Time.
+    - Reduce processing time = reduced latency.
+  - *Queuing Latency:* Time queued before being processed.
+    - Max Throughput > Request rate = Drain queue.
+    - Total Latency = Queuing Latency + Intrinsic Latency.
+  - *Throughput:* Rate of work (cps).
+    - Max Throughput = request-handlers / intrinsic-latency.
+    - Increase Threads/Workers = increased Throughput.
+- Development Aims:
+  - Reduce Intrinsic Latency (Faster HW, Efficient code path, reduce hops).
+  - Increase Processing Capacity (More threads, horizontally scale).
+
++---------------------+--------------------------+--------------------------+
+| Performance         | Queuing (falling behind) | No Queue                 |
+| Improvements        |                          |                          |
++---------------------+--------------------------+--------------------------+
+| Increase processing | Increases max throughput | Increases max throughput |
+| capacity (threads)  +--------------------------+--------------------------+
+|                     | Reduces queuing latency  | Latency remains constant |
++---------------------+--------------------------+--------------------------+
+| Reduce Intrinsic    | Increase max throughput  | Increases max throughput |
+| Latency             +--------------------------+--------------------------+
+|                     | Reduces queuing latency  | Reduces total latency    |
++---------------------+--------------------------+--------------------------+
+
 ** DNS:
 - https://root-servers.org/ - Root DNS servers at the top of the DNS
   hierarchy. These root servers farm out requests down to Top-Level
