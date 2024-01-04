@@ -437,9 +437,16 @@ will always be partitions, so the choices is Consistency vs Availability!*
 - *Consistency (CP):* requires block further writes to all other nodes until data is
   written across them all. Need to return warnings during this
   period. eg. Banking.
+  - Buy off-the-shelf Systems, *don't roll your own Distributed
+    Transaction Management System!*
 - *Availability (AP):*
   - Reads: Keep accepting, but may return stale data.
   - Writes: Keep accepting writes, sync once network partition is resolved.
+  - *Eventual Consistency*.
+  - Easier to roll out and usually good enough if User's seeing stale
+    data is fine.
+    - Follow up corrective measures once partition has been resolved
+      an Consistent again. (eg. Order -> Delay/Reimburse email).
 ** Database vs Data Lake vs Data Warehouse:
 Quick summary: [[https://youtu.be/-bSkREem8dM][YouTube: Database vs Data Warehouse vs Data Lake | What is the
 Difference?]]
