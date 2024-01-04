@@ -566,6 +566,12 @@ Links:
 An ERD (Entity Relationship Diagram) is used to describe the Database Schema
 with the inter-relationships between each table (entity). Typically it is a UML
 style diagram. Similar to a UML Class diagram for programming.
+
+** SQL (Structured Query Language):
+- (Table(s)) Schema + Data relationships defined before data
+  population.
+- Schema changes = migration = /potential/ downtime or reduced
+  performance.
 * Data Pipelines:
 ** ETL: Extract, Transform, Load.
 The mechanism of Extracting data from a Source (API, file, DB, Web Scraping,
