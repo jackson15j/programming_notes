@@ -1450,6 +1450,55 @@ How to debug an issue from Throughput + Latency graphs?
 - =Home Network > Network > Network Settings=
   - =Additional Settings > IP Addresses > IPv4 Settings=
     - =Local DNS server=
+** [[https://grpc.io/][gRPC]]:
+#+BEGIN_QUOTE
+  Why gRPC?
+
+  gRPC is a modern open source high performance Remote Procedure Call
+  (RPC) framework that can run in any environment. It can efficiently
+  connect services in and across data centers with pluggable support
+  for load balancing, tracing, health checking and authentication. It
+  is also applicable in last mile of distributed computing to connect
+  devices, mobile applications and browsers to backend services.
+#+END_QUOTE
+
+- [[https://grpc.io/docs/what-is-grpc/introduction/][gRPC Docs: What is gRPC?]]
+  - [[https://protobuf.dev/overview/][Protocol Buffers]] Request/Response(s).
+  - gRPC Server + Client Stub expose methods (parameters + return
+    types).
+  - Client/Server languages do not need to match.
+- RPC: Call a function on a Remote System, as if it was a local
+  object.
+  - *RISK: Don't do thousands of small calls in a loop!*
+    - *Issues:* Network latency/bandwidth hits, /potential/ call rate
+      limits/rejection/IP-banning.
+    - *Workaround:* Bulk network transfer, then loop local parsing of
+      response.
+*** [[https://protobuf.dev/overview/][Protocol Buffers]]:
+- JSON-like binary serialization defined in =.proto= files.
+  - Centralise =.proto= files to support generation (=protoc=
+    compiler) of client-stubs/server classes in multiple languages.
+  - Generated classes can then de/serialize & share data.
+- Serialize MB's of Data.
+- Suitable for Network Traffic or Data Storage.
+- Extendable without invalidating existing data or Code changes.
+  - Ignore new fields.
+  - Use default if deleted.
+  - Use Empty if deleted repeated fields.
+  - New code reading old messages = defaults for missing fields.
+- Language/platform-neutral structure.
+- Compact.
+- Fast parsing.
+- Language integration's.
+**** Don't use Protocol Buffers when:
+- Data is larger than memory (suggested avoid past few MB's).
+- You can not compare binary serialisations. ie. parse and then compare!
+- Messages are not compressed (but can be externally).
+- Use [[https://en.wikipedia.org/wiki/FITS][FITS]] format for speed/size efficiencies of scientific
+  multi-dimensional arrays.
+- Poor support in non-object-orientated languages.
+- Not self-describing. ie. need =.proto= file to interpret!
+- Not a formal standard!
 * People Skills:
 ** Feedback:
 - Aim for a learning opportunity.
