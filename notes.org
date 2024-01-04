@@ -495,7 +495,62 @@ Links:
 - [[https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html][AWS Redshift: Materialised Views]].
 - [[https://docs.getdbt.com/docs/build/materializations][DBT: materialisations]] - DBT uses materialisations as views for transformed
   data by default.
+** MongoDB:
+- Document DB.
+  - BSON (Binary JSON) storage.
+    - Store a range of structures. eg. Documents, objects (eg. Users).
+    - Non-JSON data-types support: datatime/date, int, long, floating
+      point, decimal128, byte array.
+  - Amorphous structure of fields between documents.
+    - Live manipulation of fields.
+    - Easy to change schema (Dev. driven changes).
+      - *PRO: vs *SQL requiring upfront schema definitions + defined
+        migrations (usually DBA)*, but I think it's a weak argument
+        when you need a Boundary Contract to decouple Teams (if you
+        have multiple teams accessing the same DB Data).
+      - I think this /could/ be more beneficial in PoC's.
+  - Schema Validation - Data Governance.
+  - Migrations via: [[https://documentation.red-gate.com/flyway/learn-more-about-flyway/system-requirements/supported-databases-and-versions#Supporteddatabasesandversions-MongoDB(preview)][Flyway DB]] is in preview atm.
+  - Change streams API
+    - Enable Event-Driven architectures.
+    - Before/after states.
+    - Change Event can trigger other Events (eg. Counters/Timers).
+  - ACID Transactions:
+    - Document updates are atomic operations.
+    - Multi-document transactions + rollbacks (RDB equivalent).
+    - Distributed Transactions support.
+- Queries:
+  - Indexing into arrays / nested fields.
+  - Automatically adds Geospatial/Time-series tags for time-based queries.
+  - MQL (Mongo Query Language) = SQL equivalent.
+    - Idiomatic [[https://docs.mongodb.com/drivers/][Mongo Docs: Language Drivers]].
+- Distributed DB design:
+  - Horizontally scale across 100's of small machines in Cluster.
+  - Sharding:
+    - Does not split Documents.
+    - Tag to pin Documents to region(s). (Governance or dec. latency).
+    - Each shard = 3+ Servers in a ReplicaSet (mini-)cluster.
+    - Replicas can be installed across DataCenters.
+    - *PRO: vs PostgreSQL's Vertical scaling Writer + no sharding!*
+  - *PRO: vs PostgreSQL is /better/ Cloud/Language integration's.*
+- Security:
+  - Client-side (KMIP-compliant Key Management Provider) Field-level
+    Encryption.
+  - Queryable Encryption: Search encrypted data without decrypting.
+- Postgresql vs Mongo:
+  - [[https://www.mongodb.com/compare/mongodb-postgresql][MongoDB: Comparing MongoDB vs PostgreSQL]].
+  - [[https://aws.amazon.com/compare/the-difference-between-mongodb-and-postgresql/][AWS: Wha's the Difference Between MongoDB and PostgreSQL?]]
+  - [[https://www.educative.io/blog/mongodb-versus-postgresql-databases][Educative.io: MongoDB vs PostgreSQL: What to consider when
+    choosing a database]].
 ** Postgres:
+- Relational DB (RDB).
+  - Mature EcoSystem/Tooling.
+- ACID Transactions:
+  - Read committed isolation.
+  - Transaction required to update all parent/child tables at once.
+- Scaling:
+  - Vertically scale Primary Writer node.
+  - Horizontally scale Read replicas (No Sharding!).
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 - [[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/][Docker Blog: How to use the Postgres Docker Official Image]].
 - [[https://ellisvalentiner.com/post/2022-01-06-flattening-json-in-postgres/#:~:text=Flattening%20JSON%20objects%20using%20jsonb_to_record,objects%2C%20and%20returns%20a%20record][Flattening JSON in postgres]].
