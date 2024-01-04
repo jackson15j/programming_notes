@@ -562,6 +562,9 @@ Links:
   (brew).
 - https://tableplus.com/ - Modern, native, and friendly GUI tool for relational
   databases: MySQL, PostgreSQL, SQLite & more. Cross-OS.
+- https://documentation.red-gate.com/flyway - CLI-based DB migrations
+  from a folder of SQL files. ie. Decoupled from Application/Language
+  and can be hosted in a centralised repo.
 *** ERD (Entity Relationship Diagram):
 An ERD (Entity Relationship Diagram) is used to describe the Database Schema
 with the inter-relationships between each table (entity). Typically it is a UML
