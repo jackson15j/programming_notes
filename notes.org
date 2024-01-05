@@ -1686,6 +1686,33 @@ existing test suite.
 - [[https://www.tornadoweb.org/en/stable/][Tornado]] - Python web framework and asynchronous networking library. Ideal for
   long polling, WebSockets and other long-lived connections.
 * Security:
+** Attacks
+*** Confused Deputy:
+In an Implicit Trust system; the Confused Deputy is when a Service
+without authorization to a Resource gets a Downstream Service with
+authorization to interact with the Resource on its' behalf. ie. an
+escalation of privileges attack:
+
+- ServiceA has no scope for DataX/FunctionX.
+- ServiceB has scope for DataX/FunctionX.
+- ServiceB implicitly trusts ServiceA.
+- ServiceA requests ServiceB for DataX/FunctionX on it's behalf.
+  - ServiceB uses it's scope to get DataX/FunctionX and return response
+    to ServiceA.
+
+The fix for this is for ServiceB to have checked the ServiceA's
+authorization to access the Resource. ie. move closer to Zero Trust
+mindset.
+
+*** Man in the Middle:
+An attack where a third-party inserts themselves unknowingly between
+two other communicating parties as a proxy. The attack is then able to
+sniff, manipulate the data in-transit, fork the conversation, or
+continue the conversation directly with one of the parties.
+
+ie. The malicious equivalent of: transparent/munging proxies,
+B2B (back-to-back) User Agents.
+
 ** Best Practices:
 - [[https://cheatsheetseries.owasp.org/index.html][OWASP: Cheat Sheet Series]].
   - [[https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html][OWASP: Attack Surface Analysis Cheat Sheet]].
@@ -1695,11 +1722,102 @@ existing test suite.
   - [[https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html][OWASP: Docker Security Cheat Sheet]].
   - [[https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html][OWASP: Input Validation Cheat Sheet]].
   - [[https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html][OWASP: Threat Modeling Cheat Sheet]].
+
+*** Categorising MicroServices:
+Zero Trust can be used as a Spectrum to avoid the pain of implementing
+it everywhere. eg. Categorisation of Services:
+
+- *Public:* Public Domain data.
+- *Private:* Data that requires authentication (+ authorization!?).
+- *Secret:* PII data. Only by that User (+ select parties).
+
+Then limit Services access to data by their tagged tier level (and
+more open access).
+
+*** CyberSecurity:
+- *Identify:*
+  - Who are potential attackers?
+  - What will they target?
+  - Where are you most vulnerable?
+  - Threat Modelling.
+- *Preventative:*
+  - Steps to stop an attack happening.
+  - Protect your key assets.
+  - Disaster Recovery backups (different cloud account + location).
+- *Detective:*
+  - Alerting that an attack has/had happened.
+  - Log Aggregation, Metrics, Intrusion Detection Systems,
+    Vulnerability Scanning ([[https://www.aquasec.com/cloud-native-academy/vulnerability-management/vulnerability-scanner/][Aqua]]).
+- *Responsive:*
+  - Respond during/after an attack - Comms.
+  - What is the scope of the Breach?
+  - Follow Legal/Regulatory notification steps based off data type
+    (eg. PII = [[https://gdpr-info.eu/art-33-gdpr/][72 hours for GDPR]]).
+- *Recover:*
+  - Post-incident restore (automated rebuilds) + implement fixes.
+  - Remove access
+
+*** Patching:
+- Do you know the state of security patches for each level in your
+  stack?
+- How are you notified of Security Vulnerabilities?
+- How are you notified of Security Patches?
+- When do you implement Security Patches? And is it automated?
+
+The Stack of a MicroService:
+- *MicroService.*
+- *Container OS.*
+- Container.
+- Kubernetes Subsystems.
+- VM OS.
+- VM.
+- Hypervisor.
+- OS.
+- Hardware
+
+*Bold* = Your responsibility if on a managed kubernetes Cloud
+provider. ie. Need to know the state of:
+
+- Application dependencies.
+  - Tooling (Scanning): [[https://snyk.io/][Snyk]], [[https://docs.github.com/en/code-security/code-scanning][Github Docs: code-scanning]].
+  - Tooling (updates): [[https://github.com/renovatebot/renovate][Github: renovatebot/renovate]]. [[https://github.com/dependabot][Github: dependabot]].
+- Application language(s).
+- Container base image.
+  - Tooling: [[https://www.aquasec.com/cloud-native-academy/vulnerability-management/vulnerability-scanner/][Aqua]].
+- Container dependencies.
+
 *** Prevent debugging Production code.
 - Prevent malicious actors attaching a debugger on Production instances to
   decompile the code.
 - API's/Code that actively rejects Debuggers, crashes code, different code
   paths (obfuscation), reports home. ie. fail securely.
+
+*** Secrets:
+Secrets range from: TLS Certificates, SSH Keys, Public/Private API
+keypairs, DB Credentials...
+
+- *Creation:*
+  - How do we create the Secret?
+  - Make sure many hyper-limited scoped secrets to avoid broad
+    failures from rotation. eg. Per-instance credentials.
+- *Distribution:* How do we get the Secret to /only/ the right place?
+- *Storage:* Can only authorised parties access the Secret?
+- *Monitoring:* How is the Secret being used?
+- *Rotation:*
+  - Can the Secret be changed without causing problems?
+  - Aim for small window eg. <1hour. - Requires tooling!
+- *Revocation:*
+  - How to revoke an exposed Secret before rotation?
+  - What tooling are you using to scan for Secrets?
+    - [[https://github.com/awslabs/git-secrets][Github: awslabs/git-secrets]] - prevent committing secrets.
+    - [[https://github.com/gitleaks/gitleaks][Github: gitleaks/gitleaks]] - prevent committing secrets + detection.
+
+What tooling is being used to manage the Secret?
+- Kubernetes built-in secrets solution.
+- [[https://www.hashicorp.com/products/vault][Hashicorp: Vault]] - supports [[https://developer.hashicorp.com/consul/tutorials/developer-configuration/consul-template][Hashicorp Docs: consul-template]] for
+  dynamic updates of Service config with secrets.
+- [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html][AWS: Secrets Manager]], [[https://azure.microsoft.com/en-us/products/key-vault/][Azure: Key Vault]], [[https://cloud.google.com/security/products/secret-manager][Google Cloud: Secrets Manager]].
+
 ** Security Bodies/Sites:
 - [[https://www.first.org/cvss/][CVSS (Common Vulnerability Scoring System)]] - Used in the scoring of PEN Tests.
 - [[https://www.cve.org/][CVE (CyberSecurity Vulnerabilities)]] ([[https://cve.mitre.org/index.html][Old CVE site (Should be dead in
@@ -1708,6 +1826,35 @@ existing test suite.
   security through Open-Source projects.
 - https://infosec.mozilla.org/guidelines/web_security
 ** Terminology:
+*** Defence in Depth:
+- Multiple-levels of Protections.
+  - eg. Unique credentials, Encryption at Rest & in Transit, different
+    network segments / physical locations, different languages (avoid
+    common 0-day bugs)
+- Breaking functionality into distributed Services ie. MicroServices.
+*** Least Privilege:
+- Grant minimum access to carry out required function and only for
+  time period needed.
+- Reduce scope of attack if credential is leaked!
+- eg. Per-Instance, time-limited, R/O DB credentials.
+*** Implicit Trust:
+- Trust all calls made inside Our network perimeter.
+- Trust is tested at perimeter.
+- High Risk if breached!
+  - Is this an explicit choice or unaware of risk?
+*** Zero Trust:
+- *Mindset:* Assume compromised environment!
+  - all interactions are with malicious attackers or compromised
+    systems.
+    - What is the process to gain Trust?
+  - all data written will be read by an attacker.
+    - How are you securing data in-transit & at rest?
+- No concept of a /"perimeter"/!
+  - /potentially/ could make all Services public with enough zero
+    trust protections (Extreme end of the scale).
+- Requires a culture/mindset change of Company to build a zero trust
+  System.
+
 *** Vertical Separation Flaw:
 - Access resources granted to more privileged accounts.
 - eg. gaining Administrator privileges.
