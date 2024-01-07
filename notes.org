@@ -421,6 +421,13 @@ with a focus on multi-package repositories .
 * Databases:
 - [[https://github.com/AltimateAI/awesome-data-contracts][Github: AltimateAI/awesome-data-contracts]] - A curated list of awesome blogs,
   videos, tools and resources about Data Contracts.
+** ACID Transactions:
+- *Atomicity:* Failing/Succesful Transaction event.
+- *Consistency:* Data consistency is maintained on success/failure of
+  a transaction.
+- *Isolation:* Sequential changes to overlapping data.
+- *Durability:* Completed transactions are recorded in event of
+  disaster.
 ** CAP Theorem:
 You can only achieve 2 of these 3 properties of databases:
 
