@@ -501,6 +501,8 @@ Links:
     - Store a range of structures. eg. Documents, objects (eg. Users).
     - Non-JSON data-types support: datatime/date, int, long, floating
       point, decimal128, byte array.
+  - Denormalize data, so Document is fully contained = Faster Reads
+    (minimal/no JOIN's).
   - Amorphous structure of fields between documents.
     - Live manipulation of fields.
     - Easy to change schema (Dev. driven changes).
@@ -542,6 +544,13 @@ Links:
   - [[https://aws.amazon.com/compare/the-difference-between-mongodb-and-postgresql/][AWS: Wha's the Difference Between MongoDB and PostgreSQL?]]
   - [[https://www.educative.io/blog/mongodb-versus-postgresql-databases][Educative.io: MongoDB vs PostgreSQL: What to consider when
     choosing a database]].
+*** When to use MongoDB?
+- *Content Management Systems:* Rapid query/retrieve unstructured data
+  (images, videos, text).
+- *Transaction data:* Horizontal Scaling + High Availability = great
+  for Transactional Financial Systems.
+- *Stream Analysis:* High Scalabilty, Horizontal Partitioning and
+  Flexible Schema = Streaming Data Applications + Real-time analytics.
 ** Postgres:
 - Relational DB (RDB).
   - Mature EcoSystem/Tooling.
@@ -554,6 +563,11 @@ Links:
 - [[https://postgrest.org/en/stable/][PostgREST: Serve a RESTful API from any Postgres database]].
 - [[https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/][Docker Blog: How to use the Postgres Docker Official Image]].
 - [[https://ellisvalentiner.com/post/2022-01-06-flattening-json-in-postgres/#:~:text=Flattening%20JSON%20objects%20using%20jsonb_to_record,objects%2C%20and%20returns%20a%20record][Flattening JSON in postgres]].
+*** When to use PostgreSQL?
+- *Data Warehousing:* Rapid, complex querying of structured data.
+- *Ecommerce & Web Applications:* Transactions + data consistency.
+- *Flexible Connections:* JSON/Foreign-data-wrappers to connect to
+  other databases.
 ** Reporting/Tooling/Visualisation:
 - https://observablehq.com/ - Jupiter Notebooks style notebooks that can
   connect to multiple data sources (no need for a Data Lake??) to provide
