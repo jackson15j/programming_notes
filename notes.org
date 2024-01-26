@@ -2287,6 +2287,35 @@ text definitions to create and modify diagrams dynamically.
 
 - [[https://github.com/mermaid-js/mermaid][Github: mermaid-js/mermaid]].
 - [[https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/][Github Blog: Include diagrams in your Markdown files with Mermaid]].
+* Task Queuing:
+** [[https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html][AWS MQ]]:
+- Managed Message Broker Service.
+  - [[https://www.amqp.org/][AMPQ]] (Advanced Message Queuing Protocol).
+  - [[https://mqtt.org/getting-started/][MQTT]] (Message Queuing Telemetry Transport).
+- Supported Engines:
+  - [[http://activemq.apache.org/][Apache ActiveMQ]].
+  - [[https://www.rabbitmq.com/][RabbitMQ]].
+- Resource Type: Async/Synch, Queues, Pub-Sub, Message Broker.
+** [[https://docs.aws.amazon.com/sns/latest/dg/welcome.html][AWS SNS]]:
+- Pub-Sub Service.
+  - Message Topics.
+  - Can chain AWS SQS as a subscriber (along with
+    notification/email/AWS Lambda/HTTPS/Application Services).
+- AWS SNS is a Real-Time Message Router. ie. Does not store messages
+  for later retrieval!
+- Resource Type: Synch, Pub-Sub.
+** [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html][AWS SQS]]:
+- Message Queue.
+  - API / SDK to access.
+- Message is processed by a single Subscriber/Worker.
+- Resource Type: Async, Queues.
+** [[https://www.rabbitmq.com/][RabbitMQ]]:
+- OpenSource Message Broker.
+  - [[https://www.amqp.org/][AMPQ]] (Advanced Message Queuing Protocol).
+  - [[https://mqtt.org/getting-started/][MQTT]] (Message Queuing Telemetry Transport).
+  - [[https://stomp.github.io/][STOMP]] (Simple Text Oriented Messaging Protocol).
+- Cloud/Self-hosting.
+
 * Testing Philosophy:
 ** TDD:
 TDD (Test Driven Development), is the practice of defining (and implementing)
