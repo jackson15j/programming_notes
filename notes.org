@@ -1629,6 +1629,11 @@ highlighting.
 *** Mamba instead of Conda:
 - https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
 - https://labs.epi2me.io/conda-or-mamba-for-production/
+** Flask:
+- [[https://flask.palletsprojects.com/en/latest/patterns/][Flask: Patterns]] - Pretty good list of typical use-cases & coding
+  patterns to follow when using Flask to do things like: DB access,
+  templating, Lazy loads, caching, factories, tasks (celery),
+  streaming, etc.
 ** Packaging:
 *** [[https://hatch.pypa.io/latest/][Hatch]]:
 Not tried it yet but:
