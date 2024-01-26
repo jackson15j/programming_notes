@@ -817,8 +817,7 @@ You can install python via brew, but it doesn't symlink: ~python3~ to
 
 #+BEGIN_SRC shell :results silent
   brew install python
-  rm -rf /usr/local/bin/python
-  ln -s /usr/local/bin/python3 /usr/local/bin/python
+  ln -sF /usr/local/bin/python3 /usr/local/bin/python
 #+END_SRC
 **** Experiments:
 - ~rust~, ~rustup~.
