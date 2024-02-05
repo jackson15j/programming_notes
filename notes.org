@@ -1557,6 +1557,26 @@ How to debug an issue from Throughput + Latency graphs?
 - *Look for outcomes:* Notice when someone creates a desirable one.
 - Apply *BID* for positive/negative feedback.
 - *Learn from praise:* Ask for specifics.
+** STAR (Situation, Task, Action, Result):
+STAR can be used to talk about past experiences. AR can be used for
+future situations.
+
+- *Situation:* Describe the situation you were in.
+- *Task:* Describe the task you had to do.
+  - Challenges.
+  - Constraints.
+  - Deadlines.
+  - Issues.
+- *Action:* Describe the action(s) you took / would take.
+  - Teamwork.
+  - Leadership.
+  - Initiative.
+  - Integrity.
+- *Results:* Describe the outcome (or expected outcome of your action(s)).
+  - Achievements.
+  - Improvements.
+  - Cost savings.
+  - Delivery.
 ** Winning Arguments:
 *** Tech Debt:
 
