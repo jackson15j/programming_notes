@@ -1215,6 +1215,57 @@ See: https://www.maxivanov.io/make-graphql-requests-with-curl/
         "query":"mutation {retrieveApplication(identifier: \"user@email.com\", pin_code: \"1234\") {id url}}"
       }'
   #+END_EXAMPLE
+** Javascript:
+*** filter:
+Create a new array with a callback function that applies a conditional
+statement against each element of the array. elements are pushed into
+the new array when the condition returns true.
+
+#+BEGIN_SRC js
+  const students = [
+    { name: 'Quincy', grade: 96 },
+    { name: 'Jason', grade: 84 },
+    { name: 'Alexis', grade: 100 },
+    { name: 'Sam', grade: 65 },
+    { name: 'Katie', grade: 90 }
+  ];
+
+  const studentGrades = students.filter(student => student.grade >= 90);
+  return studentGrades; // [ { name: 'Quincy', grade: 96 }, { name: 'Alexis', grade: 100 }, { name: 'Katie', grade: 90 } ]
+#+END_SRC
+
+#+RESULTS:
+| { | name: | Quincy | grade: | 96 | } | { | name: | Alexis | grade: | 100 | } | { | name: | Katie | grade: | 90 | } |
+
+*** map:
+Create a new array from an existing one, by applying a callback
+function to each element of the array.
+
+#+BEGIN_SRC js
+  const numbers = [1, 2, 3, 4];
+  const doubled = numbers.map(item => item * 2);
+  console.log(doubled); // [2, 4, 6, 8]
+#+END_SRC
+
+#+RESULTS:
+: [2 (\, 4) (\, 6) (\, 8)]
+
+*** reduce:
+Reduce an array down to one value. The callback function is called
+against every array item (only need =accumulator= and =currentValue=.
+
+#+BEGIN_SRC js
+  const numbers = [1, 2, 3, 4];
+  const sum = numbers.reduce(function (result, item) {
+    return result + item;
+  }, 0);
+  console.log(sum); // 10
+#+END_SRC
+
+#+RESULTS:
+: 10
+: undefined
+
 ** React:
 - View cookies in browser: ~Developer Tools > Storage Tab > Cookies~.
 - ~redux~ is the store of all BE DB state in the FE.
