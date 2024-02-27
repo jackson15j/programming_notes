@@ -750,7 +750,9 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
       echo "---- Enable autoraise service ..."
       brew services start autoraise
       echo "---- Symlink Emacs, but also need to Command+Option drag the Emacs app to: /Applications/ to show in spotlight ..."
-      ln -s /opt/homebrew/opt/emacs-plus*/Emacs.app /Applications
+      # ln -s /opt/homebrew/opt/emacs-plus*/Emacs.app /Applications
+      echo "---- New way of Symlinking Emacs into the /Applications/ folder to work with spotlight ..."
+      osascript -e 'tell application "Finder" to make alias file to posix file "/opt/homebrew/opt/emacs-plus@30/Emacs.app" at POSIX file "/Applications"'
     #+END_SRC
 **** emacs:
 - [[https://github.com/d12frosted/homebrew-emacs-plus][Github: d12frosted/homebrew-emacs-plus]] set to the latest branch:
