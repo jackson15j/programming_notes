@@ -1656,6 +1656,7 @@ See: [[https://www.youtube.com/watch?v=vSuJqMRG1WM][YouTube: TECHNICAL STORIES D
 - https://github.com/benfogle/crossenv - Virtual Environments for
   Cross-Compiling Python Extension Modules.
 ** CLI packages:
+- https://typer.tiangolo.com/ - FastAPI's spin-off for CLI's.
 - https://github.com/pallets/click - Command Line Interface Creation Kit
 - https://cloup.readthedocs.io/en/stable/ - Click + Option Groups.
 - https://github.com/astanin/python-tabulate - Pretty-print tabular data.
@@ -1702,6 +1703,15 @@ highlighting.
 *** Mamba instead of Conda:
 - https://mamba.readthedocs.io/en/latest/user_guide/mamba.html
 - https://labs.epi2me.io/conda-or-mamba-for-production/
+** [[https://fastapi.tiangolo.com/][FastAPI:]]
+Fast to write/run API framework.
+
+Features: Simple syntax, Renders JSON, Easy integration ([[https://strawberry.rocks/][Strawberry]]
+(GraphQL), [[https://docs.pydantic.dev/latest/][Pydantic]] (Validation), [[https://www.python-httpx.org/][HTTPX]] (Test client)), Auto-generates
+OpenAPI output (Swagger/Redoc UI's), Websockets, CORS, Cookie
+Sessions, Auth (OAuth2, JWT, HTTP basic).
+
+Looks to be much better than Flask for ease.
 ** Flask:
 - [[https://flask.palletsprojects.com/en/latest/patterns/][Flask: Patterns]] - Pretty good list of typical use-cases & coding
   patterns to follow when using Flask to do things like: DB access,
