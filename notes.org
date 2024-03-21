@@ -608,6 +608,50 @@ use.
 - *Data Lake to Data Warehouse:* is usually an ETL process with schema
   changing + data sanitising transforms to make it suitable for consistent
   Analysis/Reporting.
+** [[https://learn.microsoft.com/en-us/azure/databricks/introduction/][Azure DataBricks]]:
+Azure Databricks is a unified, open analytics platform for building,
+deploying, sharing, and maintaining enterprise-grade data, analytics,
+and AI solutions at scale. The Databricks Data Intelligence Platform
+integrates with cloud storage and security in your cloud account, and
+manages and deploys cloud infrastructure on your behalf.
+
+- Generative AI against Data Lakehouse (mix of Data Lake and Data
+  Warehouse).
+- NLP (ML-based) to build unique model for your business domain.
+  - Natural Language document search.
+  - Data Discovery.
+  - ML modeling, tracking, serving.
+- OpenAI support ((LLM) Large Language Models).
+- Strong Governance & Security.
+- ETL.
+- Generating dashboards/visualisations.
+- Integration:
+  - [[https://learn.microsoft.com/en-us/azure/databricks/introduction/delta-comparison][Delta Lake/Sharing]] ([[https://delta.io/][Delta.io]]).
+    - Delta is the foundation for storing data and tables in the
+      Databricks lakehouse.
+    - Extends Parquet data files with a file-based transaction log for
+      ACID transactions and scalable metadata handling.
+    - Data Lake = open source transactional storage layer on top of
+      cloud storage.
+    - Delta Tables (SQL layer on top of Delta Lake).
+  - MLFlow.
+  - [[https://spark.apache.org/][Apache Spark]] (including Structured Streaming. ie. ETL Streaming).
+    - Multi-language engine for executing data engineering, data
+      science, and ML on single-node machines or clusters.
+  - Redash.
+- Programmatic Access:
+  - Workflows.
+  - Unity Catalog - unified data governance model for data store(s).
+  - Delta Live Tables.
+    - Manages flow of data between many Delta Tables.
+    - Declarative pipelines.
+    - Batch/streaming (even on same table).
+    - Management - Task Orchestration, cluster management, monitoring.
+  - Databricks SQL.
+  - Photon compute clusters.
+  - REST API.
+  - CLI.
+  - Terraform.
 ** [[https://meltano.com/][Meltano]] (Data Pipeline):
 [[https://meltano.com/][meltano]] - /"Your CLI for ELT+: Open Source, Flexible, and Scalable."/
 
@@ -2371,6 +2415,10 @@ text definitions to create and modify diagrams dynamically.
 - [[https://github.com/mermaid-js/mermaid][Github: mermaid-js/mermaid]].
 - [[https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/][Github Blog: Include diagrams in your Markdown files with Mermaid]].
 * Task Queuing:
+** [[https://kafka.apache.org/intro][Apache Kafka]]:
+- Topic message broker (server) for streaming/storing Events.
+- Client connectors.
+- Producer/Consumer API's.
 ** [[https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html][AWS MQ]]:
 - Managed Message Broker Service.
   - [[https://www.amqp.org/][AMPQ]] (Advanced Message Queuing Protocol).
