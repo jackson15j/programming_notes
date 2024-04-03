@@ -348,9 +348,11 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
 *** How to resize a PDF + scale content?:
 ~docker run --rm -v .:/app -w /app minidocks/ghostscript -o <output>_a5.pdf -sPAPERSIZE=a5 -dFIXEDMEDIA -dPDFFitPage -sDEVICE=pdfwrite <input>.pdf~
 ** makemkv ([[https://www.makemkv.com/developers/usage.txt][~makemkvcon~ CLI]]):
-#+BEGIN_SRC shell :dir ~/Downloads/dvd_rips/ :var output="<dvd_folder>"
+#+BEGIN_SRC shell :dir ~/Downloads/dvd_rips/ :var drive="disk4" output="<dvd_folder>"
   mkdir -p $output
   makemkvcon mkv disc:0 all $output
+  sleep 2
+  diskutil eject $drive
 #+END_SRC
 
 ** RDP:
