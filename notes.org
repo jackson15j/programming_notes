@@ -323,13 +323,13 @@ Open metrics/logging/tracing telemetry.
 ** De/Compress Files:
 - Decompress =.xz=: ~unxz <file.ext.xz>~.
 ** ffmpeg:
-*** [[https://trac.ffmpeg.org/wiki/Encode/H.264][FFmpeg wikiL Encode/H.264]]:
+*** [[https://trac.ffmpeg.org/wiki/Encode/H.264][FFmpeg wiki: Encode/H.264]]:
 Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~):
 
 #+BEGIN_SRC shell :var input="" output=""
   ffmpeg -i $input -map 0 -c:v libx264 -crf 17 -preset slow -c:s copy -c:a copy $output
 #+END_SRC
-*** [[https://trac.ffmpeg.org/wiki/Encode/H.265][FFmpeg wikiL Encode/H.265]]:
+*** [[https://trac.ffmpeg.org/wiki/Encode/H.265][FFmpeg wiki: Encode/H.265]]:
 Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~):
 
 #+BEGIN_SRC shell :var input="" output=""
@@ -347,6 +347,12 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
 ~docker run --user $UID:$GROUPS --rm -v $(pwd):/work mgodlewski/qpdf --decrypt <input>.pdf <output>.pdf~
 *** How to resize a PDF + scale content?:
 ~docker run --rm -v .:/app -w /app minidocks/ghostscript -o <output>_a5.pdf -sPAPERSIZE=a5 -dFIXEDMEDIA -dPDFFitPage -sDEVICE=pdfwrite <input>.pdf~
+** makemkv ([[https://www.makemkv.com/developers/usage.txt][~makemkvcon~ CLI]]):
+#+BEGIN_SRC shell :dir ~/Downloads/dvd_rips/ :var output="<dvd_folder>"
+  mkdir -p $output
+  makemkvcon mkv disc:0 all $output
+#+END_SRC
+
 ** RDP:
 - =xfreerdp= example connection string: ~xfreerdp /w:1920 /h:1080 /u:<username>
   /v:<hostname>~
