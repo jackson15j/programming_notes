@@ -355,6 +355,64 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
   diskutil eject $drive
 #+END_SRC
 
+*** Applescript to rip DVD's via Mac's auto-play:
+
+#+NAME: rip_dvd.scpt
+#+BEGIN_EXAMPLE applescript
+  (*
+  applescript to:
+
+  - get volume name for the disc in the disc drive.
+  - Create a folder using the above volume name.
+  - run a CLI application.
+  - sleep 5 seconds.
+  - eject disc
+
+  ,*)
+
+  -- set discVolume to do shell script "diskutil info $(drutil status | grep -Eo '/dev/disk[0-9]+')" & " | grep -i 'Volume Name' | awk -F': ' '{print $2}'"
+  -- set discVolume to do shell script "diskutil info /dev/disk4 | grep -i 'Volume Name' | awk -F': ' '{print $2}'"
+  set discVolume to do shell script "diskutil info /dev/disk4 | grep -i 'Volume Name' | cut -c 31-9999 | sed 's/ /_/g'"
+
+  set parentFolder to POSIX path of (path to downloads folder) & "dvd_rips/"
+
+  tell application "Finder"
+      if not (exists folder (parentFolder & discVolume)) then
+          -- make new folder at folder parentFolder with properties {name:discVolume}
+          do shell script "ls -al " & parentFolder
+          do shell script "mkdir -p " & (parentFolder & discVolume)
+      end if
+  end tell
+
+  do shell script "/opt/homebrew/bin/makemkvcon mkv disc:0 all " & (parentFolder & discVolume)
+  do shell script "ls -al " & (parentFolder & discVolume)
+
+  delay 5
+  do shell script "diskutil eject disk4"
+#+END_EXAMPLE
+
+Steps:
+
+- Open Applescript Editor.
+- Dump above example code and save as: =rip_dvd.scpt=.
+- Export as a Read-Only, signed Application:
+  - =File > Export=
+    - =File Format: Application=.
+    - =Run-only= ticked.
+    - =Code Sign: Sign to run locally=.
+  - Read-only + signing fixes issue of requesting access on every run!
+- Set System Settings to run exported Application on DVD insertions:
+  - =Settings > CDs & DVDs=
+    - =When you insert a video DVD: Application > Open rip_dvd.app=.
+- Set System Settings to grant Application Full Disk Access:
+  - =Settings > Privacy & Security > Files and Folders > Add > rip_dvd.app=.
+- Insert a DVD and accept access requests (should only need allowing
+  on first run).
+
+FIXME:
+
+- Disk Eject is flakey.
+- Disk drive is hard-coded.
 ** RDP:
 - =xfreerdp= example connection string: ~xfreerdp /w:1920 /h:1080 /u:<username>
   /v:<hostname>~
