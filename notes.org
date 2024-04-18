@@ -1478,6 +1478,7 @@ core.attributesfile ~/.gitattributes~.
 - https://hackingthesystemsdesigninterview.com
 - https://blog.bytebytego.com - Newsletter by Alex Xu (Author of: /"System Design Interview/").
 - https://www.siliconmilkroundabout.com - London-based Job Fair.
+- https://www.hackerrank.com/ - practice coding sections.
 * Kubernetes:
 - [[https://kurl.sh/][kURL: Open Source Kubernetes Installer]].
 - https://docs.k3s.io - Lightweight Kubernetes. Easy to install, half the
