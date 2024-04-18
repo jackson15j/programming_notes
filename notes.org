@@ -2116,6 +2116,13 @@ https://www.wireguard.com/
 
 WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 * System Design:
+** Estimation:
+- *QPS:* Queries Per Second.
+  - Peak QPS ~= 2 * QPS.
+- Storage (eg. Lifetime)(eg. =X <unit> * <time> * <users>=).
+- Cache.
+- Number of Servers.
+- *DAU:* Daily Activated Users.
 ** Patterns
 *** [[https://www.tim-wellhausen.de/papers/ExpandAndContract/ExpandAndContract.html][Expand & Contract Pattern]]:
 Zero-downtime pattern to roll out a change in multiple, safe steps..
@@ -2160,6 +2167,9 @@ Don't Repeat Yourself.
 - Focus less on mechanics and more on trade-offs.
 - Focus on the high-level. Low-level will crop up.
 ** Breakdown strategies:
+Expectations > Requirements > Estimates > Solution  > Overview > Deep
+Dive > Refine.
+
 - Ask refining questions.
   - *Functional:* Requirements the Client needs directly. eg. Send messages in near real-time to contacts.
   - *Non-functional:* indirect requirements. eg. Performance shouldn't degrade with load.
