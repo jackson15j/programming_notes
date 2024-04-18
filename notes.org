@@ -3,7 +3,7 @@
 #+OPTIONS: toc:2
 #+PROPERTY: header-args:mermaid :prologue "exec 2>&1" :epilogue ":" :pupeteer-config-file ~/.puppeteerrc
 #+PROPERTY: header-args:shell :prologue "exec 2>&1" :epilogue ":" :results drawer :async
-#+STARTUP: show2levels
+#+STARTUP: overview
 * Arch:
 ** Package Management:
 *** [[https://forum.manjaro.org/t/how-do-i-limit-pamac-or-yays-cpu-core-usage-while-compiling/55043][How do I limit Pamac or yay's CPU core usage while compiling?]]
@@ -869,8 +869,8 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
   #+BEGIN_SRC sh
     brew tap d12frosted/emacs-plus
     brew install emacs-plus@30 --with-native-comp --with-mailutils --with-xwidgets
-- Then =Command+Option= drag =/opt/homebrew/opt/emacs-plus*/Emacs.app= to
   #+END_SRC
+- Then =Command+Option= drag =/opt/homebrew/opt/emacs-plus*/Emacs.app= to
   =/Applications= in Finder.
 - *NOTE:* need to do the reinstall dance because of the use of options:
   #+BEGIN_SRC sh
