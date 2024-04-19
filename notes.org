@@ -2491,6 +2491,16 @@ text definitions to create and modify diagrams dynamically.
 
 - [[https://github.com/mermaid-js/mermaid][Github: mermaid-js/mermaid]].
 - [[https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/][Github Blog: Include diagrams in your Markdown files with Mermaid]].
+** [[https://github.com/donnemartin/system-design-primer][Github: donnemartin/system-design-primer]]:
+
+#+BEGIN_SRC shell :dir "~/github_repos/"
+  git clone git@github.com:donnemartin/system-design-primer.git
+#+END_SRC
+
+NOTE: I generated the epub by modifying the script to call pandoc via
+docker and to do it based off the tempfile as input, instead of
+~cat~-ing it over stdin.
+
 * Task Queuing:
 ** [[https://kafka.apache.org/intro][Apache Kafka]]:
 - Topic message broker (server) for streaming/storing Events.
