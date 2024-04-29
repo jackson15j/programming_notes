@@ -2589,3 +2589,33 @@ hypothesis & validation.
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
 - https://scratch.mit.edu/ - Programming for kids.
+* Workflows:
+** Bullet Journaling:
+- Spread: 2 pages.
+- Index: link to pages and allow threading.
+- Future log: 6months high level. 1 spread.
+  - Use threading to link multiple books.
+  - Year view of Birthdays?
+- Monthly Log: next month. Schedule tasks/events from Future Log.
+- Daily: do tasks from Monthly Log. Concise.
+- Collection: spread+ of collocated tasks/notes/trackers.
+  - People Collection for notes on real people (dis/likes, abilities,
+    wants, etc).
+- Tracker: habit table. X completed days.
+- Review:
+  - Daily.
+  - Backport to Future Log (copy into next journal).
+  - groom daily from Future/monthly to daily.
+  - concise collection domains.
+  - What is missing?
+  - Is everything done?
+  - Any migrations?
+    - Reschedule?
+    - Drop?
+    - Move to Tracker?
+- Reflect:
+  - Monthly/Weekly.
+  - What have I learnt?
+  - What should change?
+  - Am I using the information that I am logging?
+
