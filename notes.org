@@ -315,6 +315,19 @@ Open metrics/logging/tracing telemetry.
 - [[https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry][NextJS: OpenTelemetry]].
 * Bash:
 - ~ps -aef --forest~ for tree view of processes.
+** cat:
+*** Concatenate multiple mp3's together (and fix ID3 tags):
+For when I want to merge a whole load of mp3 files into 1 (eg. Audio Books) for ease of management.
+
+#+BEGIN_SRC shell
+  brew install id3lib
+#+END_SRC
+
+#+BEGIN_SRC shell :dir ~/Music/<path> :var output="output.mp3" title="title" track="1" total_tracks="1"
+  cat *.mp3 > $output
+  id3tag -t$track -T$total_tracks -s$title $output
+#+END_SRC
+
 ** Curl:
 - [[https://tldr.ostera.io/curl][Curl examples - tldr]] | simplified, community driven man pages. Transfers data
   from or to a server. Supports most protocols, including HTTP, FTP, and
