@@ -2631,4 +2631,21 @@ hypothesis & validation.
   - What have I learnt?
   - What should change?
   - Am I using the information that I am logging?
+** Rule of 3:
+A task tracking style that focuses on 3 Must do, results-based, priorities that are tracked across a Daily+ period. 
+
+- 3 outcomes for: Today/Week/Month/Year.
+    - Results orientated.
+        - Good: Secure new Client.
+        - Bad: Prepare proposal.
+    - /"Priorities"/ not /"Items"/.
+- Work on 3 actions at most Productive Time. 
+    - Block out calendar.
+    - ignore Distractions (secondary tasks).
+    - Automate secondary tasks.
+- Must > Should > Could.
+- Do it, Queue it, Schedule it, Delegate it.
+- Micro Tasks to fill spare time.
+- Start day with a Plan.
+    - Plan, Do, Review.
 
