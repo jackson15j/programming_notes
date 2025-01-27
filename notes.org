@@ -1449,6 +1449,8 @@ a Personal SSH key on the Work System to clone the Personal repo.
 
 #+BEGIN_EXAMPLE sh
   git clone git@provider.com:userName/projectName.git --config core.sshCommand="ssh -i ~/.ssh/private_ssh_key" --config user.email="<personal_email>"
+  git -c core.sshCommand="ssh -i ~/.ssh/private_ssh_key" submodule update
+  git submodule foreach git config core.sshCommand "ssh -i ~/.ssh/private_ssh_key"
 #+END_SRC
 
 Or after the fact with:
@@ -1460,6 +1462,9 @@ eg. for my personal repos to be separate on a work laptop.
 #+BEGIN_EXAMPLE sh
   git config core.sshcommand "ssh -i ~/.ssh/id_ed25519_personal"
   git config user.email jackson15j@hotmail.com
+  git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519_personal" submodule update
+  git submodule foreach git config core.sshCommand "ssh -i ~/.ssh/id_ed25519_personal"
+  git submodule foreach git config user.email "jackson15j@hotmail.com"
 #+END_EXAMPLE
 
 ** Git Hooks:
@@ -2632,14 +2637,14 @@ hypothesis & validation.
   - What should change?
   - Am I using the information that I am logging?
 ** Rule of 3:
-A task tracking style that focuses on 3 Must do, results-based, priorities that are tracked across a Daily+ period. 
+A task tracking style that focuses on 3 Must do, results-based, priorities that are tracked across a Daily+ period.
 
 - 3 outcomes for: Today/Week/Month/Year.
     - Results orientated.
         - Good: Secure new Client.
         - Bad: Prepare proposal.
     - /"Priorities"/ not /"Items"/.
-- Work on 3 actions at most Productive Time. 
+- Work on 3 actions at most Productive Time.
     - Block out calendar.
     - ignore Distractions (secondary tasks).
     - Automate secondary tasks.
