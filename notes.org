@@ -2607,6 +2607,26 @@ hypothesis & validation.
 - https://www.educative.io/ - Text-based teaching resources (instead of video)
   and web-based coding environments.`
 - https://scratch.mit.edu/ - Programming for kids.
+* vim/neovim:
+** keyboard shortcuts:
+- ~:e </path/to/file>~
+** config:
+- Windows: ~%localappdata%\nvim\init.lua~.
+- Package Management: [[https://lazy.folke.io/][Lazy.nvim]].
+  - Add plugins into: ~/path/to/nvim/init.lua~.
+  - Restart nvim to auto install.
+** packages:
+Examples from other users:
+- [[https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7][Dev.to: Slydragon - Neovim plugins via Lazy]].
+*** [[https://github.com/NeogitOrg/neogit][NeoGit]]:
+- ~:Neogit [cwd=/path/to/repo/root].
+- Same keyboard shortcuts as Emacs [[https://magit.vc/][magit]]!
+*** [[https://nvim-orgmode.github.io/][OrgMode]]:
+- ~:Org <options>~
+- See: Treesitter install notes.
+*** TreeSitter:
+- Windows requires a Compiler installed: ~winget install zig.zig~, or: ~winget install LLVM.LLVM~ or ~gcc~. 
+
 * Workflows:
 ** Bullet Journaling:
 - Spread: 2 pages.
