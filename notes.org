@@ -27,6 +27,35 @@ Manually updated the ~resume=~ in: ~/etc/default/grub~ to be correct, then
 regenerated Grub with: ~sudo grub-mkconfig -o /boot/grub/grub.cfg.~ See:
 https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 * BackEnd:
+** C# (csharp):
+*** C# Learning notes.
+
+A good chunk of most courses are about how to program in general and OO concepts in particular. I'd suggest a schedule something like:
+
+1. Write a console app that does something relatively simple but that you can apply proper design to.  So for example, write a console app that takes two numbers and an operator as inputs and returns an output ("3", "2", "Add" - returns 5).  We can introduce the Host, configuration providers and the builder pattern at this point, which isn't in the default Console app templates but is used by everything else.
+2. Then start refactoring that to separate business and presentation logic, and prove it works by having another way of calling it - e.g. by hosting a worker service that monitors the file system for a file drop
+3. Take that refactored app and start introducing dependency injection so you can replace implementations and help with testing, and use the same mechanism to allow new operations to be added with minimal code changes.
+4. Write unit tests for it to introduce Moq and xUnit
+5. Host the business logic in a web api and write a web front end to call it to introduce ASP.Net (for the client), and WebAPI and minimal APIs (since you can write the api in at least two different-but-related frameworks).
+
+Basically if you can do everything in steps 1-5, then that covers a huge amount of the basics of what we do here.  The rest of it it just hosting- and IaaS/SaaS-dependent frameworks such as functions/webapps/container apps or Cosmos/EventHubs/Whatever
+
+The DI stuff is pretty key
+
+*** C# Microsoft Learn Courses:
+- [[https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][AZ-305: Design business continuity solutions]] - 2 modules1 hr 46 min
+- [[https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][AZ-305: Design identity, governance, and monitor solutions]] - 3 modules3 hr 5 min
+- [[https://learn.microsoft.com/en-us/training/paths/microsoft-azure-architect-design-prerequisites/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][AZ-305: Microsoft Azure Architect Design Prerequisites]] - 6 modules5 hr 19 min - 51% Completed
+- [[https://learn.microsoft.com/en-us/training/paths/get-started-c-sharp-part-6/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Debug C# console applications (Get started with C#, Part 6)]] - 6 modules5 hr 27 min
+- [[https://learn.microsoft.com/en-us/training/paths/create-microservices-with-dotnet/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Create cloud-native apps and services with .NET and ASP.NET Core]] - 7 modules4 hr 25 min
+- [[https://learn.microsoft.com/en-us/training/modules/build-web-api-aspnet-core/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Create a web API with ASP.NET Core controllers]] - 41 min
+- [[https://learn.microsoft.com/en-us/training/paths/aspnet-core-minimal-api/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Create web apps and services with ASP.NET Core, minimal API, and .NET]] - 3 modules1 hr 35 min
+- [[https://learn.microsoft.com/en-us/training/paths/build-apps-with-dotnet-maui/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Build mobile and desktop apps with .NET MAUI]] - 9 modules7 hr 18 min
+- [[https://learn.microsoft.com/en-us/training/modules/install-configure-visual-studio-code/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Install and configure Visual Studio Code for C# development]] - 35 min
+- [[https://learn.microsoft.com/en-us/training/paths/build-dotnet-applications-csharp/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Build .NET applications with C#]] - 6 modules3 hr 14 min
+- [[https://learn.microsoft.com/en-us/training/paths/accelerate-app-development-using-github-copilot/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][Accelerate app development by using GitHub Copilot]] - 6 modules8 hr 32 min
+- [[https://learn.microsoft.com/en-us/training/paths/copilot/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][GitHub Copilot Fundamentals - Understand the AI pair programmer]] - 12 modules5 hr 46 min
+
 ** Forth:
 Some interesting links that fell out of a chat about what programming on Forth
 was like:
