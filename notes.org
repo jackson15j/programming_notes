@@ -2654,7 +2654,7 @@ Examples from other users:
 - ~:Org <options>~
 - See: Treesitter install notes.
 *** TreeSitter:
-- Windows requires a Compiler installed: ~winget install zig.zig~, or: ~winget install LLVM.LLVM~ or ~gcc~. 
+- Windows requires a Compiler installed: ~winget install zig.zig~, or: ~winget install LLVM.LLVM~ or ~gcc~.
 
 * Workflows:
 ** Bullet Journaling:
@@ -2702,4 +2702,13 @@ A task tracking style that focuses on 3 Must do, results-based, priorities that 
 - Micro Tasks to fill spare time.
 - Start day with a Plan.
     - Plan, Do, Review.
+** 5, 4, 3, 2, 1:
+Focusing goals/aspirations with a breakdown in the form of:
 
+- 5 years
+- 4 quarters (1 year)
+- 3 months
+- 2 weeks
+- 1 day
+
+See: [[https://bulletjournal.com/blogs/bulletjournalist/my-end-of-year-process][My End of Year Process - Bullet Journal]]
