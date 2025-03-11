@@ -1493,6 +1493,7 @@ eg. for my personal repos to be separate on a work laptop.
 #+BEGIN_EXAMPLE sh
   git config core.sshcommand "ssh -i ~/.ssh/id_ed25519_personal"
   git config user.email jackson15j@hotmail.com
+  git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519_personal" submodule init
   git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519_personal" submodule update
   git submodule foreach git config core.sshCommand "ssh -i ~/.ssh/id_ed25519_personal"
   git submodule foreach git config user.email "jackson15j@hotmail.com"
