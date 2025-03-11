@@ -28,6 +28,8 @@ regenerated Grub with: ~sudo grub-mkconfig -o /boot/grub/grub.cfg.~ See:
 https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 * BackEnd:
 ** C# (csharp):
+*** Commands:
+- [[https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-why][~dotnet nuget why~]] - Dependency graph.
 *** C# Learning notes.
 
 A good chunk of most courses are about how to program in general and OO concepts in particular. I'd suggest a schedule something like:
