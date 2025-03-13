@@ -44,6 +44,10 @@ Basically if you can do everything in steps 1-5, then that covers a huge amount 
 
 The DI stuff is pretty key
 
+*** C# Learning Links:
+- [[https://github.com/milanm/DotNet-Developer-Roadmap][Github: .NET Developer Roadmap 2025]] - This is a step-by-step guide
+  to becoming a .NET Engineer, with links to relevant learning
+  resources.
 *** C# Microsoft Learn Courses:
 - [[https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][AZ-305: Design business continuity solutions]] - 2 modules1 hr 46 min
 - [[https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/?source=docs&tab=applied-skills-tab&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks][AZ-305: Design identity, governance, and monitor solutions]] - 3 modules3 hr 5 min
@@ -2153,6 +2157,7 @@ What tooling is being used to manage the Secret?
   need to deal with storing users or authenticating users.  Keycloak provides
   user federation, strong authentication, user management, fine-grained
   authorization, and more.
+- [[https://docs.snyk.io/scm-ide-and-ci-cd-integrations/snyk-ci-cd-integrations/azure-pipelines-integration][Snyk: Azure Pipelines integration using the Snyk Security Scan task]].
 *** [[https://www.knowbe4.com/][Knowbe4]]:
 General Security training delivered as mandatory in work. Usually on a cadence
 of quarterly/monthly, via: games, quizzes, videos. Some of it's pretty dry, but
