@@ -32,6 +32,21 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 - [[https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-why][~dotnet nuget why~]] - Dependency graph.
 *** Tools:
 - [[https://dotnetfiddle.net/][C# repl]].
+**** [[https://www.cursor.com/][Cursor AI Editor]]:
+Based off VSCodium (Open source VSCode fork).
+
+Cursor cannot use the Microsoft debugger for C#, since Microsoft has
+locked it down to only it's products. Everyone in the wild uses the
+open source C# debugger provided by Samsung
+
+Links for more information:
+- https://github.com/Samsung/netcoredbg
+- https://github.com/Cliffback/netcoredbg-macOS-arm64.nvim
+- https://github.com/getcursor/cursor/issues/1634 - Extensions defined in devcontainer.json are not installing in Dev Container
+  - Cursor doesn't install the ~ms-dotnettools.csharp~ extension in the Dev Container. So have to manually install it on every rebuild!
+  - Once installed, the debugging session will work!
+- https://guiferreira.me/archive/2025/how-to-debug-dotnet-code-in-cursor-ai/
+
 *** C# Learning notes.
 
 A good chunk of most courses are about how to program in general and OO concepts in particular. I'd suggest a schedule something like:
