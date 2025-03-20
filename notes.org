@@ -381,6 +381,10 @@ For when I want to merge a whole load of mp3 files into 1 (eg. Audio Books) for 
   id3tag -t$track -T$total_tracks -s$title $output
 #+END_SRC
 
+** certificates:
+- Get certificate contents as text: ~openssl x509 -text -nout -in </path/to/cert.pem>~.
+- Pull down certificate from Service: ~openssl s_client -connect <FQDN>:<port> </dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cert.pem~.
+- Connect to a Service with a certificate: ~curl --cacert </path/to/cert.<pem|crt>> https://<FQDN>~.
 ** Curl:
 - [[https://tldr.ostera.io/curl][Curl examples - tldr]] | simplified, community driven man pages. Transfers data
   from or to a server. Supports most protocols, including HTTP, FTP, and
