@@ -32,6 +32,9 @@ https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 - [[https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-why][~dotnet nuget why~]] - Dependency graph.
 *** Tools:
 - [[https://dotnetfiddle.net/][C# repl]].
+- [[https://docs.fluentvalidation.net/en/latest/index.html][FluentValidation]] - FluentValidation is a .NET library for building
+  strongly-typed validation rules.
+  - [[https://codewithmukesh.com/blog/fluentvalidation-in-aspnet-core/][Code with Mukesh: How to use FluentValidation in ASP.NET Core - Super Powerful Validations]].
 **** [[https://www.cursor.com/][Cursor AI Editor]]:
 Based off VSCodium (Open source VSCode fork).
 
