@@ -46,7 +46,131 @@ Links for more information:
   - Cursor doesn't install the ~ms-dotnettools.csharp~ extension in the Dev Container. So have to manually install it on every rebuild!
   - Once installed, the debugging session will work!
 - https://guiferreira.me/archive/2025/how-to-debug-dotnet-code-in-cursor-ai/
+- https://github.com/dgokcin/dotnet-cursor-debugging-with-breakpoints
 
+Dockerfile:
+
+#+BEGIN_EXAMPLE dockerfile
+  # DevContainer dockerfile
+  FROM mcr.microsoft.com/devcontainers/dotnet:9.0 AS build-deps
+  ENV TZ=Europe/London
+  RUN apt-get update && apt-get install -y curl tzdata unzip && rm -rf /var/lib/apt/lists/*
+  ARG configuration=Development
+  WORKDIR /workspace/
+
+  # Microsoft has locked down the .NET Debugger to their products, so this
+  # installs the Samsung Debugger as an alternative that can be called from
+  # `launch.json`.
+  FROM build-deps as cursor-debugger-deps
+  # Samsungs Debugger for DevContainers running on Mac's.
+  RUN mkdir -p /home/vscode/arm64 \
+      && curl -sSL https://github.com/Samsung/netcoredbg/releases/download/3.1.2-1054/netcoredbg-linux-arm64.tar.gz \
+      | tar -xz -C /home/vscode/arm64 \
+      && chmod +x /home/vscode/arm64/netcoredbg/netcoredbg
+#+END_EXAMPLE
+
+And ~launch.json~ file for an ASP.NET C# project in a DevContainer.:
+
+#+BEGIN_EXAMPLE json
+  {
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "DevContainer + Cursor (netcoredbg): .NET Core Launch (Backend)",
+              "type": "coreclr",
+              "request": "launch",
+              "preLaunchTask": "build",
+              "program": "${workspaceFolder}/path/to/app.dll",
+              "args": [],
+              "cwd": "${workspaceFolder}/path/to/src/",
+              "stopAtEntry": false,
+              "console": "internalConsole",
+              "pipeTransport": {
+                  "pipeCwd": "${workspaceFolder}",
+                  "pipeProgram": "bash",
+                  "pipeArgs": [
+                      "-c"
+                  ],
+                  "debuggerPath": "/home/vscode/arm64/netcoredbg/netcoredbg",
+                  "debuggerArgs": [
+                      "--interpreter=vscode"
+                  ],
+                  "quoteArgs": true
+              },
+              "env": {
+                  "ASPNETCORE_ENVIRONMENT": "DevContainer"
+              },
+              "sourceFileMap": {
+                  "/Views": "${workspaceFolder}/Views"
+              }
+          }
+      ]
+  }
+#+END_EXAMPLE
+
+Example ~devcontainer.json~:
+
+#+BEGIN_EXAMPLE json
+  // For format details, see https://aka.ms/devcontainer.json. For config options, see the
+  // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+  {
+  	"name": "C# DevContainer",
+  	"dockerComposeFile": "docker-compose.yaml",
+  	"service": "app_dev",
+  	"workspaceFolder": "/workspace",
+  	"mounts": [
+  		// https://code.visualstudio.com/docs/devcontainers/tips-and-tricks#_persisting-user-profile
+  		"source=profile,target=/root,type=volume",
+  		"target=/root/.vscode-server,type=volume",
+  		// https://www.marcandreuf.com/blog/2024-07-12-gitdevcont/
+  		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+  		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh/,target=/home/vscode/.ssh/,type=bind,consistency=cached"
+  	],
+  	"customizations": {
+  		"vscode": {
+  			"extensions": [
+  				"vsls-contrib.codetour",
+  				"streetsidesoftware.code-spell-checker",
+  				"ms-dotnettools.csharp",
+  				"oderwat.indent-rainbow",
+  				"ms-vsliveshare.vsliveshare",
+  				"yzhang.markdown-all-in-one",
+  				"bierner.markdown-mermaid",
+  				"DavidAnson.vscode-markdownlint",
+  				"42Crunch.vscode-openapi",
+  				"humao.rest-client",
+  				"redhat.vscode-yaml",
+  				"ms-dotnettools.vscode-dotnet-runtime",
+  				"ms-azuretools.vscode-docker",
+  				"ms-azuretools.vscode-bicep"
+  			],
+  			"settings": {
+  				// https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime
+  				// See: `I already have a .NET Runtime or SDK installed, and I want to use it`
+  				"dotnetAcquisitionExtension.sharedExistingDotnetPath": "/usr/share/dotnet/dotnet",
+  				// NOTE: The extension didn't like the format of the above file, so would still install
+  				// .NET8. This setting forces it to use what is already installed in the container.
+  				"dotnetAcquisitionExtension.allowInvalidPaths": true
+  			}
+  		},
+  		"cursor": {
+  			"extensions": [
+  				"ms-dotnettools.csharp"
+  			],
+  			"settings": {
+  				"dotnetAcquisitionExtension.sharedExistingDotnetPath": "/usr/share/dotnet/dotnet",
+  				"dotnetAcquisitionExtension.allowInvalidPaths": true,
+  				"omnisharp.useGlobalMono": "never",
+  				"omnisharp.path": "latest",
+  				"csharp.debug.netcoredbg.path": "/root/.local/bin/netcoredbg"
+  			}
+  		}
+  	},
+  	"remoteEnv": {
+  		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+  	}
+  }
+#+END_EXAMPLE
 *** C# Learning notes.
 
 A good chunk of most courses are about how to program in general and OO concepts in particular. I'd suggest a schedule something like:
