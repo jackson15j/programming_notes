@@ -1398,6 +1398,7 @@ See: https://www.maxivanov.io/make-graphql-requests-with-curl/
       }'
   #+END_EXAMPLE
 ** Javascript:
+- [[https://stdlib.io/][stdlib.io - a standard library for javascript and node.js]].
 *** filter:
 Create a new array with a callback function that applies a conditional
 statement against each element of the array. elements are pushed into
