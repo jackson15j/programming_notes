@@ -1489,6 +1489,45 @@ This will work for other elisp built-in's. eg.
   - ~C-x p r~ in a =project= managed repo.
   - ~<find> regex~ return, ~<replace> string~ return.
   - Confirm/deny replace with the usual: ~!~, ~y~, ~n~.
+*** How to add an integer sequence to a region regex?
+From: [[https://stackoverflow.com/questions/49519627/emacs-replace-regexp-with-incremental-sequence][StackOverflow: Emacs replace regexp with incremental sequence]].
+
+I wanted to add values to an enum as part of a refactor (Add enum
+integer values, add new enum names to map to existing values,
+deprecate old enums). Here's an example to do it from 0-based
+sequence:
+
+#+BEGIN_EXAMPLE csharp
+  public enum EnumToRefactor
+  {
+      badValueOne,
+      badValueTwo,
+      badValueThree,
+  }
+#+END_EXAMPLE
+
+=M-x replace-regexp <ret> \(.*\), <ret> \1 = \# <ret>= gives:
+
+#+BEGIN_EXAMPLE csharp
+  public enum EnumToRefactor
+  {
+      badValueOne = 0,
+      badValueTwo = 1,
+      badValueThree = 2,
+  }
+#+END_EXAMPLE
+
+The link also has an example with adding padded values that count up
+with: =\,(let ((start (+ 1000 (* 4 \#)))) (format "%d-%d" start (+
+start 3)))= to give:
+
+#+BEGIN_EXAMPLE shell
+  result_A_in_S1-S2.txt -> result_A_in_1000-1003.txt
+  result_A_in_S1-S2.txt -> result_A_in_1004-1007.txt
+  result_A_in_S1-S2.txt -> result_A_in_1008-1011.txt
+  result_A_in_S1-S2.txt -> result_A_in_1012-1015.txt
+#+END_EXAMPLE
+
 ** DAP:
 *** Registering a debug template for: ~dap-mode~, to use.
 #+BEGIN_EXAMPLE emacs-lisp
