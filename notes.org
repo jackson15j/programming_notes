@@ -27,6 +27,12 @@ Manually updated the ~resume=~ in: ~/etc/default/grub~ to be correct, then
 regenerated Grub with: ~sudo grub-mkconfig -o /boot/grub/grub.cfg.~ See:
 https://bbs.archlinux.org/viewtopic.php?pid=1928690#p1928690.
 * BackEnd:
+** Casing:
+- =snake_case=.
+- =SNAKE_UPPERCASE=.
+- =kebab-case=.
+- =camelCase=.
+- =PascalCase=.
 ** C# (csharp):
 *** Commands:
 - [[https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-why][~dotnet nuget why~]] - Dependency graph.
