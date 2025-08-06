@@ -1528,6 +1528,38 @@ start 3)))= to give:
   result_A_in_S1-S2.txt -> result_A_in_1012-1015.txt
 #+END_EXAMPLE
 
+*** How to continue an existing sequence from different start points with replace regex?
+I wanted to renumber some values in a =dired= buffer, but instead of
+increasing by a sequence, I wanted to take the existing numbers and
+set a new start point for the sequence:
+
+#+BEGIN_EXAMPLE sh
+  01x5 - a.jpg
+  01x5 - a.txt
+  01x6 - b.jpg
+  01x6 - b.txt
+#+END_EXAMPLE
+
+To pad the second value with zero's and start from =01=
+=M-x replace-regexp <ret> 01x\(\w+\)\(.*\), <ret> 01x\,(format "%02d" (- (string-to-number \1) 4)) <ret>= gives:
+
+#+BEGIN_EXAMPLE sh
+  01x01 - a.jpg
+  01x01 - a.txt
+  01x02 - b.jpg
+  01x02 - b.txt
+#+END_EXAMPLE
+
+To pad the second value with zero's but start from =15=:
+=M-x replace-regexp <ret> 01x\(\w+\)\(.*\), <ret> 01x\,(format "%02d" (+ (string-to-number \1) 10)) <ret>= gives:
+
+#+BEGIN_EXAMPLE sh
+  01x15 - a.jpg
+  01x15 - a.txt
+  01x16 - b.jpg
+  01x16 - b.txt
+#+END_EXAMPLE
+
 ** DAP:
 *** Registering a debug template for: ~dap-mode~, to use.
 #+BEGIN_EXAMPLE emacs-lisp
