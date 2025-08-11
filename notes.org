@@ -550,6 +550,12 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
   ffmpeg -y -ss <secs_to_start_from> -t <duration_in_secs> -i <source_video> -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss <secs_to_start_from> -t <duration_in_secs> -i <source_video> -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" <output.gif>
   ffmpeg -y -ss 8 -t 4 -i P1020397.MP4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss 8 -t 4 -i P1020397.MP4 -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output4.gif
 #+END_SRC
+
+Or simpler version:
+
+#+BEGIN_SRC shell
+  ffmpeg -i <source_video> -r 10 -pix_fmt rgb24 <output_gif>
+#+END_SRC
 ** PDF:
 *** How to decrypt a PDF for printing?:
 ~docker run --user $UID:$GROUPS --rm -v $(pwd):/work mgodlewski/qpdf --decrypt <input>.pdf <output>.pdf~
