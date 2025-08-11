@@ -4,6 +4,11 @@
 #+PROPERTY: header-args:mermaid :prologue "exec 2>&1" :epilogue ":" :pupeteer-config-file ~/.puppeteerrc
 #+PROPERTY: header-args:shell :prologue "exec 2>&1" :epilogue ":" :results drawer :async
 #+STARTUP: overview
+* AI:
+- [[https://github.com/github/awesome-copilot][Github: github/awesome-copilot]] - Enhance your GitHub Copilot
+  experience with community-contributed instructions, prompts, and
+  configurations. Get consistent AI assistance that follows your
+  team's coding standards and project requirements.
 * Arch:
 ** Package Management:
 *** [[https://forum.manjaro.org/t/how-do-i-limit-pamac-or-yays-cpu-core-usage-while-compiling/55043][How do I limit Pamac or yay's CPU core usage while compiling?]]
