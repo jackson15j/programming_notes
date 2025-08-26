@@ -545,11 +545,18 @@ Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~
 #+END_SRC
 
 In Zsh, this can be called in a folder with this one-liner (*NOTE:*
-the ~.avi~ extension should be changed to the file type when stripping
-of the extension with ~basename~:
+the =.avi= extension should be changed to the file type when stripping
+of the extension with =basename=:
 
 #+BEGIN_SRC shell
   for x (*.avi(ND.)); do ffmpeg -i $x -map 0 -c:v libx265 -crf 23 -preset fast -c:a copy -c:s copy "$(basename $x .avi) - h265.mp4"; done
+#+END_SRC
+
+And an example converting Real Media files with =cook= audio codec to
+h265 + mp3:
+
+#+BEGIN_SRC shell
+  for x (*.rm(ND.)); do ffmpeg -i $x -map 0 -c:v libx265 -crf 23 -preset fast -c:a libmp3lame  -c:s copy "$(basename $x .rm) - h265.mp4"; done
 #+END_SRC
 
 *** [[https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality#556031][FFMPEG:Convert video files to GIF]]:
