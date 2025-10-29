@@ -1420,6 +1420,12 @@ Orchestrator (similar to Kubernetes) but built by the Docker Team.
     EXPOSE 80
     ENTRYPOINT ["dotnet", "aspnet-core.dll"]
   #+END_EXAMPLE
+** How to get compressed docker image size from a registry?
+- [[https://gist.github.com/MichaelSimons/fb588539dcefd9b5fdf45ba04c302db6][Github Gist: MichaelSimons - Retrieving Docker Image Sizes]].
+
+#+BEGIN_EXAMPLE sh
+  docker manifest inspect <repo> | jq -r '.config.size + ([.layers[].size] | add)' | numfmt --to=iec
+#+END_EXAMPLE
 * Emacs:
 ** Core:
 *** Cleaning up an org buffer:
