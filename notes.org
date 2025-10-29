@@ -229,6 +229,9 @@ was like:
 - [[https://go.dev/][go dev site]].
 - [[https://github.com/golang/tools][Github: golang/tools]] - Repo of all =golang/x/tools= tools & static checkers.
 - [[https://www.jetbrains.com/go/][Jetbrains: GoLand]] editor.
+- [[https://github.com/golang-standards/project-layout][Github: golang-standards/project-layout]] - Unofficial suggested layout.
+- [[Insert link: https://github.com/caarlos0/env][Github: caarlos0/env]] - A simple, zero-dependencies library to parse environment variables into structs.
+- [[https://github.com/samber/lo][Github: samber/lo]] - makes it easier to work with slices, maps, strings, channels, and functions.
 *** Cross-compiling:
 - ~go env GOARCH GOOS~ - Current Systems Architecture & OS.
 - ~GOOS=<darwin|linux|windows> go build~ - Build binary for a particular OS.
