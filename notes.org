@@ -1451,6 +1451,12 @@ See: [[https://www.masteringemacs.org/article/diacritics-in-emacs][Mastering Ema
 *** Yasnippet:
 - [[https://youtu.be/xmBovJvQ3KU][YouTube: Supercharge your Emacs / Spacemacs / Doom with Yasnippets!]] ~13mins
   walkthrough.
+** Dired:
+*** Show all sub folders.
+- =C-u i=, Then add =R= to the =ls= command options.
+- =C-u l= to redraw buffer.
+- =^= to jump up to parent.
+- =CM-d= to dive into a child directory.
 ** org-mode:
 - ~org-eww-copy-for-org-mode~ to copy text + links from Eww to Org. ~C-y~ to
   paste.
