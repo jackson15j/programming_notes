@@ -1569,6 +1569,15 @@ start 3)))= to give:
   result_A_in_S1-S2.txt -> result_A_in_1012-1015.txt
 #+END_EXAMPLE
 
+Or for renaming an ordered list to start from 1:
+=prefix - \(\w+\) - \(.*\)\.ext → newPrefix\,(format "%02d" (+ \# 1)) - \2 (\1).ext=
+
+#+BEGIN_EXAMPLE shell
+  prefix - 001 - descriptionX.ext -> newPrefix 01 - descriptionX (001).ext
+  prefix - 002 - descriptionY.ext -> newPrefix 02 - descriptionY (002).ext
+  prefix - 003 - descriptionZ.ext -> newPrefix 03 - descriptionZ (003).ext
+#+END_EXAMPLE
+
 *** How to continue an existing sequence from different start points with replace regex?
 I wanted to renumber some values in a =dired= buffer, but instead of
 increasing by a sequence, I wanted to take the existing numbers and
