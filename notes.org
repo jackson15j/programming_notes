@@ -1792,6 +1792,14 @@ eg. for my personal repos to be separate on a work laptop.
   git submodule foreach git config user.email "jackson15j@hotmail.com"
 #+END_EXAMPLE
 
+** Default Global git config:
+#+BEGIN_SRC shell
+  git config set  --global fetch.all true
+  git config set  --global fetch.prune true
+  git config set  --global fetch.pruneTags true
+  git config set  --global fetch.recurseSubmodules true
+  git config set  --global fetch.parallel 0
+#+END_SRC
 ** Git Hooks:
 - [[https://pre-commit.com][~pre-commit~]] - A framework for managing and maintaining mutli-language
   pre-commit hooks. Repo of hooks in YAML format.
