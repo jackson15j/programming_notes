@@ -1812,6 +1812,87 @@ not abort ~git commit~]].
 #+BEGIN_EXAMPLE shell
   go-task lint || exit $?
 #+END_EXAMPLE
+** Git Notes:
+Git notes are great to add information after the fact. Just remember
+to do the note against the commit SHA and not a tag, else it requires
+a separate =git notes show <tag>= to view the note.
+
+#+BEGIN_EXAMPLE sh
+  % git show <commit_SHA>
+  commit <commit_SHA>
+  Author: <git_author>
+  Date:   Wed Nov 26 17:07:05 2025 +0000
+
+      <conventional_commit>: <descriptive title>
+
+      <Descriptive commit message>
+
+      Ticket: <id>
+
+
+
+  % git tag -a -m "Descriptive tag message" v1.2.3 <commit_SHA>
+  % git show <commit_SHA>
+  commit <commit_SHA> (tag: v1.2.3)
+  Author: <git_author>
+  Date:   Wed Nov 26 17:07:05 2025 +0000
+
+      <conventional_commit>: <descriptive title>
+
+      <Descriptive commit message>
+
+      Ticket: <id>
+  % git show v1.2.3
+  tag v1.2.3
+  Tagger: <git_author>
+  Date:   Thu Nov 27 09:54:05 2025 +0000
+
+  Descriptive tag message
+
+  commit <commit_SHA> (tag: v1.2.3)
+  Author: <git_author>
+  Date:   Wed Nov 26 17:07:05 2025 +0000
+
+      <conventional_commit>: <descriptive title>
+
+      <Descriptive commit message>
+
+      Ticket: <id>
+  % git notes add -m "Note added after the fact, with additional detail." <commit_SHA>
+  % git show <commit_SHA>
+  commit <commit_SHA> (tag: v1.2.3)
+  Author: <git_author>
+  Date:   Wed Nov 26 17:07:05 2025 +0000
+
+      <conventional_commit>: <descriptive title>
+
+      <Descriptive commit message>
+
+      Ticket: <id>
+
+  Notes:
+      Note added after the fact, with additional detail.
+  % git show v1.2.3
+  tag v1.2.3
+  Tagger: <git_author>
+  Date:   Thu Nov 27 09:54:05 2025 +0000
+
+  Descriptive tag message
+
+  commit <commit_SHA> (tag: v1.2.3)
+  Author: <git_author>
+  Date:   Wed Nov 26 17:07:05 2025 +0000
+
+      <conventional_commit>: <descriptive title>
+
+      <Descriptive commit message>
+
+      Ticket: <id>
+
+  Notes:
+      Note added after the fact, with additional detail.
+  %
+#+END_EXAMPLE
 ** How to show log history for a function?:
 Call: ~git log -L :<function_name>:</path/to/file> [-n
 <number_of_log_entries_to_show>]~.
