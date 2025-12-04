@@ -1053,6 +1053,21 @@ Need to get to the ~Secure Erase Options~ to do full disk erasing.
           bridge-vids 2-4094
 #+END_EXAMPLE
 ** Mac config:
+*** Intune:
+**** Taming Intune when it hogs CPU:
+Work laptops always use Intune for deploying policy. Often Intune
+misbehaves on new OS's and spikes the CPU several 100%. Killing the
+process is a temporary solution, since Intune auto-restarts and then
+eventually misbehaves again.
+
+This is a cron one-liner to kill the process when it is above a
+threshold:
+
+#+BEGIN_EXAMPLE sh
+  ,* * * * 5 ps -eo pid,%cpu,comm | awk '$0 ~ /IntuneMdmDaemon/ && $2 > 190 {system("kill " $1)}'
+#+END_EXAMPLE
+
+Apply with: =sudo crontab -e=, to set it at =root= level.
 *** iterm2
 - ~Preferences > Profiles > Keys > General > <Left/Right> Option Key = Esc+~ -
   to fix ~Alt~ to be the ~Meta~ key again.
