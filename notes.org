@@ -1925,6 +1925,14 @@ following in: =*.<ext> diff=<language>=. eg. for PHP: =*.php diff=php=
 
 Global =~/.gitattributes= can be found by: ~git config --global
 core.attributesfile ~/.gitattributes~.
+** Investigate SSH Key used in =git clone=:
+When running with: [[*Global git config to use per-VCS SSH keys for HTTPS/Git URLS:][Global git config to use per-VCS SSH keys for
+HTTPS/Git URLS]], you can search the output of the following command to
+figure out which SSH key is used:
+
+#+BEGIN_EXAMPLE shell
+  GIT_SSH_COMMAND="ssh -v" git clone <url>
+#+END_EXAMPLE
 * Job hunting:
 - https://github.com/readme/guides/technical-interviews
 - https://www.codinginterview.com/
