@@ -1403,6 +1403,13 @@ Orchestrator (similar to Kubernetes) but built by the Docker Team.
 - No ~port~ config required for mapping.
 - Cannot support multiple Containers re-using the same Port, due to Host-side
   conflicts.
+*** list networks + ip subnet/gateway ranges:
+Needed to investigate a docker network overlap issue from a script
+with a hardcoded subnet. Used this for discovery:
+
+#+BEGIN_EXAMPLE shell
+  docker network ls --format '{{.Name}}' | xargs -I {} sh -c 'echo "{}"; docker network inspect {} --format "  Subnet: {{range .IPAM.Config}}{{.Subnet}} Gateway: {{.Gateway}}{{end}}"'
+#+END_EXAMPLE
 ** Performance:
 - Uses ~cgroups~ (Control Groups) to allocate Hosts CPU/Memory to containers.
 - Use ~--cpu/--memory~~ to constrain the running container.
