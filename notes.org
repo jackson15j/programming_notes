@@ -1814,6 +1814,56 @@ eg. for my personal repos to be separate on a work laptop.
   git submodule foreach git config user.email "jackson15j@hotmail.com"
 #+END_EXAMPLE
 
+** Global git config to use per-VCS SSH keys for HTTPS/Git URLS:
+[[*Configure git repo with explicit SSH Key:][Configure git repo with explicit SSH Key]] is great for setting unique
+SSH keys per-repo, but this is how to set them on a global scale.
+
+- *Pre-req:* Create unique SSH keys:
+
+  #+BEGIN_EXAMPLE shell
+    |- ~/.ssh/
+      |- id_rsa_work_azuredevops[.pub]
+      |- id_ed25519_personal[.pub]
+      |- id_ed25519_work[.pub]
+  #+END_EXAMPLE
+- =~/.ssh/config=
+  #+BEGIN_EXAMPLE cfg
+    # Personal GitHub
+    Host github.com
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_ed25519_personal
+        IdentitiesOnly yes
+
+    # Work GitHub
+    Host github.com-work
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_ed25519_work
+        IdentitiesOnly yes
+
+    # Work Azure DevOps - Insecure RSA
+    Host ssh.dev.azure.com
+        HostName ssh.dev.azure.com
+        User git
+        IdentityFile ~/.ssh/id_rsa_work_azuredevops
+        IdentitiesOnly yes
+  #+END_EXAMPLE
+- =~/.ssh/config=
+  #+BEGIN_EXAMPLE cfg
+    ...
+    [url "git@github.com:"]
+        insteadOf = https://github.com/
+        insteadOf = git@github.com/
+    [url "git@github.com-work:<work_organisation>/"]
+        insteadOf = https://github.com/<work_organisation>/
+        insteadOf = git@github.com:<work_organisation>/
+    [url "git@ssh.dev.azure.com:v3/"]
+        insteadOf = https://dev.azure.com/
+        insteadOf = git@dev.azure.com/
+  #+END_EXAMPLE
+- =git clone <url>= should now always work. Debug via: [[*Investigate SSH Key used in =git
+  clone=:][Investigate SSH Key used in =git clone=]].
 ** Default Global git config:
 #+BEGIN_SRC shell
   git config set  --global fetch.all true
