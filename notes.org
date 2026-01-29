@@ -1085,6 +1085,14 @@ Apply with: =sudo crontab -e=, to set it at =root= level.
   window.
 - ~Preferences > Sharing > AirPlayReceiver~ Disabled due to port conflict
   on 5000.
+**** Tame Mac's Spotlight noise:
+- =Settings > Spotlight= and only leave: =Applications, Conversion,
+  Definition, System Settings= enabled.
+- To Remove the =Developer= section from Spotlight, when you don't
+  have Xcode installed:
+  - =touch /Applications/Xcode.app=.
+  - Reload: =Settings > Spotlight=, untick: =Developer=.
+  - =rm -rf /Applications/Xcode.app==
 *** Brew
 - [[https://brew.sh][Homebrew]].
   #+BEGIN_SRC sh
