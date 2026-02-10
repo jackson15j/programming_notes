@@ -3234,3 +3234,37 @@ Focusing goals/aspirations with a breakdown in the form of:
 - 1 day
 
 See: [[https://bulletjournal.com/blogs/bulletjournalist/my-end-of-year-process][My End of Year Process - Bullet Journal]]
+** Trunk development + high trust team processes/expectations:
+Key points around trunk development:
+
+- *Pros:*
+  - *Lead Time* = =Push commit -> Deployed= (Instead of: Push commit, wait for PR review, Deployed, Released).
+  - *High Integration* = All dev's get changes more rapidly than long-lived branches.
+  - *Highly Reactive* = Process to pull back from a Released breakage: =git revert <sha>= , push, CI time.
+  - *High Trust culture* = The barrier to deploy changes is lower (both pushing good/broken code). Developers Own the Risk of making changes.
+  - CI and Kubernetes probes are still doing the same job to prevent known breakages being Released to Customers
+  - *Reduction in CI costs* = Only building =main= + pushed branches, instead of: =main= + PR's.
+- *Cons:*
+  - *Bus Count / Discoverability of changes*: Need post-merge Demo's, pre-merge buddying, Standup Comm's, etc to get Bus Count > 1.
+  - *High churn can affect stability*. - People typically counter-act with long-lived branches + move back to PR flow. Instead of embracing constant change.
+  - Intent of un-signposted concise changes can cause more conflicts for Devs overlapping in the same area.
+  - *Requires diligence to use Feature Toggles* to not expose broken/partially-implemented changes.
+- *Workflow differences:*
+  - Always expect changes (get comfortable with merging/rebasing changes).
+  - Down Tools on broken =main= - Culture change.
+  - Git hooks are more important to enforce Quality standards / Definition of Done.
+  - Concise commits, little & often (eg. The extreme view is to aim for 100 commits a day vs. 1).
+    - Async Communication: Requires sign-posting intent/direction in code, especially if devs are overlapping in the same area.
+  - Post-merge Demos of Deployed/Released functionality.
+  - Feature Toggles!!
+    - Every change should be behind a feature toggle to separate Deployed from Released.
+    - Support gradual rollout of changes.
+    - Rollback = toggle feature instead of =git revert=.
+    - Clean up cost to remove feature toggle when no longer needed.
+
+I've tried different styles, and currently swinging back to favouring
+trunk development. I think it's a clear winner for anywhere that is
+making a push on Lead Times that are measured from Push to Released,
+since it removes the Human Review lag. I would suggest it as something
+for repo maintainers to have as an option, but can keep fly-by-night
+contributors on PR's only if you have Trust concerns.
