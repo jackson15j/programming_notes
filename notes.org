@@ -1304,6 +1304,17 @@ rectangle (snap to area shortcuts).
 ** Terminals:
 - [[https://github.com/alacritty/alacritty][Github: alacritty/alacritty]]: A cross-platform, OpenGL terminal emulator.
 - [[https://sw.kovidgoyal.net/kitty/][kitty]] - The fast, feature-rich, GPU based terminal emulator.
+** Jarvis Fully Standing Desk - =Error 01= fix:
+1. Check whether the desk is overloaded on one side. If it is
+   overloaded, you need to remove part of the load.
+2. Check whether there is mechanical abnormality, lifting
+   interference.
+3. If there is no mechanical abnormality on the outside, press the
+   down button of the handset to enter the RST =reset= state.
+   1. If the column descends synchronously, keep pressing the button
+      until the reset is completed, and the handset displays numbers.
+   2. if the table top is tilted, release the button immediately,
+      contact after-sales.
 * Docker:
 - [[https://www.youtube.com/watch?v=fqMOX6JJhGo][YouTube: Docker Tutorial for Beginners - A Full DevOps Course on How to Run
   Applications in Containers]].
