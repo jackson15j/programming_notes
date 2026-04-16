@@ -2804,6 +2804,7 @@ monitoring service and reducing costs by 90%]].
 ** Components in Detail:
 *** Addresses (postal):
 - [[https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/][Falsehoods Programmers believe about Addresses]].
+- [[https://www.eircode.ie/benefits/overview][EIR Code - Irelands modern postcode system]].
 *** API's:
 **** [[https://www.openapis.org/][OpenAPI]]:
 - [[https://learn.openapis.org/][Getting Started | OpenAPI Documentation]].
