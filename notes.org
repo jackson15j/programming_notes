@@ -574,6 +574,16 @@ Or simpler version:
 #+BEGIN_SRC shell
   ffmpeg -i <source_video> -r 10 -pix_fmt rgb24 <output_gif>
 #+END_SRC
+** JSON/YAML:
+*** Filetype conversions with =yq=:
+#+BEGIN_SRC emacs-lisp
+  yq -p json -o yaml file.json # json -> yaml
+  yq -p json -o xml file.json  # json -> xml
+  yq -p yaml -o json file.yaml # yaml -> json
+  yq -p yaml -o xml file.yaml  # yaml -> xml
+  yq -p xml -o json file.xml   # xml -> json
+  yq -p xml -o yaml file.xml   # xml -> yaml
+#+END_SRC
 ** PDF:
 *** How to decrypt a PDF for printing?:
 ~docker run --user $UID:$GROUPS --rm -v $(pwd):/work mgodlewski/qpdf --decrypt <input>.pdf <output>.pdf~
