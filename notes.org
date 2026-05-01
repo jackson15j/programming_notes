@@ -574,6 +574,19 @@ Or simpler version:
 #+BEGIN_SRC shell
   ffmpeg -i <source_video> -r 10 -pix_fmt rgb24 <output_gif>
 #+END_SRC
+*** FFmpeg trim video:
+#+BEGIN_SRC shell
+  # ffmpeg -ss <secs_to_start_from> <-t <duration_in_secs>|-to <secs_to_end_at>> -i <source_video> -c copy <output_video>
+
+  # Skip first 10 seconds
+  ffmpeg -i input.mp4 -ss 10 -c copy output.mp4
+
+  # Skip first 1 minute 30 seconds
+  ffmpeg -i input.mp4 -ss 00:01:30 -c copy output.mp4
+
+  # Keep only seconds 10-60
+  ffmpeg -i input.mp4 -ss 10 -to 60 -c copy output.mp4
+#+END_SRC
 ** JSON/YAML:
 *** Filetype conversions with =yq=:
 #+BEGIN_SRC emacs-lisp
