@@ -569,10 +569,10 @@ h265 + mp3:
   ffmpeg -y -ss 8 -t 4 -i P1020397.MP4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png && ffmpeg -ss 8 -t 4 -i P1020397.MP4 -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output4.gif
 #+END_SRC
 
-Or simpler version:
+Or simpler version (with [[https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video#setptsfilter][double speedup]]):
 
 #+BEGIN_SRC shell
-  ffmpeg -i <source_video> -r 10 -pix_fmt rgb24 <output_gif>
+  ffmpeg -i <source_video> -r 10 [-filter:v "setpts=0.5*PTS"] -pix_fmt rgb24 <output_gif>
 #+END_SRC
 *** FFmpeg trim video:
 #+BEGIN_SRC shell
