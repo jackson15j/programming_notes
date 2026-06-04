@@ -534,6 +534,17 @@ For when I want to merge a whole load of mp3 files into 1 (eg. Audio Books) for 
 ** De/Compress Files:
 - Decompress =.xz=: ~unxz <file.ext.xz>~.
 ** ffmpeg:
+*** FFmpeg Get video info:
+#+BEGIN_EXAMPLE shell
+  ffmpeg -i <source_video>
+#+END_EXAMPLE
+
+Or, to avoid the: =At least one output file must be specified=, error
+(with =-t 0= to avoid decoding the file):
+
+#+BEGIN_EXAMPLE shell
+  ffmpeg -i <source_video> -t 0 -f null -
+#+END_EXAMPLE
 *** [[https://trac.ffmpeg.org/wiki/Encode/H.264][FFmpeg wiki: Encode/H.264]]:
 Single pass with a \"visually loss-less"\ look (~output=/path/to/file.<mp4|mkv>~):
 
@@ -587,6 +598,13 @@ Or simpler version (with [[https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20
   # Keep only seconds 10-60
   ffmpeg -i input.mp4 -ss 10 -to 60 -c copy output.mp4
 #+END_SRC
+*** [[https://trac.ffmpeg.org/wiki/Scaling][FFmpeg wiki: resize/scale by ratio for video/image]]:
+
+Resize and keeping ratio by width or height:
+#+BEGIN_EXAMPLE shell
+  ffmpeg -i <input> -vf scale=<int>:-2 <scaled_output_by_width>
+  ffmpeg -i <input> -vf scale=-2<int> <scaled_output_by_height>
+#+END_EXAMPLE
 ** JSON/YAML:
 *** Filetype conversions with =yq=:
 #+BEGIN_SRC emacs-lisp
